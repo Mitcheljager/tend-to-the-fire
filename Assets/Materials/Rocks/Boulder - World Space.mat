@@ -114,7 +114,7 @@ Material:
     - _Detail_Normal_Strength: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _Enable_Vertex_Snapping: 1
+    - _Enable_Vertex_Snapping: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
