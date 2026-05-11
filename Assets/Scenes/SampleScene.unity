@@ -1634,7 +1634,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6179246, g: 0.8320052, b: 1, a: 1}
   m_Intensity: 0.025
   m_Range: 10
   m_SpotAngle: 30
@@ -1678,7 +1678,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 12000
+  m_ColorTemperature: 20000
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -3411,9 +3411,9 @@ MonoBehaviour:
   vertexSnapSize: 32
   vertexSnapDistance: 3
   materials:
+  - {fileID: 2100000, guid: 34d12681e85626b4b923fc2c154c68c8, type: 2}
   - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
   - {fileID: 2100000, guid: 8ebe7877bb17ab447b1dfd2d93b50de0, type: 2}
-  - {fileID: 2100000, guid: 34d12681e85626b4b923fc2c154c68c8, type: 2}
 --- !u!4 &1067460667
 Transform:
   m_ObjectHideFlags: 0
@@ -4167,7 +4167,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8591101, b: 0.4292453, a: 1}
   m_Intensity: 10
   m_Range: 20
   m_SpotAngle: 30
@@ -4211,7 +4211,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 2000
+  m_ColorTemperature: 1700
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -4236,8 +4236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LightFlicker
   minimumIntensityMultiplier: 0.5
   maximumIntensityMultiplier: 1.5
-  minimumPositionDisplacement: {x: -0.05, y: 0, z: -0.05}
-  maximumPositionDisplacement: {x: 0.05, y: 0, z: 0.05}
+  minimumPositionDisplacement: {x: -0.025, y: 0, z: -0.025}
+  maximumPositionDisplacement: {x: 0.025, y: 0, z: 0.025}
   lerpChance: 0.05
   lerpSpeed: 20
 --- !u!1 &1354452015
