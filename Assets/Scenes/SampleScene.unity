@@ -4234,8 +4234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93eb7a6909fec848bda11f768d854da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightFlicker
-  minimumMultiplier: 0.75
-  maximumMultiplier: 1.25
+  minimumIntensityMultiplier: 0.5
+  maximumIntensityMultiplier: 1.5
+  minimumPositionDisplacement: {x: -0.05, y: 0, z: -0.05}
+  maximumPositionDisplacement: {x: 0.05, y: 0, z: 0.05}
   lerpChance: 0.05
   lerpSpeed: 20
 --- !u!1 &1354452015
