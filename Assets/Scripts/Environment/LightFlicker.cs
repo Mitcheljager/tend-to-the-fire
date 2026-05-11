@@ -36,7 +36,7 @@ public class LightFlicker : MonoBehaviour {
     }
 
     void CycleIntensity() {
-        if (Random.value < lerpChance) {
+        if (targetPosition == Vector3.zero || Random.value < lerpChance) {
             targetIntensityMultiplier = Random.Range(minimumIntensityMultiplier, maximumIntensityMultiplier);
             targetPosition = basePosition + new Vector3(
                 Random.Range(minimumPositionDisplacement.x, maximumPositionDisplacement.x),
