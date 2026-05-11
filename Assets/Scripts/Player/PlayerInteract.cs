@@ -20,11 +20,11 @@ public class PlayerInteract : MonoBehaviour {
     void Update() {
         hitObject = GetMouseHoverObject();
 
-        Debug.DrawLine(transform.position, endTransform.position, Color.red);
-
         hoveringInteractable = UpdateGrabberTooltip();
 
         interactImage.SetActive(hoveringInteractable);
+
+        Debug.DrawLine(transform.position, endTransform.position, hoveringInteractable ? Color.green : Color.red);
 
         if (hoveringInteractable && Input.GetMouseButtonDown(0)) hoveringInteractable.Interact();
     }
