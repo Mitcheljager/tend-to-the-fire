@@ -113,6 +113,7 @@ Material:
     - _Detail_Normal_Strength: 0
     - _DstBlend: 0
     - _DstBlendAlpha: 0
+    - _Enable_Vertex_Snapping: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -133,6 +134,8 @@ Material:
     - _Surface: 0
     - _Tiling: 1
     - _UVSec: 0
+    - _Vertex_Snap_Distance: 3
+    - _Vertex_Snap_Size: 32
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
