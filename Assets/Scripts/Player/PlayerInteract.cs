@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
-using Unity.Collections;
 using TMPro;
 
 public class PlayerInteract : MonoBehaviour {
@@ -14,23 +12,18 @@ public class PlayerInteract : MonoBehaviour {
     [Header("Interact limits")]
     public float interactRange = 2f;
 
-    private GameObject hitObject;
-    private Interactable hoveringInteractable;
-
     void Update() {
-        hitObject = GetMouseHoverObject();
+        GameObject hitObject = GetMouseHoverObject();
+        Interactable interactable = UpdateInteractTooltip(hitObject);
 
-        hoveringInteractable = UpdateGrabberTooltip();
+        interactImage.SetActive(interactable);
+        if (interactable && Input.GetButtonDown("Interact")) interactable.Interact();
 
-        interactImage.SetActive(hoveringInteractable);
-
-        Debug.DrawLine(transform.position, endTransform.position, hoveringInteractable ? Color.green : Color.red);
-
-        if (hoveringInteractable && Input.GetButtonDown("Interact")) hoveringInteractable.Interact();
+        Debug.DrawLine(transform.position, endTransform.position, interactable ? Color.green : Color.red);
     }
 
-    private Interactable UpdateGrabberTooltip() {
-        if (hitObject == null || (!CanInteract())) {
+    private Interactable UpdateInteractTooltip(GameObject hitObject) {
+        if (hitObject == null || (!CanInteract(hitObject))) {
             uiText.text = " ";
             uiText.gameObject.SetActive(false);
             return null;
@@ -39,13 +32,13 @@ public class PlayerInteract : MonoBehaviour {
         if (!hitObject.TryGetComponent<Interactable>(out var interactable)) return null;
         if (!uiText.gameObject.activeInHierarchy) {
             uiText.gameObject.SetActive(true);
-            uiText.text = interactable.interactText;
+            uiText.text = interactable.GetInteractableText();
         }
 
         return interactable;
     }
 
-    public bool CanInteract() {
+    public bool CanInteract(GameObject hitObject) {
         return hitObject && hitObject.CompareTag("Interactable");
     }
 
