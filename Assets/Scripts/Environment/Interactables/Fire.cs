@@ -51,6 +51,10 @@ public class Fire : Interactable {
     }
 
     private void AddFuelFromPlayerInventory() {
-        if (playerInventory.IsCarryingAnyFuel()) return;
+        if (!playerInventory.IsCarryingAnyFuel()) return;
+
+        Fuel fuel = playerInventory.carryingFuel[0];
+
+        playerInventory.UseFuel(fuel, this);
     }
 }
