@@ -824,7 +824,6 @@ Transform:
   m_Children:
   - {fileID: 1944374165}
   - {fileID: 1119184378}
-  - {fileID: 1064749170}
   - {fileID: 182577220}
   - {fileID: 382819231}
   - {fileID: 578301}
@@ -833,17 +832,6 @@ Transform:
   - {fileID: 111980412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &330132962 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6981575085425204825, guid: ad1df6c86b3233d4ea8c9c33d2bff42f, type: 3}
-  m_PrefabInstance: {fileID: 662509742}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4637e6aa79d5884c8b9b6102e760fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fuel
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,6 +2612,7 @@ Transform:
   - {fileID: 1229640553}
   - {fileID: 1416853729}
   - {fileID: 330585546}
+  - {fileID: 768903580}
   - {fileID: 1271156234}
   - {fileID: 803557603}
   m_Father: {fileID: 0}
@@ -2653,6 +2642,51 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &768903579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 768903580}
+  - component: {fileID: 768903581}
+  m_Layer: 6
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &768903580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768903579}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 768568922}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &768903581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768903579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ec6f91d40cca6418e5856b89927372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInventory
+  carryingFuel: []
 --- !u!1 &770159846
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,17 +3147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7dbd581727f1d4494efad46e5174fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &911250246 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6981575085425204825, guid: ad1df6c86b3233d4ea8c9c33d2bff42f, type: 3}
-  m_PrefabInstance: {fileID: 1565086749}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4637e6aa79d5884c8b9b6102e760fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fuel
 --- !u!1 &914755862
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,7 +3456,7 @@ GameObject:
   - component: {fileID: 1064749171}
   - component: {fileID: 1064749172}
   m_Layer: 0
-  m_Name: Fire
+  m_Name: Campfire
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3447,13 +3470,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064749169}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1289191396}
-  m_Father: {fileID: 292496294}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1064749171
 MonoBehaviour:
@@ -3470,9 +3493,7 @@ MonoBehaviour:
   interactText: Tend to the fire
   maxFuel: 50
   fuelConsumptionPerSecond: 5
-  activeFuel:
-  - {fileID: 330132962}
-  - {fileID: 911250246}
+  activeFuel: []
   currentFuel: 0
 --- !u!135 &1064749172
 SphereCollider:
@@ -5857,6 +5878,7 @@ SceneRoots:
   - {fileID: 2008091551}
   - {fileID: 770159847}
   - {fileID: 292496294}
+  - {fileID: 1064749170}
   - {fileID: 768568922}
   - {fileID: 245049701}
   - {fileID: 3016064564963424320}

@@ -9,9 +9,23 @@ public class Fire : Interactable {
     [Fade] public List<Fuel> activeFuel;
     [Fade] public float currentFuel = 0f;
 
+    private PlayerInventory playerInventory;
+
+    void Start() {
+        playerInventory = FindFirstObjectByType<PlayerInventory>();
+    }
+
     void Update() {
         DecreaseActiveFuel();
         currentFuel = GetCurrentFuel();
+    }
+
+    public override void Interact() {
+        AddFuelFromPlayerInventory();
+    }
+
+    public override string GetInteractableText() {
+        return playerInventory.IsCarryingAnyFuel() ? "Tend to the Fire" : "You have nothing left";
     }
 
     private float GetCurrentFuel() {
@@ -30,5 +44,9 @@ public class Fire : Interactable {
         }
 
         activeFuel = activeFuel.Where(fuel => fuel.currentFuel > 0).ToList();
+    }
+
+    private void AddFuelFromPlayerInventory() {
+        if (playerInventory.IsCarryingAnyFuel()) return;
     }
 }
