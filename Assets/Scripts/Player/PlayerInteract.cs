@@ -39,7 +39,7 @@ public class PlayerInteract : MonoBehaviour {
         if (!hitObject.TryGetComponent<Interactable>(out var interactable)) return null;
         if (!uiText.gameObject.activeInHierarchy) {
             uiText.gameObject.SetActive(true);
-            uiText.text = interactable.text;
+            uiText.text = interactable.interactText;
         }
 
         return interactable;
