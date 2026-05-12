@@ -3,8 +3,12 @@ using System.Linq;
 using UnityEngine;
 
 public class Fire : Interactable {
+    [Header("Config")]
     public float maxFuel = 10f;
     public float fuelConsumptionPerSecond = 1f;
+    [Header("Text")]
+    public string interactTextAble = "Tend to the fire";
+    public string interactTextUnable = "You have nothing left";
     [Header("State")]
     [Fade] public List<Fuel> activeFuel;
     [Fade] public float currentFuel = 0f;
@@ -25,7 +29,7 @@ public class Fire : Interactable {
     }
 
     public override string GetInteractableText() {
-        return playerInventory.IsCarryingAnyFuel() ? "Tend to the Fire" : "You have nothing left";
+        return playerInventory.IsCarryingAnyFuel() ? interactTextAble : interactTextUnable;
     }
 
     private float GetCurrentFuel() {

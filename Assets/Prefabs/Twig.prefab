@@ -158,4 +158,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Fuel
   interactText: Grab me
   maxFuel: 10
+  mesh: {fileID: 2039721871763823745}
   currentFuel: 0
