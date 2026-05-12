@@ -3491,12 +3491,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fire
   interactText: Tend to the fire
+  maxLightRange: 20
+  maxLightIntensity: 10
   maxFuel: 50
   fuelConsumptionPerSecond: 1
+  lightRangeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.0017548
+      inSlope: -0.052162882
+      outSlope: -0.052162882
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.26619238
+    - serializedVersion: 3
+      time: 0.39544088
+      value: 0.9978089
+      inSlope: -0.021268656
+      outSlope: -0.021268656
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.17753482
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: -0.00022888184
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 0
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  lightIntensityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.0017548
+      inSlope: -0.052162882
+      outSlope: -0.052162882
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.26619238
+    - serializedVersion: 3
+      time: 0.39544088
+      value: 0.9978089
+      inSlope: -0.021268656
+      outSlope: -0.021268656
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.17753482
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: -0.00022888184
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 0
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fireLight: {fileID: 1289191398}
   interactTextAble: Tend to the fire
   interactTextUnable: You have nothing left
   activeFuel: []
   currentFuel: 0
+  currentLightRange: 0
+  currentLightIntensity: 0
 --- !u!135 &1064749172
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4404,8 +4475,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f93eb7a6909fec848bda11f768d854da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightFlicker
+  fire: {fileID: 1064749171}
   minimumIntensityMultiplier: 0.5
   maximumIntensityMultiplier: 1.5
+  minimumRangeMultiplier: 0.9
+  maximumRangeMultiplier: 1.1
   minimumPositionDisplacement: {x: -0.025, y: 0, z: -0.025}
   maximumPositionDisplacement: {x: 0.025, y: 0, z: 0.025}
   lerpChance: 0.05
