@@ -1,0 +1,6 @@
+- Collect fuel to keep the fire going
+- Fuel is found throughout the forest
+- Fuel comes in various (2?) sizes, each providing different burn times
+- Something looms in the darkness, keeping the fire going keeps it at bay
+- Perhaps the thing that looms can be heard
+- Hearing the thing might be difficult, closing your eyes focuses on the sound instead, boosting the sound of whatever it is that looms
