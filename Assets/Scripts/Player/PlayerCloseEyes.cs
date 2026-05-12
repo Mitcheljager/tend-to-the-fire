@@ -17,13 +17,11 @@ public class PlayerCloseEyes : MonoBehaviour {
 
         float screenHeight = Screen.height;
 
-        // Top eye lid
         float topTargetBottom = isClosed ? screenHeight * 0.5f : screenHeight;
         Vector2 topOffsetMin = topEyeLid.offsetMin;
         topOffsetMin.y = Mathf.Lerp(topOffsetMin.y, topTargetBottom - screenHeight, Time.deltaTime * animationSpeed);
         topEyeLid.offsetMin = topOffsetMin;
 
-        // Bottom eye lid
         float bottomTargetTop = isClosed ? screenHeight * 0.5f : 0;
         Vector2 bottomOffsetMax = bottomEyeLid.offsetMax;
         bottomOffsetMax.y = Mathf.Lerp(bottomOffsetMax.y, bottomTargetTop, Time.deltaTime * animationSpeed);
