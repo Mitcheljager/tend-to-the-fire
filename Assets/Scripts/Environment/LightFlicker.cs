@@ -3,9 +3,13 @@ using UnityEngine;
 
 [RequireComponent(typeof(Light))]
 public class LightFlicker : MonoBehaviour {
+    [Header("Components")]
+    public Fire fire;
     [Header("Intensity")]
     public float minimumIntensityMultiplier = 0f;
     public float maximumIntensityMultiplier = 2f;
+    public float minimumRangeMultiplier = 0f;
+    public float maximumRangeMultiplier = 2f;
     [Header("Position")]
     public Vector3 minimumPositionDisplacement = new(-1, 0, -1);
     public Vector3 maximumPositionDisplacement = new(1, 0, 1);
@@ -14,30 +18,27 @@ public class LightFlicker : MonoBehaviour {
     public float lerpSpeed = 8f;
 
     private Light lightComponent;
-    private float baseIntensity = 0f;
-    private float baseRange = 0f;
     private Vector3 basePosition = new();
     private Vector3 targetPosition = new();
     private float currentIntensityMultiplier = 0;
     private float targetIntensityMultiplier = 1f;
+    private float currentRangeMultiplier = 0;
+    private float targetRangeMultiplier = 1f;
 
     void Start() {
         lightComponent = GetComponent<Light>();
 
-        baseIntensity = lightComponent.intensity;
-        baseRange = lightComponent.range;
         basePosition = transform.position;
     }
 
     void Update() {
-        if (!lightComponent.enabled) return;
-
-        CycleIntensity();
+        if (lightComponent.enabled) CycleIntensity();
     }
 
     void CycleIntensity() {
         if (targetPosition == Vector3.zero || Random.value < lerpChance) {
             targetIntensityMultiplier = Random.Range(minimumIntensityMultiplier, maximumIntensityMultiplier);
+            targetRangeMultiplier = Random.Range(minimumRangeMultiplier, maximumRangeMultiplier);
             targetPosition = basePosition + new Vector3(
                 Random.Range(minimumPositionDisplacement.x, maximumPositionDisplacement.x),
                 Random.Range(minimumPositionDisplacement.y, maximumPositionDisplacement.y),
@@ -46,8 +47,10 @@ public class LightFlicker : MonoBehaviour {
         }
 
         currentIntensityMultiplier = Mathf.Lerp(currentIntensityMultiplier, targetIntensityMultiplier, Time.deltaTime * lerpSpeed);
-        lightComponent.intensity = baseIntensity * currentIntensityMultiplier;
-        lightComponent.range = baseRange * currentIntensityMultiplier;
+        lightComponent.intensity = fire.currentLightRange * currentIntensityMultiplier;
+
+        currentRangeMultiplier = Mathf.Lerp(currentRangeMultiplier, targetRangeMultiplier, Time.deltaTime * lerpSpeed);
+        lightComponent.range = fire.currentLightIntensity * currentRangeMultiplier;
 
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * lerpSpeed);;
     }

@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class Fire : Interactable {
     [Header("Config")]
+    public float maxLightRange = 20f;
+    public float maxLightIntensity;
     public float maxFuel = 10f;
     public float fuelConsumptionPerSecond = 1f;
+    public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
+    public AnimationCurve lightIntensityCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
+    [Header("Objects")]
+    public Light fireLight;
     [Header("Text")]
     public string interactTextAble = "Tend to the fire";
     public string interactTextUnable = "You have nothing left";
     [Header("State")]
     [Fade] public List<Fuel> activeFuel;
     [Fade] public float currentFuel = 0f;
+    [Fade] public float currentLightRange = 0f;
+    [Fade] public float currentLightIntensity = 0f;
 
     private PlayerInventory playerInventory;
 
@@ -21,7 +29,8 @@ public class Fire : Interactable {
 
     void Update() {
         DecreaseActiveFuel();
-        currentFuel = GetCurrentFuel();
+        SetCurrentFuel();
+        SetFireSize();
     }
 
     public override void Interact() {
@@ -32,14 +41,21 @@ public class Fire : Interactable {
         return playerInventory.IsCarryingAnyFuel() ? interactTextAble : interactTextUnable;
     }
 
-    private float GetCurrentFuel() {
+    private void SetCurrentFuel() {
         float total = 0f;
 
         foreach (Fuel fuel in activeFuel) {
             total += fuel.currentFuel;
         }
 
-        return total;
+        currentFuel = total;
+    }
+
+    private void SetFireSize() {
+        float multiplier = 1f - (1f / maxFuel * currentFuel);
+
+        currentLightRange = maxLightRange * lightRangeCurve.Evaluate(multiplier);
+        currentLightIntensity = maxLightIntensity * lightIntensityCurve.Evaluate(multiplier);
     }
 
     private void DecreaseActiveFuel() {
