@@ -26,7 +26,7 @@ public class PlayerInteract : MonoBehaviour {
 
         Debug.DrawLine(transform.position, endTransform.position, hoveringInteractable ? Color.green : Color.red);
 
-        if (hoveringInteractable && Input.GetMouseButtonDown(0)) hoveringInteractable.Interact();
+        if (hoveringInteractable && Input.GetButtonDown("Interact")) hoveringInteractable.Interact();
     }
 
     private Interactable UpdateGrabberTooltip() {
