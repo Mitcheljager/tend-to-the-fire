@@ -63,9 +63,6 @@ public class EventWhenOutOfView : MonoBehaviour {
         float verticalAngle = Camera.main.fieldOfView;
         float horizontalAngle = 2f * Mathf.Atan(Mathf.Tan(Camera.main.fieldOfView * Mathf.Deg2Rad / 2f) * Camera.main.aspect) * Mathf.Rad2Deg;
 
-        Debug.Log("Vertical: " + verticalAngle);
-        Debug.Log("Horizontal: " + horizontalAngle);
-
         return Mathf.Max(verticalAngle, horizontalAngle) + angleBuffer;
     }
 }
