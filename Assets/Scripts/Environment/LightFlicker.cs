@@ -47,7 +47,7 @@ public class LightFlicker : MonoBehaviour {
         }
 
         currentIntensityMultiplier = Mathf.Lerp(currentIntensityMultiplier, targetIntensityMultiplier, Time.deltaTime * lerpSpeed);
-        lightComponent.intensity = fire.currentLightRange * currentIntensityMultiplier;
+        lightComponent.intensity = fire.currentLightIntensity * currentIntensityMultiplier;
 
         currentRangeMultiplier = Mathf.Lerp(currentRangeMultiplier, targetRangeMultiplier, Time.deltaTime * lerpSpeed);
         lightComponent.range = fire.currentLightRange * currentRangeMultiplier;
