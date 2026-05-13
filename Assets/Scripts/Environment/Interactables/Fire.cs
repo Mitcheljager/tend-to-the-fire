@@ -7,6 +7,7 @@ public class Fire : Interactable {
     public float maxLightRange = 20f;
     public float maxLightIntensity;
     public float maxFuel = 10f;
+    public float maxEffectiveFuel = 5f;
     public float fuelConsumptionPerSecond = 1f;
     public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     public AnimationCurve lightIntensityCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
@@ -52,7 +53,7 @@ public class Fire : Interactable {
     }
 
     private void SetFireSize() {
-        float multiplier = 1f - (1f / maxFuel * currentFuel);
+        float multiplier = 1f - (1f / Mathf.Min(maxFuel, maxEffectiveFuel) * Mathf.Min(currentFuel, maxEffectiveFuel));
 
         currentLightRange = maxLightRange * lightRangeCurve.Evaluate(multiplier);
         currentLightIntensity = maxLightIntensity * lightIntensityCurve.Evaluate(multiplier);
