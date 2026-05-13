@@ -9,8 +9,8 @@ public class Fire : Interactable {
     public float maxFuel = 10f;
     public float maxEffectiveFuel = 5f;
     public float fuelConsumptionPerSecond = 1f;
-    public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     public AnimationCurve lightIntensityCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
+    public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("Objects")]
     public Light fireLight;
     [Header("Text")]
@@ -19,8 +19,8 @@ public class Fire : Interactable {
     [Header("State")]
     [Fade] public List<Fuel> activeFuel;
     [Fade] public float currentFuel = 0f;
-    [Fade] public float currentLightRange = 0f;
     [Fade] public float currentLightIntensity = 0f;
+    [Fade] public float currentLightRange = 0f;
 
     private PlayerInventory playerInventory;
 
