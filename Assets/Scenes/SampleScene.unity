@@ -3799,13 +3799,22 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.26619238
     - serializedVersion: 3
-      time: 0.39544088
+      time: 0.29287675
       value: 0.9978089
-      inSlope: -0.021268656
-      outSlope: -0.021268656
+      inSlope: -0.025223041
+      outSlope: -0.025223041
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.17753482
+      outWeight: 0.14691125
+    - serializedVersion: 3
+      time: 0.5156082
+      value: 0.240944
+      inSlope: -1.5875369
+      outSlope: -1.5875369
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
@@ -3884,6 +3893,7 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
   - {fileID: 2100000, guid: 8ebe7877bb17ab447b1dfd2d93b50de0, type: 2}
+  - {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
   - {fileID: 2100000, guid: 34d12681e85626b4b923fc2c154c68c8, type: 2}
 --- !u!4 &1067460667
 Transform:

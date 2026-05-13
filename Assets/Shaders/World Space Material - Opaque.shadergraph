@@ -4348,8 +4348,8 @@
     "m_ObjectId": "946c538af6a44ae8a1eb58a3d1508c29",
     "m_Title": "Position",
     "m_Position": {
-        "x": -4504.00048828125,
-        "y": -60.99993896484375
+        "x": -4504.0,
+        "y": -61.0
     }
 }
 
@@ -5589,8 +5589,8 @@
     "m_ObjectId": "d6a6a8e0751b440fbe8ad2a341335f3f",
     "m_Title": "Overgrowth Direction",
     "m_Position": {
-        "x": -2984.000244140625,
-        "y": 1182.0001220703125
+        "x": -2984.0,
+        "y": 1182.0
     }
 }
 
@@ -5934,7 +5934,7 @@
     "m_Title": "Overgrowth Mask",
     "m_Position": {
         "x": -2627.0,
-        "y": 555.0000610351563
+        "y": 555.0
     }
 }
 
@@ -6310,8 +6310,8 @@
     "m_ObjectId": "fd186ca09c984683b3b07f2a4396e30a",
     "m_Title": "Diffuse Texture",
     "m_Position": {
-        "x": -3377.000244140625,
-        "y": 202.0000457763672
+        "x": -3377.0,
+        "y": 202.0
     }
 }
 
