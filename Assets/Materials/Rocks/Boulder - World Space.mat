@@ -84,6 +84,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_1a95c4a088f445529e01fdd09e339830_Out_0_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 9895b9b639c999f488492b5182e2242c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -122,6 +126,7 @@ Material:
     - _Metallic: 0
     - _Normal_Strength: 1
     - _OcclusionStrength: 1
+    - _Overgrowth_Multiplier: 10
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -133,6 +138,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _Tiling: 0.2
+    - _Use_Overgrowth: 0
     - _Vertex_Snap: 32
     - _Vertex_Snap_Distance: 3
     - _Vertex_Snap_Grid_Size: 32
@@ -145,6 +151,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Detail_Color: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Overgrowth_Color: {r: 0.29614443, g: 0.3584906, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

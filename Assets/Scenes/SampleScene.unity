@@ -1171,7 +1171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
+  - {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1803,7 +1803,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
+  - {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1914,7 +1914,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
+  - {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2099,7 +2099,7 @@ PrefabInstance:
     - target: {fileID: -6093592463355912122, guid: 45d6e51281973204c977bb3d26f2b4a2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
+      objectReference: {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
     - target: {fileID: -5881127140091820408, guid: 45d6e51281973204c977bb3d26f2b4a2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
@@ -2177,13 +2177,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
     - target: {fileID: -678588488315902003, guid: 45d6e51281973204c977bb3d26f2b4a2, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -678588488315902003, guid: 45d6e51281973204c977bb3d26f2b4a2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
+      objectReference: {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
+    - target: {fileID: -678588488315902003, guid: 45d6e51281973204c977bb3d26f2b4a2, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f4194dfc3f4e11942932d0619cdfa56f, type: 2}
     - target: {fileID: 776046731749314290, guid: 45d6e51281973204c977bb3d26f2b4a2, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
+      objectReference: {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
     - target: {fileID: 919132149155446097, guid: 45d6e51281973204c977bb3d26f2b4a2, type: 3}
       propertyPath: m_Name
       value: rocks
@@ -3754,6 +3762,30 @@ MonoBehaviour:
   maxFuel: 50
   maxEffectiveFuel: 40
   fuelConsumptionPerSecond: 1
+  lightIntensityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.0017548
+      inSlope: -2.6330779
+      outSlope: -2.6330779
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.022941971
+    - serializedVersion: 3
+      time: 1
+      value: -0.00022888184
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 0
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   lightRangeCurve:
     serializedVersion: 2
     m_Curve:
@@ -3787,37 +3819,13 @@ MonoBehaviour:
     m_PreInfinity: 0
     m_PostInfinity: 2
     m_RotationOrder: 4
-  lightIntensityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1.0017548
-      inSlope: -3.2565403
-      outSlope: -3.2565403
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.023188584
-    - serializedVersion: 3
-      time: 1
-      value: -0.00022888184
-      inSlope: -0.09992366
-      outSlope: -0.09992366
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.08483732
-      outWeight: 0
-    m_PreInfinity: 0
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   fireLight: {fileID: 1289191398}
   interactTextAble: Tend to the fire
   interactTextUnable: You have nothing left
   activeFuel: []
   currentFuel: 0
-  currentLightRange: 0
   currentLightIntensity: 0
+  currentLightRange: 0
 --- !u!135 &1064749172
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4554,7 +4562,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
+  - {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4951,7 +4959,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
+  - {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5093,7 +5101,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
+  - {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5536,7 +5544,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
+  - {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
