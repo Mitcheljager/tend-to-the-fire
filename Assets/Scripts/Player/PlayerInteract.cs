@@ -1,11 +1,12 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour {
     public PlayerState playerState;
     public Transform endTransform;
     [Header("Cursor & UI")]
-    public GameObject interactImage;
+    public Image interactImage;
     public TMP_Text uiText;
     [Header("Mask")]
     public LayerMask layerMask;
@@ -16,7 +17,7 @@ public class PlayerInteract : MonoBehaviour {
         GameObject hitObject = GetMouseHoverObject();
         Interactable interactable = UpdateInteractTooltip(hitObject);
 
-        interactImage.SetActive(interactable);
+        interactImage.gameObject.SetActive(interactable);
         if (interactable && Input.GetButtonDown("Interact")) interactable.Interact();
 
         Debug.DrawLine(transform.position, endTransform.position, interactable ? Color.green : Color.red);
@@ -32,7 +33,8 @@ public class PlayerInteract : MonoBehaviour {
         if (!hitObject.TryGetComponent<Interactable>(out var interactable)) return null;
         if (!uiText.gameObject.activeInHierarchy) {
             uiText.gameObject.SetActive(true);
-            uiText.text = interactable.GetInteractableText();
+            uiText.text = interactable.GetInteractText();
+            interactImage.sprite = interactable.GetInteractImage();
         }
 
         return interactable;

@@ -13,9 +13,11 @@ public class Fire : Interactable {
     public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("Objects")]
     public Light fireLight;
-    [Header("Text")]
+    [Header("Fluff")]
     public string interactTextAble = "Tend to the fire";
     public string interactTextUnable = "You have nothing left";
+    public Sprite interactImageAble;
+    public Sprite interactImageUnable;
     [Header("State")]
     [Fade] public List<Fuel> activeFuel;
     [Fade] public float currentFuel = 0f;
@@ -38,8 +40,12 @@ public class Fire : Interactable {
         AddFuelFromPlayerInventory();
     }
 
-    public override string GetInteractableText() {
+    public override string GetInteractText() {
         return playerInventory.IsCarryingAnyFuel() ? interactTextAble : interactTextUnable;
+    }
+
+    public override Sprite GetInteractImage() {
+        return playerInventory.IsCarryingAnyFuel() ? interactImageAble : interactImageUnable;
     }
 
     private void SetCurrentFuel() {

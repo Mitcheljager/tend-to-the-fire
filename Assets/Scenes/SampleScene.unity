@@ -661,6 +661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   interactText: 
+  interactImage: {fileID: 0}
 --- !u!1 &289377753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,6 +3758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fire
   interactText: Tend to the fire
+  interactImage: {fileID: 21300000, guid: bae0f6bbaa7da6d4e8d472d9c44ea1dd, type: 3}
   maxLightRange: 20
   maxLightIntensity: 10
   maxFuel: 50
@@ -3775,13 +3777,22 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.022941971
     - serializedVersion: 3
-      time: 1
-      value: -0.00022888184
-      inSlope: 0
-      outSlope: 0
+      time: 0.3647039
+      value: 0.1942008
+      inSlope: -0.8596251
+      outSlope: -0.8596251
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.07751908
+    - serializedVersion: 3
+      time: 1
+      value: -0.00022888184
+      inSlope: -0.03289152
+      outSlope: -0.03289152
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.11116577
       outWeight: 0
     m_PreInfinity: 0
     m_PostInfinity: 2
@@ -3808,15 +3819,6 @@ MonoBehaviour:
       inWeight: 0.17753482
       outWeight: 0.14691125
     - serializedVersion: 3
-      time: 0.5156082
-      value: 0.240944
-      inSlope: -1.5875369
-      outSlope: -1.5875369
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
       time: 1
       value: -0.00022888184
       inSlope: 0
@@ -3831,6 +3833,8 @@ MonoBehaviour:
   fireLight: {fileID: 1289191398}
   interactTextAble: Tend to the fire
   interactTextUnable: You have nothing left
+  interactImageAble: {fileID: 21300000, guid: 3fa351ee18f32c94eafda27234fe97f9, type: 3}
+  interactImageUnable: {fileID: 21300000, guid: 6bb2dc1864089174aa4166472675b29b, type: 3}
   activeFuel: []
   currentFuel: 0
   currentLightIntensity: 0
@@ -5246,7 +5250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteract
   playerState: {fileID: 1229640552}
   endTransform: {fileID: 1354452016}
-  interactImage: {fileID: 948355954}
+  interactImage: {fileID: 948355956}
   uiText: {fileID: 2109584601}
   layerMask:
     serializedVersion: 2

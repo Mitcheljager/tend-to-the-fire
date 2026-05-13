@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fuel
   interactText: Grab me
+  interactImage: {fileID: 21300000, guid: d32150ab4f2b96b43b08fb8691cf51c5, type: 3}
   maxFuel: 10
   mesh: {fileID: 2039721871763823745}
   currentFuel: 0
