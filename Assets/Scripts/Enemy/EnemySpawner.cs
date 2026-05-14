@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour {
     public Fire campfire;
 
     private PlayerState playerState;
+    private PlayerCamera playerCamera;
 
     void OnDrawGizmos() {
         if (playerState == null) return;
@@ -16,6 +17,7 @@ public class EnemySpawner : MonoBehaviour {
 
     void Start() {
         playerState = FindFirstObjectByType<PlayerState>();
+        playerCamera = FindFirstObjectByType<PlayerCamera>();
 
         SpawnEnemies();
     }
@@ -25,7 +27,7 @@ public class EnemySpawner : MonoBehaviour {
             Vector3 position = FindRandomPositionOutsideOfCampfire();
 
             int safety = 0;
-            while (Vector3.Distance(position, campfire.transform.position) < campfire.currentLightRange) {
+            while (Vector3.Distance(position, campfire.transform.position) < campfire.currentLightRange || playerCamera.IsInViewAngleOfPlayer(position)) {
                 position = FindRandomPositionOutsideOfCampfire();
                 safety++;
 

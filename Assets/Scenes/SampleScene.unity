@@ -4991,7 +4991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67c066b374085d4ab56c0d6eab76e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  maxRadius: 10
+  maxRadius: 15
   enemyPrefab: {fileID: 5034556932203097326, guid: 2caceba9582a0f74ca5ada296a57d5cc, type: 3}
   campfire: {fileID: 1064749171}
 --- !u!4 &1266096517

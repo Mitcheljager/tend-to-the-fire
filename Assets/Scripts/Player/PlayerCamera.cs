@@ -50,7 +50,7 @@ public class PlayerCamera : MonoBehaviour {
 
     public float GetCameraViewAngle(float angleBuffer = 0f) {
         float verticalAngle = thisCamera.fieldOfView;
-        float horizontalAngle = 2f * Mathf.Atan(Mathf.Tan(Camera.main.fieldOfView * Mathf.Deg2Rad / 2f) * Camera.main.aspect) * Mathf.Rad2Deg;
+        float horizontalAngle = 0f; // 2f * Mathf.Atan(Mathf.Tan(Camera.main.fieldOfView * Mathf.Deg2Rad / 2f) * Camera.main.aspect) * Mathf.Rad2Deg;
 
         return Mathf.Max(verticalAngle, horizontalAngle) + angleBuffer;
     }
