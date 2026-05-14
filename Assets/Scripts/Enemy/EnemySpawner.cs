@@ -5,19 +5,17 @@ public class EnemySpawner : MonoBehaviour {
     public GameObject enemyPrefab;
     public Fire campfire;
 
-    private PlayerState playerState;
     private PlayerCamera playerCamera;
+    private PlayerFocus playerFocus;
 
     void OnDrawGizmos() {
-        if (playerState == null) return;
-
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(playerState.transform.position, maxRadius);
+        Gizmos.DrawWireSphere(playerCamera.transform.position, maxRadius);
     }
 
     void Start() {
-        playerState = FindFirstObjectByType<PlayerState>();
         playerCamera = FindFirstObjectByType<PlayerCamera>();
+        playerFocus = FindFirstObjectByType<PlayerFocus>();
 
         SpawnEnemies();
     }
@@ -27,7 +25,7 @@ public class EnemySpawner : MonoBehaviour {
             Vector3 position = FindRandomPositionOutsideOfCampfire();
 
             int safety = 0;
-            while (Vector3.Distance(position, campfire.transform.position) < campfire.currentLightRange || playerCamera.IsInViewAngleOfPlayer(position)) {
+            while (Vector3.Distance(position, campfire.transform.position) < campfire.currentLightRange || (!playerFocus.isFullyClosed && playerCamera.IsInViewAngleOfPlayer(position))) {
                 position = FindRandomPositionOutsideOfCampfire();
                 safety++;
 
@@ -39,7 +37,7 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     public Vector3 FindRandomPositionOutsideOfCampfire() {
-        return FindRandomPointAlongRadius(playerState.transform.position, maxRadius * 0.75f, maxRadius);
+        return FindRandomPointAlongRadius(playerCamera.transform.position, maxRadius * 0.75f, maxRadius);
     }
 
     // https://discussions.unity.com/t/random-point-within-circle-with-min-max-radius/724904/14
