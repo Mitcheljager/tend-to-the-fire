@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-5262627868174628953
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 8c5525f18242c014592d94d4a90568a3
+  m_EffectName: Attenuation
+  m_MixLevel: 404a9ce3c560ecb4fa5294d36e99e64d
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-3002936659182176880
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -53,6 +67,28 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-590660919875918343
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Overall Boost
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 2d07aa01296b83443af48fddc14360c2
+  m_Children:
+  - {fileID: -1490217412245594890}
+  - {fileID: 2093394117744487455}
+  - {fileID: 2145303824069378230}
+  m_Volume: b4a8728dfa7f54148a33f8598860f4ad
+  m_Pitch: cc2561589c9c0ad4ba04da7000cda5c1
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 5506414490963059577}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -68,13 +104,19 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 7eeb98cdfe339ec4b8a874c0c0c64488
+    name: FocusVolume
+  - guid: b4a8728dfa7f54148a33f8598860f4ad
+    name: BoostVolume
   m_AudioMixerGroupViews:
   - guids:
     - 743d5d31cf0bf414a8e0d15344cb3fee
     - b19e16a46d0da12469ab1df940c30a27
     - aeda2db014efafc44902cab8a67c3f29
+    - 4569567c436b59a468b6ddf8990a25ab
     - 9ef16f125ead7ac468f7363fdea15a7b
+    - 2d07aa01296b83443af48fddc14360c2
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -88,9 +130,7 @@ AudioMixerGroupController:
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 743d5d31cf0bf414a8e0d15344cb3fee
   m_Children:
-  - {fileID: -1490217412245594890}
-  - {fileID: 2093394117744487455}
-  - {fileID: 2145303824069378230}
+  - {fileID: -590660919875918343}
   m_Volume: a2f47dc1d778827409aeec4f66575d7d
   m_Pitch: e6ffa2f5912a1824f8cb5a0943526d28
   m_Send: 00000000000000000000000000000000
@@ -123,7 +163,8 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: d767d8c02b3e6554b8fcdfd520401468
-  m_FloatValues: {}
+  m_FloatValues:
+    7eeb98cdfe339ec4b8a874c0c0c64488: -60.40684
   m_TransitionOverrides: {}
 --- !u!244 &623545771396603275
 AudioMixerEffectController:
@@ -148,7 +189,8 @@ AudioMixerGroupController:
   m_Name: Sound Effects
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: aeda2db014efafc44902cab8a67c3f29
-  m_Children: []
+  m_Children:
+  - {fileID: 8698328548590768093}
   m_Volume: d1eb2a1f894d7bc4e8bdaab3e7526f9b
   m_Pitch: 9ff0df11256a8c1408d83288e3fbaf15
   m_Send: 00000000000000000000000000000000
@@ -191,6 +233,20 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!244 &5506414490963059577
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 3773f9628a7327247964fb7875e9e578
+  m_EffectName: Attenuation
+  m_MixLevel: 6dbfa2492c357994dbe354584cad69cd
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &7124350805515408840
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -205,3 +261,22 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &8698328548590768093
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Focus
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 4569567c436b59a468b6ddf8990a25ab
+  m_Children: []
+  m_Volume: 7eeb98cdfe339ec4b8a874c0c0c64488
+  m_Pitch: 537299cefd2c0634ca291787b001b075
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -5262627868174628953}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0

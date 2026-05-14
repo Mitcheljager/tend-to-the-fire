@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
-public class PlayerCloseEyes : MonoBehaviour {
+public class PlayerFocus : MonoBehaviour {
     [Header("References")]
     public RectTransform topEyeLid;
     public RectTransform bottomEyeLid;
-
     [Header("Animation")]
     public float animationSpeed = 5f;
-
+    [Header("Audio")]
+    public AudioMixer audioMixer;
+    public int focusAudioBoost = 0;
+    public int focusAudioDropoff = -60;
     [Header("State")]
-    public bool isClosed = false;
-    public bool isFullyClosed = false;
+    [Fade] public bool isClosed = false;
+    [Fade] public bool isFullyClosed = false;
 
     void Update() {
         isClosed = Input.GetButton("Close Eyes");
@@ -31,5 +34,8 @@ public class PlayerCloseEyes : MonoBehaviour {
         bool topClosed = Mathf.Abs(topOffsetMin.y - targetTopOffsetY) <= 0.1f;
         bool bottomClosed = Mathf.Abs(bottomOffsetMax.y - bottomTargetTop) <= 0.1f;
         isFullyClosed = isClosed && topClosed && bottomClosed;
+
+        audioMixer.SetFloat("FocusVolume", isClosed ? 0 : focusAudioDropoff);
+        audioMixer.SetFloat("BoostVolume", isClosed ? focusAudioBoost : 0);
     }
 }

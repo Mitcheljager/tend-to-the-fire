@@ -11,7 +11,7 @@ public class EventWhenOutOfView : MonoBehaviour {
     public float angleBuffer = 2f; // This is use to add a buffer to the view angle, useful for large objects that might stick halfway into view
 
     private Camera playerCamera;
-    private PlayerCloseEyes playerCloseEyes;
+    private PlayerFocus playerFocus;
     private bool wasInView = false;
 
     void OnDrawGizmosSelected() {
@@ -28,7 +28,7 @@ public class EventWhenOutOfView : MonoBehaviour {
 
     void Start() {
         playerCamera = Camera.main;
-        playerCloseEyes = FindFirstObjectByType<PlayerCloseEyes>();
+        playerFocus = FindFirstObjectByType<PlayerFocus>();
     }
 
     void Update() {
@@ -46,7 +46,7 @@ public class EventWhenOutOfView : MonoBehaviour {
     }
 
     private bool IsInView() {
-        if (playerCloseEyes.isFullyClosed) return false;
+        if (playerFocus.isFullyClosed) return false;
 
         return IsInViewAngleOfPlayer();
     }
