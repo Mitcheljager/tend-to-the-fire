@@ -6,7 +6,9 @@ public class PlayerFocus : MonoBehaviour {
     public RectTransform topEyeLid;
     public RectTransform bottomEyeLid;
     [Header("Animation")]
-    public float animationSpeed = 5f;
+    public float animationSpeedClose = 10f;
+    public float animationSpeedOpen = 50f;
+    public float animationOffset = 0.1f;
     [Header("Audio")]
     public AudioMixer audioMixer;
     public int focusAudioBoost = 0;
@@ -23,13 +25,14 @@ public class PlayerFocus : MonoBehaviour {
         isClosed = Input.GetButton("Close Eyes");
 
         float screenHeight = Screen.height;
+        float animationSpeed = isClosed ? animationSpeedClose : animationSpeedOpen;
 
-        float topTargetBottom = isClosed ? screenHeight * 0.5f : screenHeight;
+        float topTargetBottom = isClosed ? (screenHeight * 0.5f - animationOffset) : (screenHeight + animationOffset);
         Vector2 topOffsetMin = topEyeLid.offsetMin;
         topOffsetMin.y = Mathf.Lerp(topOffsetMin.y, topTargetBottom - screenHeight, Time.deltaTime * animationSpeed);
         topEyeLid.offsetMin = topOffsetMin;
 
-        float bottomTargetTop = isClosed ? screenHeight * 0.5f : 0;
+        float bottomTargetTop = isClosed ? (screenHeight * 0.5f + animationOffset) : -animationOffset;
         Vector2 bottomOffsetMax = bottomEyeLid.offsetMax;
         bottomOffsetMax.y = Mathf.Lerp(bottomOffsetMax.y, bottomTargetTop, Time.deltaTime * animationSpeed);
         bottomEyeLid.offsetMax = bottomOffsetMax;

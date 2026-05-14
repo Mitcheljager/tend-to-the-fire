@@ -5152,7 +5152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCloseEyes
   topEyeLid: {fileID: 5514868}
   bottomEyeLid: {fileID: 1961977746}
-  animationSpeed: 50
+  animationSpeedClose: 20
+  animationSpeedOpen: 50
+  animationOffset: 0.1
   audioMixer: {fileID: 24100000, guid: c80f57c2c511f534e9b8f41aab8ad4d1, type: 2}
   focusAudioBoost: 10
   focusAudioDropoff: -50
