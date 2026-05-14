@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
@@ -9,6 +10,8 @@ public class EnemySpawner : MonoBehaviour {
     private PlayerFocus playerFocus;
 
     void OnDrawGizmos() {
+        if (playerCamera == null) return;
+
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(playerCamera.transform.position, maxRadius);
     }
@@ -17,23 +20,21 @@ public class EnemySpawner : MonoBehaviour {
         playerCamera = FindFirstObjectByType<PlayerCamera>();
         playerFocus = FindFirstObjectByType<PlayerFocus>();
 
-        SpawnEnemies();
+        StartCoroutine(RepeatedlySpawnEnemies());
     }
 
-    private void SpawnEnemies() {
-        for (int i = 0; i < 500; i++) {
-            Vector3 position = FindRandomPositionOutsideOfCampfire();
+    private void SpawnEnemy() {
+        Vector3 position = FindRandomPositionOutsideOfCampfire();
 
-            int safety = 0;
-            while (Vector3.Distance(position, campfire.transform.position) < campfire.currentLightRange || (!playerFocus.isFullyClosed && playerCamera.IsInViewAngleOfPlayer(position))) {
-                position = FindRandomPositionOutsideOfCampfire();
-                safety++;
+        int safety = 0;
+        while (Vector3.Distance(position, campfire.transform.position) < campfire.currentLightRange || (!playerFocus.isFullyClosed && playerCamera.IsInViewAngleOfPlayer(position))) {
+            position = FindRandomPositionOutsideOfCampfire();
+            safety++;
 
-                if (safety > 100) return;
-            }
-
-            Instantiate(enemyPrefab, position, transform.rotation);
+            if (safety > 100) return;
         }
+
+        Instantiate(enemyPrefab, position, transform.rotation);
     }
 
     public Vector3 FindRandomPositionOutsideOfCampfire() {
@@ -46,5 +47,13 @@ public class EnemySpawner : MonoBehaviour {
         float distance = Random.Range(minRadius, maxRadius);
 
         return origin + new Vector3(direction.x, 0, direction.y) * distance;
+    }
+
+    private IEnumerator RepeatedlySpawnEnemies() {
+        for (int i = 0; i < 500; i++) {
+            yield return new WaitForSeconds(0.1f);
+
+            SpawnEnemy();
+        }
     }
 }
