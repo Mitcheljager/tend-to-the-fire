@@ -26,6 +26,11 @@ public class Fire : Interactable {
 
     private PlayerInventory playerInventory;
 
+    void OnDrawGizmos() {
+        Gizmos.color = Color.orange;
+        Gizmos.DrawWireSphere(transform.position, currentLightRange);
+    }
+
     void Start() {
         playerInventory = FindFirstObjectByType<PlayerInventory>();
     }
