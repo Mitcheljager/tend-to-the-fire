@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Boulder - World Space
+  m_Name: Boulder Undergrowth - World Space
   m_Shader: {fileID: -6465566751694194690, guid: 3bf1471fe2786e64a8fc7dcc70bab368, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -128,7 +128,7 @@ Material:
     - _OcclusionStrength: 1
     - _Overgrowth_Angle: 0
     - _Overgrowth_Contrast: -10
-    - _Overgrowth_Multiplier: 10
+    - _Overgrowth_Multiplier: 50
     - _Overgrowth_Saturation: -0.5
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -141,13 +141,13 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _Tiling: 0.2
-    - _Undergrowth_Contrast: 10
-    - _Undergrowth_Depth: 0
-    - _Undergrowth_Multiplier: 0
-    - _Undergrowth_Saturation: 0.5
-    - _Undergrowth_Thickness: 1
+    - _Undergrowth_Contrast: 3
+    - _Undergrowth_Depth: 0.5
+    - _Undergrowth_Multiplier: 10
+    - _Undergrowth_Saturation: 0.85
+    - _Undergrowth_Thickness: 5
     - _Use_Overgrowth: 0
-    - _Use_Undergrowth: 0
+    - _Use_Undergrowth: 1
     - _Vertex_Snap: 32
     - _Vertex_Snap_Distance: 3
     - _Vertex_Snap_Grid_Size: 32
@@ -160,10 +160,10 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Detail_Color: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Overgrowth_Color: {r: 0.29614443, g: 0.3584906, b: 0, a: 1}
+    - _Overgrowth_Color: {r: 0.26378736, g: 0.29411766, b: 0.015686277, a: 1}
     - _Overgrowth_Direction: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Undergrowth_Color: {r: 0.27990928, g: 0.7169812, b: 0.16571736, a: 1}
+    - _Undergrowth_Color: {r: 0.28421304, g: 0.3207547, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7118404538615992517
