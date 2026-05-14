@@ -11,9 +11,13 @@ public class PlayerFocus : MonoBehaviour {
     public AudioMixer audioMixer;
     public int focusAudioBoost = 0;
     public int focusAudioDropoff = -60;
+    public float focusAudioLerpSpeed = 5f;
     [Header("State")]
     [Fade] public bool isClosed = false;
     [Fade] public bool isFullyClosed = false;
+
+    private float currentFocusVolume;
+    private float currentBoostVolume;
 
     void Update() {
         isClosed = Input.GetButton("Close Eyes");
@@ -35,7 +39,10 @@ public class PlayerFocus : MonoBehaviour {
         bool bottomClosed = Mathf.Abs(bottomOffsetMax.y - bottomTargetTop) <= 0.1f;
         isFullyClosed = isClosed && topClosed && bottomClosed;
 
-        audioMixer.SetFloat("FocusVolume", isClosed ? 0 : focusAudioDropoff);
-        audioMixer.SetFloat("BoostVolume", isClosed ? focusAudioBoost : 0);
+        currentFocusVolume = isClosed ? Mathf.Lerp(currentFocusVolume, 0, Time.deltaTime * focusAudioLerpSpeed) : focusAudioDropoff;
+        audioMixer.SetFloat("FocusVolume", currentFocusVolume);
+
+        currentBoostVolume = isClosed ? Mathf.Lerp(currentBoostVolume, focusAudioBoost, Time.deltaTime * focusAudioLerpSpeed) : 0;
+        audioMixer.SetFloat("BoostVolume", currentBoostVolume);
     }
 }
