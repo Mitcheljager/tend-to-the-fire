@@ -14,15 +14,6 @@ public class Fire : Interactable {
     public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("Objects")]
     public Light fireLight;
-    [Header("Effects")]
-    public VisualEffect embersEffect;
-    public AnimationCurve embersEffectRateCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
-    public AnimationCurve embersEffectMaxVelocityCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
-    public AnimationCurve embersEffectMaxLifetimeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
-    public Renderer[] effectRenderers;
-    public AnimationCurve effectFuzzinessCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
-    public AnimationCurve effectContrastCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
-    public AnimationCurve effectIntensityCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("Fluff")]
     public string interactTextAble = "Tend to the fire";
     public string interactTextUnable = "You have nothing left";
@@ -33,6 +24,7 @@ public class Fire : Interactable {
     [Fade] public float currentFuel = 0f;
     [Fade] public float currentLightIntensity = 0f;
     [Fade] public float currentLightRange = 0f;
+    [Fade] public float currentMultiplier = 0f;
 
     private PlayerInventory playerInventory;
 
@@ -74,24 +66,10 @@ public class Fire : Interactable {
     }
 
     private void SetFireSize() {
-        float multiplier = 1f - (1f / Mathf.Min(maxFuel, maxEffectiveFuel) * Mathf.Min(currentFuel, maxEffectiveFuel));
+        currentMultiplier = 1f - (1f / Mathf.Min(maxFuel, maxEffectiveFuel) * Mathf.Min(currentFuel, maxEffectiveFuel));
 
-        currentLightRange = maxLightRange * lightRangeCurve.Evaluate(multiplier);
-        currentLightIntensity = maxLightIntensity * lightIntensityCurve.Evaluate(multiplier);
-
-        SetEffectValues(multiplier);
-    }
-
-    private void SetEffectValues(float multiplier) {
-        embersEffect.SetFloat("Rate", embersEffectRateCurve.Evaluate(multiplier));
-        embersEffect.SetFloat("Max Y Velocity", embersEffectMaxVelocityCurve.Evaluate(multiplier));
-        embersEffect.SetFloat("Max Lifetime", embersEffectMaxLifetimeCurve.Evaluate(multiplier));
-
-        foreach (Renderer effectRenderer in effectRenderers) {
-            effectRenderer.material.SetFloat("_Fuzziness", effectFuzzinessCurve.Evaluate(multiplier));
-            effectRenderer.material.SetFloat("_Contrast", effectContrastCurve.Evaluate(multiplier));
-            effectRenderer.material.SetFloat("_Intensity", effectIntensityCurve.Evaluate(multiplier));
-        }
+        currentLightRange = maxLightRange * lightRangeCurve.Evaluate(currentMultiplier);
+        currentLightIntensity = maxLightIntensity * lightIntensityCurve.Evaluate(currentMultiplier);
     }
 
     private void DecreaseActiveFuel() {
