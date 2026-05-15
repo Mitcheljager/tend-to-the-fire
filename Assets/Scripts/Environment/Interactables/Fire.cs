@@ -13,6 +13,11 @@ public class Fire : Interactable {
     public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("Objects")]
     public Light fireLight;
+    [Header("Effects")]
+    public Renderer[] effectRenderers;
+    public AnimationCurve effectFuzzinessCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
+    public AnimationCurve effectContrastCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
+    public AnimationCurve effectIntensityCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("Fluff")]
     public string interactTextAble = "Tend to the fire";
     public string interactTextUnable = "You have nothing left";
@@ -68,6 +73,16 @@ public class Fire : Interactable {
 
         currentLightRange = maxLightRange * lightRangeCurve.Evaluate(multiplier);
         currentLightIntensity = maxLightIntensity * lightIntensityCurve.Evaluate(multiplier);
+
+        SetEffectValues(multiplier);
+    }
+
+    private void SetEffectValues(float multiplier) {
+        foreach (Renderer effectRenderer in effectRenderers) {
+            effectRenderer.material.SetFloat("_Fuzziness", effectFuzzinessCurve.Evaluate(multiplier));
+            effectRenderer.material.SetFloat("_Contrast", effectContrastCurve.Evaluate(multiplier));
+            effectRenderer.material.SetFloat("_Intensity", effectIntensityCurve.Evaluate(multiplier));
+        }
     }
 
     private void DecreaseActiveFuel() {
