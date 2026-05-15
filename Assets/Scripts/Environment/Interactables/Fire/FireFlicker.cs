@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Light))]
-public class LightFlicker : MonoBehaviour {
+public class FireFlicker : MonoBehaviour {
     [Header("Components")]
     public Fire fire;
     [Header("Intensity")]
