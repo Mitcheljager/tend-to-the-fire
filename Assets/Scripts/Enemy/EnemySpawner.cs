@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
     public float maxRadius = 10f;
+    public float ignoreViewAngleFromDistance = 20f;
     public GameObject enemyPrefab;
     public Fire campfire;
 
@@ -27,11 +28,14 @@ public class EnemySpawner : MonoBehaviour {
         Vector3 position = FindRandomPositionOutsideOfCampfire();
 
         int safety = 0;
-        while (Vector3.Distance(position, campfire.transform.position) < campfire.currentLightRange || (!playerFocus.isFullyClosed && playerCamera.IsInViewAngleOfPlayer(position))) {
-            position = FindRandomPositionOutsideOfCampfire();
-            safety++;
 
-            if (safety > 100) return;
+        if (Vector3.Distance(position, campfire.transform.position) < ignoreViewAngleFromDistance) {
+            while (Vector3.Distance(position, campfire.transform.position) < campfire.currentLightRange || (!playerFocus.isFullyClosed && playerCamera.IsInViewAngleOfPlayer(position))) {
+                position = FindRandomPositionOutsideOfCampfire();
+                safety++;
+
+                if (safety > 100) return;
+            }
         }
 
         Instantiate(enemyPrefab, position, transform.rotation);
