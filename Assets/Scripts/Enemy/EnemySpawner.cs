@@ -38,7 +38,8 @@ public class EnemySpawner : MonoBehaviour {
             }
         }
 
-        Instantiate(enemyPrefab, position, transform.rotation);
+        GameObject enemy = Instantiate(enemyPrefab, position, transform.rotation);
+        enemy.transform.parent = transform;
     }
 
     public Vector3 FindRandomPositionOutsideOfCampfire() {
