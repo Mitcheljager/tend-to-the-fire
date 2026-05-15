@@ -4704,8 +4704,8 @@
     "m_ObjectId": "6c6fb0c5f89f42a0b700148d49cca815",
     "m_Title": "Alpha + Color",
     "m_Position": {
-        "x": -1497.0,
-        "y": -119.0
+        "x": 0.0,
+        "y": 0.0
     }
 }
 
@@ -5301,8 +5301,8 @@
     "m_ObjectId": "7d9784e2fd0f49488d4ee588d15daa43",
     "m_Title": "Pixelate",
     "m_Position": {
-        "x": -4311.0,
-        "y": 337.0
+        "x": 0.0,
+        "y": 0.0
     }
 }
 
@@ -6615,8 +6615,8 @@
     "m_ObjectId": "9b8a799b8fb44fe6bb6171563e7f5847",
     "m_Title": "Noise",
     "m_Position": {
-        "x": -3568.0,
-        "y": -709.0
+        "x": 0.0,
+        "y": 0.0
     }
 }
 
@@ -7479,8 +7479,8 @@
     "m_ObjectId": "b7308f4c6abd42369538bd26555d9aa1",
     "m_Title": "Shape",
     "m_Position": {
-        "x": -3217.0,
-        "y": 337.0
+        "x": 0.0,
+        "y": 0.0
     }
 }
 
@@ -8651,8 +8651,8 @@
     "m_ObjectId": "d4e7fe2bc1a14a808c3d26835aaa42e8",
     "m_Title": "Wavy Vertex",
     "m_Position": {
-        "x": -1502.0,
-        "y": -1340.0
+        "x": 0.0,
+        "y": 0.0
     }
 }
 
