@@ -12,8 +12,6 @@ public class Fire : Interactable {
     public float fuelConsumptionPerSecond = 1f;
     public AnimationCurve lightIntensityCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
-    [Header("Objects")]
-    public Light fireLight;
     [Header("Fluff")]
     public string interactTextAble = "Tend to the fire";
     public string interactTextUnable = "You have nothing left";
