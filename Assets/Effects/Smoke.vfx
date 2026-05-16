@@ -1866,7 +1866,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614746}
   - {fileID: 8926484042661614750}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661614741}
   m_MasterData:
@@ -1875,7 +1875,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEditor.VFX.Transform, Unity.VisualEffectGraph.Editor,
           Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"position":{"x":0.0,"y":0.0,"z":0.0},"angles":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":1.0,"y":1.0,"z":1.0}}'
+      m_SerializableObject: '{"position":{"x":0.0,"y":0.0,"z":0.0},"angles":{"x":0.0,"y":0.0,"z":0.0},"scale":{"x":-1.0,"y":0.0,"z":-1.0}}'
     m_Space: 0
   m_Property:
     name: FieldTransform
@@ -2314,7 +2314,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 10
+      m_SerializableObject: 2
     m_Space: -1
   m_Property:
     name: Intensity
@@ -2348,7 +2348,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.1
+      m_SerializableObject: 0.05
     m_Space: -1
   m_Property:
     name: Drag
@@ -2382,7 +2382,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.01
+      m_SerializableObject: 1
     m_Space: -1
   m_Property:
     name: frequency
@@ -2518,7 +2518,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: False
+      m_SerializableObject: True
     m_Space: -1
   m_Property:
     name: _vfx_enabled
