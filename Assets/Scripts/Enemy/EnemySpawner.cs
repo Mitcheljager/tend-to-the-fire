@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour {
     public float maxRadius = 10f;
     public float ignoreViewAngleFromDistance = 20f;
     public GameObject enemyPrefab;
-    public Fire campfire;
+    public Fire fire;
 
     private PlayerCamera playerCamera;
     private PlayerFocus playerFocus;
@@ -25,13 +25,13 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     private void SpawnEnemy() {
-        Vector3 position = FindRandomPositionOutsideOfCampfire();
+        Vector3 position = FindRandomPositionOutsideOfFire();
 
         int safety = 0;
 
-        if (Vector3.Distance(position, campfire.transform.position) < ignoreViewAngleFromDistance) {
-            while (Vector3.Distance(position, campfire.transform.position) < campfire.currentLightRange || (!playerFocus.isFullyClosed && playerCamera.IsInViewAngleOfPlayer(position))) {
-                position = FindRandomPositionOutsideOfCampfire();
+        if (Vector3.Distance(position, fire.transform.position) < ignoreViewAngleFromDistance) {
+            while (Vector3.Distance(position, fire.transform.position) < fire.currentLightRange || (!playerFocus.isFullyClosed && playerCamera.IsInViewAngleOfPlayer(position))) {
+                position = FindRandomPositionOutsideOfFire();
                 safety++;
 
                 if (safety > 100) return;
@@ -42,7 +42,7 @@ public class EnemySpawner : MonoBehaviour {
         enemy.transform.parent = transform;
     }
 
-    public Vector3 FindRandomPositionOutsideOfCampfire() {
+    public Vector3 FindRandomPositionOutsideOfFire() {
         return FindRandomPointAlongRadius(playerCamera.transform.position, maxRadius * 0.75f, maxRadius);
     }
 
