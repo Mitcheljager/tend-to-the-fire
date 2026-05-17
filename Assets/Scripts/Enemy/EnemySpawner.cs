@@ -38,7 +38,10 @@ public class EnemySpawner : MonoBehaviour {
             }
         }
 
-        GameObject enemy = Instantiate(enemyPrefab, position, transform.rotation);
+        Vector3 abovePosition = position + Vector3.up * 20f;
+        if (!Physics.Raycast(abovePosition, Vector3.down, out RaycastHit floorHit)) return;
+
+        GameObject enemy = Instantiate(enemyPrefab, floorHit.point, transform.rotation);
         enemy.transform.parent = transform;
     }
 
