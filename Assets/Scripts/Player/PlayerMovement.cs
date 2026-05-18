@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour {
     public float inputX = 0f;
     public float inputZ = 0f;
     public bool isGrounded = false;
+    public bool startedRunningBeforeCutoff = false;
 
     void Update() {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -47,12 +48,15 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void SetRunning() {
-        if (!Input.GetKey(KeyCode.LeftShift) || playerStamina.isExhausted) {
-          isRunning = false;
-          return;
-        }
+        if (!startedRunningBeforeCutoff && playerStamina.currentStamina < staminaRunningCutoff) return;
 
-        isRunning = true;
+        if (Input.GetKey(KeyCode.LeftShift) && !playerStamina.isExhausted) {
+            isRunning = true;
+            if (!startedRunningBeforeCutoff) startedRunningBeforeCutoff = playerStamina.currentStamina > staminaRunningCutoff;
+        } else {
+            isRunning = false;
+            startedRunningBeforeCutoff = false;
+        }
     }
 
     private void SetSpeed() {
