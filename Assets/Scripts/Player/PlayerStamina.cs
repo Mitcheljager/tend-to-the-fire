@@ -39,10 +39,7 @@ public class PlayerStamina : MonoBehaviour {
         } else {
             currentStamina = Mathf.Min(currentStamina + Time.deltaTime * gainPerSecond, maxStamina);
 
-            if (wasRunning) {
-                wasRunning = false;
-                StartCoroutine(SetRecovering());
-            }
+            if (wasRunning) StartCoroutine(SetRecovering());
         }
 
         barSlider.value = currentStamina;
@@ -61,5 +58,6 @@ public class PlayerStamina : MonoBehaviour {
         yield return new WaitForSeconds(secondsRecovery);
 
         isRecovering = false;
+        wasRunning = false;
     }
 }
