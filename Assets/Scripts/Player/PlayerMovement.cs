@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour {
     private void SetRunning() {
         if (!startedRunningBeforeCutoff && playerStamina.currentStamina < staminaRunningCutoff) return;
 
-        if (Input.GetKey(KeyCode.LeftShift) && !playerStamina.isExhausted) {
+        if (Input.GetKey(KeyCode.LeftShift) && !playerStamina.isRecovering) {
             isRunning = true;
             if (!startedRunningBeforeCutoff) startedRunningBeforeCutoff = playerStamina.currentStamina > staminaRunningCutoff;
         } else {
