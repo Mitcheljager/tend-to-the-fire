@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
@@ -7,12 +5,11 @@ public class PlayerMovement : MonoBehaviour {
     public CharacterController controller;
     public PlayerState playerState;
     public PlayerCamera playerCamera;
-
+    public PlayerStamina playerStamina;
     [Header("Movement")]
     public float baseSpeed = 2f;
     public float runSpeed = 4f;
     public bool isRunning = false;
-
     [Header("Gravity")]
     public Vector3 gravityDirection = new(0f, -1f, 0f);
     public float gravity = 10f;
@@ -20,7 +17,6 @@ public class PlayerMovement : MonoBehaviour {
     public Transform groundCheck;
     public float groundDistance = 0.25f;
     public LayerMask groundMask;
-
     [Header("State")]
     public float currentSpeed = 0f;
     public Vector3 move = Vector3.zero;
@@ -44,7 +40,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void SetRunning() {
-        if (!Input.GetKey(KeyCode.LeftShift)) {
+        if (!Input.GetKey(KeyCode.LeftShift) || playerStamina.currentStamina == 0f) {
           isRunning = false;
           return;
         }
