@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
     public float baseSpeed = 2f;
     public float runSpeed = 4f;
     public bool isRunning = false;
+    public float staminaRunningCutoff = 0.25f;
     [Header("Gravity")]
     public Vector3 gravityDirection = new(0f, -1f, 0f);
     public float gravity = 10f;
@@ -30,23 +31,11 @@ public class PlayerMovement : MonoBehaviour {
 
         if (isGrounded && IsGravityPositive()) velocity = gravityDirection * 10;
 
-        currentSpeed = baseSpeed;
-        if (move.magnitude == 0f) currentSpeed = 0f;
-
         if (playerState.isDead) return;
 
-        SetRunning();
         SetMovement();
-    }
-
-    private void SetRunning() {
-        if (!Input.GetKey(KeyCode.LeftShift) || playerStamina.currentStamina == 0f) {
-          isRunning = false;
-          return;
-        }
-
-        isRunning = move.magnitude > 0;
-        currentSpeed = runSpeed;
+        SetRunning();
+        SetSpeed();
     }
 
     private void SetMovement() {
@@ -55,6 +44,24 @@ public class PlayerMovement : MonoBehaviour {
 
         SetVelocityValues();
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void SetRunning() {
+        if (!Input.GetKey(KeyCode.LeftShift) || playerStamina.isExhausted) {
+          isRunning = false;
+          return;
+        }
+
+        isRunning = true;
+    }
+
+    private void SetSpeed() {
+        if (move.magnitude == 0f) {
+            currentSpeed = 0f;
+            return;
+        }
+
+        currentSpeed = isRunning ? runSpeed : baseSpeed;
     }
 
     private void SetMovementValues() {
