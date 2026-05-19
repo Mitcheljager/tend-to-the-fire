@@ -62,7 +62,7 @@ public class PlayerInteract : MonoBehaviour {
         Vector3 position = transform.position;
         Vector3 target = position + transform.forward * interactRange;
 
-        Physics.Linecast(position, target, out RaycastHit raycastHit, layerMask);
+        Physics.SphereCast(position, 0.1f, transform.forward, out RaycastHit raycastHit, interactRange, layerMask);
 
         endTransform.position = raycastHit.point;
 
