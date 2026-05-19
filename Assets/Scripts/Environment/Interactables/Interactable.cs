@@ -3,6 +3,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour {
     public string interactText;
     public Sprite interactImage;
+    public GameObject[] meshes;
 
     public virtual void Interact() {
     }

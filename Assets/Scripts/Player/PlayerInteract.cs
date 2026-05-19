@@ -10,12 +10,26 @@ public class PlayerInteract : MonoBehaviour {
     public TMP_Text uiText;
     [Header("Mask")]
     public LayerMask layerMask;
+    public int interactableLayerIndex = 0;
+    public int interactableSelectedLayerIndex = 0;
     [Header("Interact limits")]
     public float interactRange = 2f;
 
+    private Interactable lastSelectedInteractable;
+
     void Update() {
+        if (lastSelectedInteractable) {
+            foreach(GameObject mesh in lastSelectedInteractable.meshes) mesh.layer = interactableLayerIndex;
+            lastSelectedInteractable = null;
+        }
+
         GameObject hitObject = GetMouseHoverObject();
         Interactable interactable = UpdateInteractTooltip(hitObject);
+
+        if (interactable) {
+            lastSelectedInteractable = interactable;
+            foreach(GameObject mesh in lastSelectedInteractable.meshes) mesh.layer = interactableSelectedLayerIndex;
+        }
 
         interactImage.gameObject.SetActive(interactable);
         if (interactable && Input.GetButtonDown("Interact")) interactable.Interact();

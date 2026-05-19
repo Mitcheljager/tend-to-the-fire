@@ -11,7 +11,8 @@ public class PlayerInventory : MonoBehaviour {
     public void PickUpFuel(Fuel fuel) {
         carryingFuel.Add(fuel);
 
-        fuel.mesh.SetActive(false);
+        foreach(GameObject mesh in fuel.meshes) mesh.SetActive(false);
+
         fuel.transform.parent = transform;
         fuel.transform.localPosition = Vector3.zero;
     }
@@ -19,7 +20,8 @@ public class PlayerInventory : MonoBehaviour {
     public void UseFuel(Fuel fuel, Fire fire) {
         carryingFuel.Remove(fuel);
 
-        fuel.mesh.SetActive(true);
+        foreach(GameObject mesh in fuel.meshes)  mesh.SetActive(true);
+
         fuel.transform.parent = fire.transform;
         fuel.transform.localPosition = Vector3.zero;
 

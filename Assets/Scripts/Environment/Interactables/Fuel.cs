@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Fuel : Interactable {
     public float maxFuel = 10f;
-    public GameObject mesh;
     [Header("State")]
     [Fade] public float currentFuel = 0;
 
