@@ -199,6 +199,53 @@ MonoBehaviour:
   texture:
     m_OverrideState: 1
     m_Value: {fileID: 0}
+--- !u!114 &-6048105369129302632
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b2b176d6078f2e4d8e1e46dfb46503a, type: 3}
+  m_Name: PixelationVol
+  m_EditorClassIdentifier: Assembly-CSharp::VolFx.PixelationVol
+  active: 1
+  <displayName>k__BackingField: 
+  m_Scale:
+    <fieldHash>k__BackingField: 283038528
+    m_OverrideState: 1
+    m_Value: 1
+  m_Grid:
+    <fieldHash>k__BackingField: -2097125632
+    m_OverrideState: 1
+    m_Value: 1
+  m_Roundness:
+    <fieldHash>k__BackingField: -1379074456
+    m_OverrideState: 1
+    m_Value: 0
+  m_Color:
+    <fieldHash>k__BackingField: -1139724064
+    m_OverrideState: 1
+    m_Value:
+      r: 0
+      g: 0
+      b: 0
+      a: 0
+    hdr: 0
+  m_Palette:
+    <fieldHash>k__BackingField: 775079072
+    m_OverrideState: 1
+    m_Value: {fileID: 0}
+  m_Impact:
+    <fieldHash>k__BackingField: -1605085088
+    m_OverrideState: 1
+    m_Value: 0
+  m_Crisp:
+    <fieldHash>k__BackingField: -1185100360
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-5520245016509672950
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -465,6 +512,7 @@ MonoBehaviour:
   - {fileID: -6288072647309666549}
   - {fileID: 7518938298396184218}
   - {fileID: -1410297666881709256}
+  - {fileID: 6992523843231330362}
 --- !u!114 &853819529557874667
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -866,6 +914,41 @@ MonoBehaviour:
   m_Name: VolumeComponentSupportedOnAnySRP
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Editor.Tests:UnityEngine.Rendering.Tests:VolumeComponentEditorSupportedOnTests/VolumeComponentSupportedOnAnySRP
   active: 1
+--- !u!114 &6992523843231330362
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 772ef47f3fce34346bbb42fb4f5434b8, type: 3}
+  m_Name: PixelationVol
+  m_EditorClassIdentifier: Pixelation.Runtime::VolFx.PixelationVol
+  active: 1
+  m_Scale:
+    m_OverrideState: 1
+    m_Value: 0.95
+  m_Grid:
+    m_OverrideState: 1
+    m_Value: 1
+  m_Roundness:
+    m_OverrideState: 1
+    m_Value: 0
+  m_Color:
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0, b: 0, a: 0}
+    hdr: 0
+  m_Palette:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 8b021c7d6c1a7ac44886c87f1b054a0f, type: 3}
+  m_Impact:
+    m_OverrideState: 1
+    m_Value: 0
+  m_Crisp:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &7173750748008157695
 MonoBehaviour:
   m_ObjectHideFlags: 3
