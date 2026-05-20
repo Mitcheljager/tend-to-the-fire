@@ -115,7 +115,7 @@ Material:
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
-    - _Change_speed: 5
+    - _Change_speed: 2
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ColorMode: 0
@@ -162,6 +162,9 @@ Material:
     - _SoftParticlesFarFadeDistance: 1
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
+    - _Spiralize: 1
+    - _Spiralize_speed: 0.3
+    - _Spiralize_strength: 0.4
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
