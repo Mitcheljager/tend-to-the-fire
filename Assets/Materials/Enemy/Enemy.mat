@@ -115,11 +115,11 @@ Material:
     - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
     - _CameraNearFadeDistance: 1
-    - _Change_speed: 2
+    - _Change_speed: 10
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ColorMode: 0
-    - _Contrast: 1.09
+    - _Contrast: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -147,7 +147,7 @@ Material:
     - _Overgrowth_Contrast: -10
     - _Overgrowth_Multiplier: 5
     - _Overgrowth_Saturation: -0.5
-    - _Overlay_opacity: 0.98
+    - _Overlay_opacity: 0.997
     - _Parallax: 0.005
     - _Pixel_size: 200
     - _Pixelate: 1
@@ -163,8 +163,8 @@ Material:
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
     - _Spiralize: 1
-    - _Spiralize_speed: 0.3
-    - _Spiralize_strength: 0.4
+    - _Spiralize_speed: 0.02
+    - _Spiralize_strength: 0.2
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
@@ -191,6 +191,7 @@ Material:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
+    - _Color_step: {r: 0.9, g: 0.9, b: 0.9, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flat_color: {r: 0, g: 0, b: 0, a: 0}
     - _Overgrowth_Color: {r: 0.20567387, g: 1, b: 0, a: 1}
@@ -200,6 +201,7 @@ Material:
     - _Pixelate_min_max: {r: 50, g: 250, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Spiralize_inner_edge: {r: 0.2, g: 0.25, b: 0, a: 0}
     - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _Undergrowth_Color: {r: 0.9415528, g: 0.06074226, b: 0.99056596, a: 1}
     - _Vertex_noise_multiplier: {r: 0.25, g: 0, b: 0.25, a: 0}
