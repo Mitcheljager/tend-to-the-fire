@@ -11,6 +11,6 @@ public class Enemy : MonoBehaviour {
     }
 
     public void Despawn() {
-        enemyManager.DespawnEnemy(this);
+        if (enemyManager != null) enemyManager.DespawnEnemy(this);
     }
 }
