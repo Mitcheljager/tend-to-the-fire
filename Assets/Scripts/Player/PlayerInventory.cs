@@ -1,8 +1,16 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour {
+    public float maxWeight = 50f;
     public List<Fuel> carryingFuel;
+    [Header("State")]
+    [Fade] public float currentWeight = 0f;
+
+    void Update() {
+        currentWeight = GetCurrentWeight();
+    }
 
     public bool IsCarryingAnyFuel() {
         return carryingFuel.Count > 0;
@@ -26,5 +34,9 @@ public class PlayerInventory : MonoBehaviour {
         fuel.transform.localPosition = Vector3.zero;
 
         fire.activeFuel.Add(fuel);
+    }
+
+    public float GetCurrentWeight() {
+        return carryingFuel.Sum(fuel => fuel.weight);
     }
 }

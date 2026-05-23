@@ -140,6 +140,7 @@ MonoBehaviour:
   meshes:
   - {fileID: 2039721871763823745}
   maxFuel: 10
+  weight: 2
   currentFuel: 0
 --- !u!65 &1795887789496423131
 BoxCollider:
