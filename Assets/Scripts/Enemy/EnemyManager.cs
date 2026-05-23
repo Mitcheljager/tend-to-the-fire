@@ -1,11 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour {
+public class EnemyManager : MonoBehaviour {
     public float maxRadius = 10f;
     public float ignoreViewAngleFromDistance = 20f;
     public GameObject enemyPrefab;
     public Fire fire;
+    [Header("State")]
+    public List<Enemy> enemies;
 
     private PlayerCamera playerCamera;
     private PlayerFocus playerFocus;
@@ -41,8 +44,16 @@ public class EnemySpawner : MonoBehaviour {
         Vector3 abovePosition = position + Vector3.up * 20f;
         if (!Physics.Raycast(abovePosition, Vector3.down, out RaycastHit floorHit)) return;
 
-        GameObject enemy = Instantiate(enemyPrefab, floorHit.point, transform.rotation);
-        enemy.transform.parent = transform;
+        GameObject instantiatedEnemy = Instantiate(enemyPrefab, floorHit.point, transform.rotation);
+        instantiatedEnemy.transform.parent = transform;
+
+        Enemy enemy = instantiatedEnemy.GetComponent<Enemy>();
+        enemies.Add(enemy);
+    }
+
+    public void DespawnEnemy(Enemy enemy) {
+        enemies.Remove(enemy);
+        Destroy(enemy.gameObject);
     }
 
     public Vector3 FindRandomPositionOutsideOfFire() {
