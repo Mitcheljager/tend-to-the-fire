@@ -18,6 +18,6 @@ public class Enemy : MonoBehaviour {
     }
 
     private void SetFocusAudioProgress() {
-        audioHelperFocus.audioSource.time = enemyManager.GetFocusAudioProgress();
+        if (enemyManager != null) audioHelperFocus.audioSource.time = enemyManager.GetFocusAudioProgress();
     }
 }
