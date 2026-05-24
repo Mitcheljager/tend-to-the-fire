@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
+    [Header("Config")]
     public float maxRadius = 10f;
     public float ignoreViewAngleFromDistance = 20f;
+    public float spawnDistanceFromFloor = 1f;
+    [Header("Objects")]
     public GameObject enemyPrefab;
     public Fire fire;
     [Header("State")]
@@ -44,7 +47,7 @@ public class EnemyManager : MonoBehaviour {
         Vector3 abovePosition = position + Vector3.up * 20f;
         if (!Physics.Raycast(abovePosition, Vector3.down, out RaycastHit floorHit)) return;
 
-        GameObject instantiatedEnemy = Instantiate(enemyPrefab, floorHit.point, transform.rotation);
+        GameObject instantiatedEnemy = Instantiate(enemyPrefab, floorHit.point + Vector3.up * spawnDistanceFromFloor, transform.rotation);
         instantiatedEnemy.transform.parent = transform;
 
         Enemy enemy = instantiatedEnemy.GetComponent<Enemy>();
