@@ -68,6 +68,12 @@ public class EnemyManager : MonoBehaviour {
         return origin + new Vector3(direction.x, 0, direction.y) * distance;
     }
 
+    public float GetFocusAudioProgress() {
+        if (enemies[0] == null) return 0;
+
+        return enemies[0].audioHelperFocus.audioSource.time;
+    }
+
     private IEnumerator RepeatedlySpawnEnemies() {
         for (int i = 0; i < 500; i++) {
             yield return new WaitForSeconds(0.1f);
