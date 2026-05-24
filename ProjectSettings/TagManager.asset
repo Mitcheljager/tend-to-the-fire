@@ -10,19 +10,19 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - Player
   - Interactable
   - Interactable Selected
-  - Ground
   - 
   - 
   - 
   - 
   - 
   - 
+  - Player Blocker
   - 
   - 
   - 
