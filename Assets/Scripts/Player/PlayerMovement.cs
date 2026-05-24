@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour {
     public PlayerState playerState;
     public PlayerCamera playerCamera;
     public PlayerStamina playerStamina;
+    public PlayerRest playerRest;
     [Header("Movement")]
     public float baseSpeed = 2f;
     public float runSpeed = 4f;
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour {
         if (isGrounded && IsGravityPositive()) velocity = gravityDirection * 10;
 
         if (playerState.isDead) return;
+        if (playerRest.isResting) return;
 
         SetMovement();
         SetRunning();

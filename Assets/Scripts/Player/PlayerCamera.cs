@@ -2,12 +2,18 @@ using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
 public class PlayerCamera : MonoBehaviour {
+    [Header("Config")]
     public float mouseSensitivity = 25f;
+    public int cameraAngleRestingLimit = 60;
+    [Header("Components")]
     public Transform playerBody;
     public PlayerState playerState;
+    public PlayerRest playerRest;
     public Camera thisCamera;
 
     private float xRotation = 0f;
+    private float yRotation = 0f;
+    private float rotationLimitCenter = 0f;
 
     void OnDrawGizmosSelected() {
         float angle = GetCameraViewAngle();
@@ -36,6 +42,11 @@ public class PlayerCamera : MonoBehaviour {
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
+        if (playerRest.isResting) {
+            yRotation = Mathf.Clamp(yRotation + mouseX, rotationLimitCenter - cameraAngleRestingLimit, rotationLimitCenter + cameraAngleRestingLimit);
+            playerBody.localRotation = Quaternion.Euler(0f, yRotation, 0f);
+        }
+
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
     }
@@ -53,5 +64,18 @@ public class PlayerCamera : MonoBehaviour {
         float horizontalAngle = 0f; // 2f * Mathf.Atan(Mathf.Tan(Camera.main.fieldOfView * Mathf.Deg2Rad / 2f) * Camera.main.aspect) * Mathf.Rad2Deg;
 
         return Mathf.Max(verticalAngle, horizontalAngle) + angleBuffer;
+    }
+
+    public void SetCameraLimitAngle(float direction = 90f) {
+        rotationLimitCenter = direction;
+    }
+
+    public void SetCameraFacingDirection(Vector3 direction) {
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        yRotation = rotation.eulerAngles.y;
+        xRotation = rotation.eulerAngles.x;
+
+        playerBody.rotation = Quaternion.Euler(0f, yRotation, 0f);
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 }

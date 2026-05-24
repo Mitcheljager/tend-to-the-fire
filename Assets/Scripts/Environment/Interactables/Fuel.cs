@@ -8,6 +8,10 @@ public class Fuel : Interactable {
 
     private PlayerInventory playerInventory;
 
+    void OnDrawGizmos() {
+        if (this.enabled) Gizmos.DrawIcon(transform.position, "fuel.png", false);
+    }
+
     void Start() {
         playerInventory = FindAnyObjectByType<PlayerInventory>();
 
