@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour {
     public float maxWeight = 50f;
     public List<Fuel> carryingFuel;
+    public LayerMask dropFloorCheckMask;
+    public float dropRandomPositionRange = 0.25f;
     [Header("State")]
     [Fade] public float currentWeight = 0f;
 
     void Update() {
         currentWeight = GetCurrentWeight();
+
+        if (Input.GetButtonDown("Drop")) DropAllFuel();
     }
 
     public bool IsCarryingAnyFuel() {
@@ -19,7 +23,7 @@ public class PlayerInventory : MonoBehaviour {
     public void PickUpFuel(Fuel fuel) {
         carryingFuel.Add(fuel);
 
-        foreach(GameObject mesh in fuel.meshes) mesh.SetActive(false);
+        SetFuelMeshesActive(fuel, false);
 
         fuel.transform.parent = transform;
         fuel.transform.localPosition = Vector3.zero;
@@ -28,7 +32,7 @@ public class PlayerInventory : MonoBehaviour {
     public void UseFuel(Fuel fuel, Fire fire) {
         carryingFuel.Remove(fuel);
 
-        foreach(GameObject mesh in fuel.meshes)  mesh.SetActive(true);
+        SetFuelMeshesActive(fuel, true);
 
         fuel.transform.parent = fire.transform;
         fuel.transform.localPosition = Vector3.zero;
@@ -38,5 +42,28 @@ public class PlayerInventory : MonoBehaviour {
 
     public float GetCurrentWeight() {
         return carryingFuel.Sum(fuel => fuel.weight);
+    }
+
+    public void DropAllFuel() {
+        Physics.Raycast(transform.position, Vector3.down, out RaycastHit floorHit, 10f, dropFloorCheckMask);
+        Vector3 floorPosition = floorHit.point;
+
+        foreach(Fuel fuel in carryingFuel) {
+            fuel.transform.parent = null;
+
+            fuel.transform.position = new(
+                floorPosition.x + Random.Range(-dropRandomPositionRange, dropRandomPositionRange),
+                floorPosition.y,
+                floorPosition.z + Random.Range(-dropRandomPositionRange, dropRandomPositionRange)
+            );
+
+            SetFuelMeshesActive(fuel, true);
+        }
+
+        carryingFuel.Clear();
+    }
+
+    private void SetFuelMeshesActive(Fuel fuel, bool state) {
+        foreach(GameObject mesh in fuel.meshes) mesh.SetActive(state);
     }
 }
