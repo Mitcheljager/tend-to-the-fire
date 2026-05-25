@@ -28,6 +28,8 @@ The light can not die. We must **tend to the fire**.
 - Choosing hope directs you to a place that has continuous lights going, something like a dam with perpetual energy
 - Both options are somewhat open an ambiguous, neither shows a clear end or is clearly more positive or negative than the other
 
+- The narrator does not remember and does not wish to tell the player what they know, simply because they do not trust their own memories and does not want to mislead. They choose not to tell rather than to possibly share false memories.
+
 ## Possibles names
 Tend to the fire
 These trees all around you
