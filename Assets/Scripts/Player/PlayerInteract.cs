@@ -3,7 +3,6 @@ using TMPro;
 using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour {
-    public PlayerState playerState;
     public Transform endTransform;
     [Header("Cursor & UI")]
     public Image interactImage;
@@ -45,11 +44,10 @@ public class PlayerInteract : MonoBehaviour {
         }
 
         if (!hitObject.TryGetComponent<Interactable>(out var interactable)) return null;
-        if (!uiText.gameObject.activeInHierarchy) {
-            uiText.gameObject.SetActive(true);
-            uiText.text = interactable.GetInteractText();
-            interactImage.sprite = interactable.GetInteractImage();
-        }
+
+        uiText.gameObject.SetActive(true);
+        uiText.text = interactable.GetInteractText();
+        interactImage.sprite = interactable.GetInteractImage();
 
         return interactable;
     }
