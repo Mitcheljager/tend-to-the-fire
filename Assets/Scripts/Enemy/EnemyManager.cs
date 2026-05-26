@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour {
     public float maxRadius = 10f;
     public float ignoreViewAngleFromDistance = 20f;
     public float spawnDistanceFromFloor = 1f;
+    public int maxNumberOfEnemies = 500;
     [Header("Objects")]
     public GameObject enemyPrefab;
     public Fire fire;
@@ -80,7 +81,7 @@ public class EnemyManager : MonoBehaviour {
     }
 
     private IEnumerator RepeatedlySpawnEnemies() {
-        for (int i = 0; i < 500; i++) {
+        while (enemies.Count < maxNumberOfEnemies) {
             yield return new WaitForSeconds(0.1f);
 
             if (!playerState.isInTotalSafetyRange) SpawnEnemy();
