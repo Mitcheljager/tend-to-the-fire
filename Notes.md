@@ -25,7 +25,7 @@ The light can not die. We must **tend to the fire**.
 
 I'm on my own. Surviving a world void of hope, void of direction.
 Each day hiding from fear. Each day putting off what I do not wish to face.
-I'm on my own. I do not wish to by alone at the end, I wish to go home.
+I'm on my own. I do not wish to be alone at the end, I wish to go home.
 
 - The finale of the game presents a choice, love or hope
 - Choosing love directs you home to where someone you loved was consumed by the darkness, you join them
