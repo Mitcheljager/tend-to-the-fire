@@ -36,3 +36,4 @@ These trees all around you
 
 ## Quotes from media
 - A home and a repository of memories from an unremarkable life, lived at the fringes of a life I once wanted for myself
+- No one is left to listen
