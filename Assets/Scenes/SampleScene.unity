@@ -6483,7 +6483,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0.0013595354
-      value: 0.70256394
+      value: 0.500858
       inSlope: -0.05556333
       outSlope: -0.05556333
       tangentMode: 0
@@ -6492,7 +6492,7 @@ MonoBehaviour:
       outWeight: 0.3497832
     - serializedVersion: 3
       time: 0.2033169
-      value: 0.68343174
+      value: 0.4817258
       inSlope: -0.074939
       outSlope: -0.074939
       tangentMode: 0
@@ -6588,11 +6588,11 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
   - {fileID: 2100000, guid: f265991a8d505be4585f1567ad068e8a, type: 2}
+  - {fileID: 2100000, guid: 8ebe7877bb17ab447b1dfd2d93b50de0, type: 2}
   - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
   - {fileID: 2100000, guid: c1c6a78b7af95564a99a8eeff2658104, type: 2}
-  - {fileID: 2100000, guid: 34d12681e85626b4b923fc2c154c68c8, type: 2}
-  - {fileID: 2100000, guid: 8ebe7877bb17ab447b1dfd2d93b50de0, type: 2}
   - {fileID: 2100000, guid: c51f3d1d8cccf0e4284b74f8f6326f85, type: 2}
+  - {fileID: 2100000, guid: 34d12681e85626b4b923fc2c154c68c8, type: 2}
   - {fileID: 2100000, guid: 4bed1cf04766a1044a007c30ddfa6c13, type: 2}
 --- !u!4 &1067460667
 Transform:
@@ -7460,6 +7460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+  isInTotalSafetyRange: 0
 --- !u!4 &1229640553
 Transform:
   m_ObjectHideFlags: 0
@@ -7699,6 +7700,7 @@ MonoBehaviour:
   maxRadius: 20
   ignoreViewAngleFromDistance: 30
   spawnDistanceFromFloor: 0.5
+  maxNumberOfEnemies: 500
   enemyPrefab: {fileID: 5034556932203097326, guid: 2caceba9582a0f74ca5ada296a57d5cc, type: 3}
   fire: {fileID: 1064749171}
   enemies: []

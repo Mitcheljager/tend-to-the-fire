@@ -42,6 +42,22 @@ MonoBehaviour:
       restoreCamera: 1
       offset: {x: 0, y: 0, z: 0, w: 0}
       cameraFieldOfView: 60
+--- !u!114 &-7452219266945150461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fad84c61e51d6443b20acca165fb2d2, type: 3}
+  m_Name: DitherRendererFeature
+  m_EditorClassIdentifier: Assembly-CSharp::DitherRendererFeature
+  m_Active: 1
+  settings:
+    renderPassEvent: 550
+    ditherMaterial: {fileID: 2100000, guid: a10e3132071a01e4cac7962a86ea402d, type: 2}
 --- !u!114 &-2394833066068419662
 MonoBehaviour:
   m_ObjectHideFlags: 0
