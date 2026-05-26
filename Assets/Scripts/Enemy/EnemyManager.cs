@@ -13,6 +13,7 @@ public class EnemyManager : MonoBehaviour {
     [Header("State")]
     public List<Enemy> enemies;
 
+    private PlayerState playerState;
     private PlayerCamera playerCamera;
     private PlayerFocus playerFocus;
 
@@ -24,6 +25,7 @@ public class EnemyManager : MonoBehaviour {
     }
 
     void Start() {
+        playerState = FindFirstObjectByType<PlayerState>();
         playerCamera = FindFirstObjectByType<PlayerCamera>();
         playerFocus = FindFirstObjectByType<PlayerFocus>();
 
@@ -81,7 +83,7 @@ public class EnemyManager : MonoBehaviour {
         for (int i = 0; i < 500; i++) {
             yield return new WaitForSeconds(0.1f);
 
-            SpawnEnemy();
+            if (!playerState.isInTotalSafetyRange) SpawnEnemy();
         }
     }
 }

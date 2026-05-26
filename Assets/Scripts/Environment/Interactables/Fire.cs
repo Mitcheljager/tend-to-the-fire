@@ -11,6 +11,7 @@ public class Fire : Interactable {
     public float fuelConsumptionPerSecond = 1f;
     public AnimationCurve lightIntensityCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
+    public AnimationCurve totalSafetyCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("Fluff")]
     public string interactTextAble = "Tend to the fire";
     public string interactTextUnable = "You have nothing left";
@@ -22,12 +23,16 @@ public class Fire : Interactable {
     [Fade] public float currentLightIntensity = 0f;
     [Fade] public float currentLightRange = 0f;
     [Fade] public float currentMultiplier = 0f;
+    [Fade] public float currentTotalSafetyRange = 0f;
 
     private PlayerInventory playerInventory;
 
     void OnDrawGizmos() {
         Gizmos.color = Color.orange;
         Gizmos.DrawWireSphere(transform.position, currentLightRange);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, currentTotalSafetyRange);
     }
 
     void Start() {
@@ -67,6 +72,7 @@ public class Fire : Interactable {
 
         currentLightRange = maxLightRange * lightRangeCurve.Evaluate(currentMultiplier);
         currentLightIntensity = maxLightIntensity * lightIntensityCurve.Evaluate(currentMultiplier);
+        currentTotalSafetyRange = maxLightRange * totalSafetyCurve.Evaluate(currentMultiplier);
     }
 
     private void DecreaseActiveFuel() {
