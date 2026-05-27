@@ -6036,8 +6036,8 @@
     "m_ObjectId": "7b41507a3a9e4be493e2640c02505160",
     "m_Title": "Attempt at using intersection depth, failed big time",
     "m_Position": {
-        "x": -5149.0,
-        "y": 2077.0
+        "x": -5142.0,
+        "y": 2018.0
     }
 }
 
@@ -6256,8 +6256,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -5123.99951171875,
-            "y": 2330.999755859375,
+            "x": -5117.0,
+            "y": 2077.0,
             "width": 208.0,
             "height": 314.0
         }
@@ -7663,10 +7663,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -5123.99951171875,
-            "y": 2172.999755859375,
+            "x": -5104.0,
+            "y": 2433.0,
             "width": 195.0,
-            "height": 95.0
+            "height": 94.999755859375
         }
     },
     "m_Slots": [
@@ -7724,8 +7724,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3495.999755859375,
-            "y": 2278.0,
+            "x": -3522.0,
+            "y": 2531.0,
             "width": 120.0,
             "height": 149.0
         }
@@ -8179,10 +8179,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3495.999755859375,
-            "y": 2564.999755859375,
+            "x": -3522.0,
+            "y": 2327.0,
             "width": 120.0,
-            "height": 149.000244140625
+            "height": 149.0
         }
     },
     "m_Slots": [
@@ -8404,8 +8404,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3216.999755859375,
-            "y": 2298.999755859375,
+            "x": -3216.0,
+            "y": 2299.0,
             "width": 126.0,
             "height": 118.0
         }
@@ -8730,8 +8730,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4867.99951171875,
-            "y": 2135.999755859375,
+            "x": -4866.0,
+            "y": 2331.0,
             "width": 120.0,
             "height": 149.0
         }
@@ -9964,8 +9964,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3781.999755859375,
-            "y": 2291.000244140625,
+            "x": -3754.0,
+            "y": 2531.0,
             "width": 208.0,
             "height": 314.0
         }
@@ -10154,7 +10154,7 @@
     "m_ObjectId": "de8fd791daf242b2ae2ded1fc1a37359",
     "m_Title": "Undergrowth Direction",
     "m_Position": {
-        "x": -3807.0,
+        "x": -3779.0,
         "y": 2064.0
     }
 }
@@ -10877,10 +10877,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3744.999755859375,
-            "y": 2668.0,
+            "x": -3708.0,
+            "y": 2327.0,
             "width": 153.0,
-            "height": 173.000244140625
+            "height": 173.0
         }
     },
     "m_Slots": [
@@ -11319,8 +11319,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4867.99951171875,
-            "y": 2321.999755859375,
+            "x": -4866.0,
+            "y": 2152.0,
             "width": 120.0,
             "height": 149.0
         }
