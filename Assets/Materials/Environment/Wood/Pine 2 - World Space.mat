@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pine - World Space
+  m_Name: Pine 2 - World Space
   m_Shader: {fileID: -6465566751694194690, guid: 3bf1471fe2786e64a8fc7dcc70bab368, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -53,7 +53,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Diffuse_Texture:
-        m_Texture: {fileID: 2800000, guid: 2d53654200008b5498ce421ce4ee4e35, type: 3}
+        m_Texture: {fileID: 2800000, guid: 28e7d2594dbc63b47a61a1ebe75aee38, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -141,11 +141,11 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _Tiling: 0.6
-    - _Undergrowth_Contrast: 10
-    - _Undergrowth_Depth: 0.1
-    - _Undergrowth_Multiplier: 0.5
-    - _Undergrowth_Saturation: 0.5
-    - _Undergrowth_Thickness: 1.2
+    - _Undergrowth_Contrast: 8.34
+    - _Undergrowth_Depth: 1.16
+    - _Undergrowth_Multiplier: 0.27
+    - _Undergrowth_Saturation: 0.75
+    - _Undergrowth_Thickness: 1.5
     - _Use_Overgrowth: 0
     - _Use_Undergrowth: 1
     - _Vertex_Snap: 32
@@ -163,7 +163,7 @@ Material:
     - _Overgrowth_Color: {r: 0.2056739, g: 1, b: 0, a: 1}
     - _Overgrowth_Direction: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Undergrowth_Color: {r: 0.92900944, g: 0.9528302, b: 0, a: 1}
+    - _Undergrowth_Color: {r: 0.92371565, g: 0.9529412, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7118404538615992517

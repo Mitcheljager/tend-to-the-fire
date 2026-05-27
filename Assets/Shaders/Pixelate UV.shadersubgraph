@@ -44,9 +44,6 @@
         },
         {
             "m_Id": "1c58044b9507470d8028c6e1bb32cf4a"
-        },
-        {
-            "m_Id": "2f6fba653c5d4d7b9bb2830626bf3ee9"
         }
     ],
     "m_GroupDatas": [
@@ -296,43 +293,6 @@
     "m_Property": {
         "m_Id": "95c1ba998dbf475dad9f6e0d36cee220"
     }
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.PositionNode",
-    "m_ObjectId": "2f6fba653c5d4d7b9bb2830626bf3ee9",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Position",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": -480.0,
-            "y": -250.0,
-            "width": 0.0,
-            "height": 0.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "98037cb076844494abb14e7c9065d9b8"
-        }
-    ],
-    "synonyms": [
-        "location"
-    ],
-    "m_Precision": 1,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 2,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Space": 2,
-    "m_PositionSource": 0
 }
 
 {
@@ -846,29 +806,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
-    "m_ObjectId": "98037cb076844494abb14e7c9065d9b8",
-    "m_Id": 0,
-    "m_DisplayName": "Out",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "ae2c3d8d66c140b29445146a5756a48f",
     "m_Id": 2,
@@ -1034,10 +971,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1302.9998779296875,
-            "y": 155.00001525878907,
+            "x": -1303.0,
+            "y": 155.0,
             "width": 125.0,
-            "height": 33.999969482421878
+            "height": 34.0
         }
     },
     "m_Slots": [
