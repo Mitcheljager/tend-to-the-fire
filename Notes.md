@@ -23,7 +23,7 @@ The light can not die. We must **tend to the fire**.
 
 
 
-I'm on my own. Surviving a world void of hope, void of direction.
+I'm on my own. Surviving a life void of hope, void of direction.
 Each day hiding from fear. Each day putting off what I do not wish to face.
 I'm on my own. I do not wish to be alone at the end, I wish to go home.
 
