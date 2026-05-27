@@ -3,6 +3,7 @@ using UnityEngine;
 public class Fuel : Interactable {
     public float maxFuel = 10f;
     public float weight = 0f;
+    public Renderer[] materialRenderers;
     [Header("State")]
     [Fade] public float currentFuel = 0;
 
@@ -28,9 +29,19 @@ public class Fuel : Interactable {
         currentFuel -= amount;
 
         if (currentFuel <= 0) DestroyFuel();
+
+        SetMaterial();
     }
 
     public void DestroyFuel() {
         Destroy(gameObject);
+    }
+
+    private void SetMaterial() {
+        float multiplier = 1f / maxFuel * currentFuel;
+
+        foreach (Renderer renderer in materialRenderers) {
+            renderer.material.SetFloat("_Current_Value", 1f - multiplier);
+        }
     }
 }
