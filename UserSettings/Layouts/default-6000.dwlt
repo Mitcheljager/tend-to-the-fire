@@ -286,8 +286,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Burning\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 799
-    y: 79
+    x: 1
+    y: 24
     width: 1760
     height: 932
   m_SerializedDataModeController:
@@ -2740,7 +2740,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79
+    y: 24
     width: 332
     height: 1275
   m_SerializedDataModeController:
@@ -2805,8 +2805,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 333
-    y: 79
+    x: 334
+    y: 24
     width: 464
     height: 1275
   m_SerializedDataModeController:
@@ -3654,11 +3654,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.32148632, y: 0.30578235, z: -0.114175916, w: -0.88931507}
     speed: 2
-    m_Value: {x: -0.32002845, y: 0.30583522, z: -0.113672525, w: -0.8894522}
+    m_Value: {x: -0.3214863, y: 0.30578235, z: -0.114175916, w: -0.88931507}
   m_Size:
     m_Target: 1.1526158
     speed: 2
-    m_Value: 1.1029816
+    m_Value: 1.1526158
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -10668,8 +10668,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 799
-    y: 1037
+    x: 1
+    y: 982
     width: 1760
     height: 317
   m_SerializedDataModeController:
@@ -10713,7 +10713,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 303}
     m_SelectedIDs: 04d70000
     m_LastClickedID: 55044
-    m_ExpandedIDs: 00000000f6d40000f8d40000fad40000fcd40000fed4000000d5000002d5000004d5000006d5000008d500009ad50000
+    m_ExpandedIDs: 0000000002d5000004d5000006d5000008d500000ad500000cd500000ed5000010d5000012d5000014d50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -10742,7 +10742,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f6d40000f8d40000fad40000fcd40000fed4000000d5000002d5000004d5000006d5000008d50000
+    m_ExpandedIDs: 0000000002d5000004d5000006d5000008d500000ad500000cd500000ed5000010d5000012d5000014d50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
