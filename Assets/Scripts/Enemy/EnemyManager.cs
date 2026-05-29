@@ -43,11 +43,11 @@ public class EnemyManager : MonoBehaviour {
     }
 
     private void SpawnEnemy() {
-        Vector3 position = FindValidPosition();
+        Vector3? position = FindValidPosition();
 
-        if (position == Vector3.zero) return;
+        if (position == null) return;
 
-        GameObject instantiatedEnemy = Instantiate(enemyPrefab, position, transform.rotation);
+        GameObject instantiatedEnemy = Instantiate(enemyPrefab, position.Value, transform.rotation);
         instantiatedEnemy.transform.parent = transform;
 
         Enemy enemy = instantiatedEnemy.GetComponent<Enemy>();
@@ -60,11 +60,11 @@ public class EnemyManager : MonoBehaviour {
     }
 
     public void RepositionEnemy(Enemy enemy) {
-        Vector3 position = FindValidPosition();
+        Vector3? position = FindValidPosition();
 
-        if (position == Vector3.zero) return;
+        if (position == null) return;
 
-        enemy.transform.position = position;
+        enemy.transform.position = position.Value;
     }
 
     public void DespawnAllOutOfViewEnemies() {
@@ -97,7 +97,7 @@ public class EnemyManager : MonoBehaviour {
         return enemies[0].audioHelperFocus.audioSource.time;
     }
 
-    private Vector3 FindValidPosition() {
+    private Vector3? FindValidPosition() {
         Vector3 position = FindRandomPositionOutsideOfFire();
 
         int safety = 0;
@@ -107,12 +107,12 @@ public class EnemyManager : MonoBehaviour {
                 position = FindRandomPositionOutsideOfFire();
                 safety++;
 
-                if (safety > 100) return Vector3.zero;
+                if (safety > 100) return null;
             }
         }
 
         Vector3 abovePosition = position + Vector3.up * 20f;
-        Physics.Raycast(abovePosition, Vector3.down, out RaycastHit floorHit);
+        if (!Physics.Raycast(abovePosition, Vector3.down, out RaycastHit floorHit)) return null;
 
         return floorHit.point + Vector3.up * spawnDistanceFromFloor;
     }
