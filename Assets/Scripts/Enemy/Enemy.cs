@@ -4,6 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
     public float killRadius;
     public AudioHelper audioHelperFocus;
+    public EventWhenOutOfView eventWhenOutOfView;
 
     private EnemyManager enemyManager;
 
@@ -15,6 +16,10 @@ public class Enemy : MonoBehaviour {
 
     public void Despawn() {
         if (enemyManager != null) enemyManager.DespawnEnemy(this);
+    }
+
+    public bool IsInView() {
+        return eventWhenOutOfView.IsInView();
     }
 
     private void SetFocusAudioProgress() {

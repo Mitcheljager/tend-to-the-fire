@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
@@ -23,6 +24,14 @@ public class EnemyManager : MonoBehaviour {
 
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(playerCamera.transform.position, maxRadius);
+    }
+
+    private void OnEnable() {
+        PlayerEvent.OnPlayerEnteredTotalSafetyRange.AddListener(DespawnAllOutOfViewEnemies);
+    }
+
+    private void OnDisable() {
+        PlayerEvent.OnPlayerEnteredTotalSafetyRange.RemoveListener(DespawnAllOutOfViewEnemies);
     }
 
     void Start() {
@@ -60,6 +69,12 @@ public class EnemyManager : MonoBehaviour {
     public void DespawnEnemy(Enemy enemy) {
         enemies.Remove(enemy);
         Destroy(enemy.gameObject);
+    }
+
+    public void DespawnAllOutOfViewEnemies() {
+        foreach(Enemy enemy in enemies.ToList()) {
+            if (!enemy.IsInView()) DespawnEnemy(enemy);
+        }
     }
 
     public Vector3 FindRandomPositionOutsideOfFire() {

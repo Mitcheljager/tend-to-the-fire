@@ -230,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   killRadius: 0
   audioHelperFocus: {fileID: 3801201590881745037}
+  eventWhenOutOfView: {fileID: 1762595228292357626}
 --- !u!114 &1762595228292357626
 MonoBehaviour:
   m_ObjectHideFlags: 0

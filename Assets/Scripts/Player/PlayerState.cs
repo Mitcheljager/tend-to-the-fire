@@ -10,7 +10,10 @@ public class PlayerState : MonoBehaviour {
     void Update() {
         fire = FindFirstObjectByType<Fire>();
 
+        bool wasInTotalSafetyRange = isInTotalSafetyRange;
         isInTotalSafetyRange = IsInTotalSafetyRange();
+
+        if (isInTotalSafetyRange && !wasInTotalSafetyRange) PlayerEvent.EnteredTotalSafetyRange();
     }
 
     public void Kill() {

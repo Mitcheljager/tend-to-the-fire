@@ -34,7 +34,7 @@ public class EventWhenOutOfView : MonoBehaviour {
         wasInView = isInView;
     }
 
-    private bool IsInView() {
+    public bool IsInView() {
         if (playerFocus.isFullyClosed) return false;
 
         return playerCamera.IsInViewAngleOfPlayer(transform.position, angleBuffer);

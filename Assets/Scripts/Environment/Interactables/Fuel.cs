@@ -40,6 +40,8 @@ public class Fuel : Interactable {
     private void SetMaterial() {
         float multiplier = 1f / maxFuel * currentFuel;
 
+        if (materialRenderers == null) return;
+
         foreach (Renderer renderer in materialRenderers) {
             renderer.material.SetFloat("_Current_Value", 1f - multiplier);
         }
