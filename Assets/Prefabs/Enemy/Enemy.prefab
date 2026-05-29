@@ -248,7 +248,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2783010608148101610}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: Despawn
+        m_MethodName: Reposition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

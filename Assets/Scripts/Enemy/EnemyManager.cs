@@ -73,6 +73,12 @@ public class EnemyManager : MonoBehaviour {
         }
     }
 
+    public void DespawnAllEnemies() {
+        foreach(Enemy enemy in enemies.ToList()) {
+            DespawnEnemy(enemy);
+        }
+    }
+
     public Vector3 FindRandomPositionOutsideOfFire() {
         return FindRandomPointAlongRadius(playerCamera.transform.position, maxRadius * 0.75f, maxRadius);
     }
