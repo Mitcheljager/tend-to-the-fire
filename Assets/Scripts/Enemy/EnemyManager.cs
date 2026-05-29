@@ -43,23 +43,11 @@ public class EnemyManager : MonoBehaviour {
     }
 
     private void SpawnEnemy() {
-        Vector3 position = FindRandomPositionOutsideOfFire();
+        Vector3 position = FindValidPosition();
 
-        int safety = 0;
+        if (position == Vector3.zero) return;
 
-        if (Vector3.Distance(position, fire.transform.position) < ignoreViewAngleFromDistance) {
-            while (Vector3.Distance(position, fire.transform.position) < fire.currentLightRange || (!playerFocus.isFullyClosed && playerCamera.IsInViewAngleOfPlayer(position))) {
-                position = FindRandomPositionOutsideOfFire();
-                safety++;
-
-                if (safety > 100) return;
-            }
-        }
-
-        Vector3 abovePosition = position + Vector3.up * 20f;
-        if (!Physics.Raycast(abovePosition, Vector3.down, out RaycastHit floorHit)) return;
-
-        GameObject instantiatedEnemy = Instantiate(enemyPrefab, floorHit.point + Vector3.up * spawnDistanceFromFloor, transform.rotation);
+        GameObject instantiatedEnemy = Instantiate(enemyPrefab, position, transform.rotation);
         instantiatedEnemy.transform.parent = transform;
 
         Enemy enemy = instantiatedEnemy.GetComponent<Enemy>();
@@ -69,6 +57,14 @@ public class EnemyManager : MonoBehaviour {
     public void DespawnEnemy(Enemy enemy) {
         enemies.Remove(enemy);
         Destroy(enemy.gameObject);
+    }
+
+    public void RepositionEnemy(Enemy enemy) {
+        Vector3 position = FindValidPosition();
+
+        if (position == Vector3.zero) return;
+
+        enemy.transform.position = position;
     }
 
     public void DespawnAllOutOfViewEnemies() {
@@ -93,6 +89,26 @@ public class EnemyManager : MonoBehaviour {
         if (enemies[0] == null) return 0;
 
         return enemies[0].audioHelperFocus.audioSource.time;
+    }
+
+    private Vector3 FindValidPosition() {
+        Vector3 position = FindRandomPositionOutsideOfFire();
+
+        int safety = 0;
+
+        if (Vector3.Distance(position, fire.transform.position) < ignoreViewAngleFromDistance) {
+            while (Vector3.Distance(position, fire.transform.position) < fire.currentLightRange || (!playerFocus.isFullyClosed && playerCamera.IsInViewAngleOfPlayer(position))) {
+                position = FindRandomPositionOutsideOfFire();
+                safety++;
+
+                if (safety > 100) return Vector3.zero;
+            }
+        }
+
+        Vector3 abovePosition = position + Vector3.up * 20f;
+        Physics.Raycast(abovePosition, Vector3.down, out RaycastHit floorHit);
+
+        return floorHit.point + Vector3.up * spawnDistanceFromFloor;
     }
 
     private IEnumerator RepeatedlySpawnEnemies() {

@@ -18,6 +18,10 @@ public class Enemy : MonoBehaviour {
         if (enemyManager != null) enemyManager.DespawnEnemy(this);
     }
 
+    public void Reposition() {
+        if (enemyManager != null) enemyManager.RepositionEnemy(this);
+    }
+
     public bool IsInView() {
         return eventWhenOutOfView.IsInView();
     }
