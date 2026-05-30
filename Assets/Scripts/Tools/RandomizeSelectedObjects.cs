@@ -3,9 +3,12 @@ using UnityEditor;
 
 public class RandomizeSelectedObjects : EditorWindow {
     private float randomRange = 5f;
-    private bool x = true;
-    private bool y = false;
-    private bool z = true;
+    private bool positionX = true;
+    private bool positionY = false;
+    private bool positionZ = true;
+    private bool rotationX = false;
+    private bool rotationY = false;
+    private bool rotationZ = false;
 
     [MenuItem("Tools/Randomize object positions")]
     public static void ShowWindow() {
@@ -15,9 +18,15 @@ public class RandomizeSelectedObjects : EditorWindow {
     private void OnGUI() {
         randomRange = EditorGUILayout.FloatField("Range", randomRange);
 
-        x = EditorGUILayout.Toggle("X", x);
-        y = EditorGUILayout.Toggle("Y", y);
-        z = EditorGUILayout.Toggle("Z", z);
+        positionX = EditorGUILayout.Toggle("X Position", positionX);
+        positionY = EditorGUILayout.Toggle("Y Position", positionY);
+        positionZ = EditorGUILayout.Toggle("Z Position", positionZ);
+
+        EditorGUILayout.Space();
+
+        rotationX = EditorGUILayout.Toggle("X Rotation", rotationX);
+        rotationY = EditorGUILayout.Toggle("Y Rotation", rotationY);
+        rotationZ = EditorGUILayout.Toggle("Z Rotation", rotationZ);
 
         if (GUILayout.Button("Randomize positions", GUILayout.Height(30))) RandomizePositions();
     }
@@ -29,12 +38,17 @@ public class RandomizeSelectedObjects : EditorWindow {
 
         foreach (GameObject selectedObject in selectedObjects) {
             Vector3 currentPosition = selectedObject.transform.position;
+            float newPositionX = currentPosition.x + (positionX ? Random.Range(-randomRange, randomRange) : 0f);
+            float newPositionY = currentPosition.y + (positionY ? Random.Range(-randomRange, randomRange) : 0f);
+            float newPositionZ = currentPosition.z + (positionZ ? Random.Range(-randomRange, randomRange) : 0f);
 
-            float newX = currentPosition.x + (x ? Random.Range(-randomRange, randomRange) : 0f);
-            float newY = currentPosition.y + (y ? Random.Range(-randomRange, randomRange) : 0f);
-            float newZ = currentPosition.z + (z ? Random.Range(-randomRange, randomRange) : 0f);
+            Vector3 currentRotation = selectedObject.transform.eulerAngles;
+            float newRotationX = rotationX ? Random.Range(0f, 360f) : 0f;
+            float newRotationY = rotationY ? Random.Range(0f, 360f) : 0f;
+            float newRotationZ = rotationZ ? Random.Range(0f, 360f) : 0f;
 
-            selectedObject.transform.position = new Vector3(newX, newY, newZ);
+            selectedObject.transform.position = new(newPositionX, newPositionY, newPositionZ);
+            selectedObject.transform.rotation = Quaternion.Euler(newRotationX, newRotationY, newRotationZ);
         }
     }
 }

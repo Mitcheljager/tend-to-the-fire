@@ -32,7 +32,7 @@ public class AlignSelectedObjectsWithGround : EditorWindow {
         foreach (GameObject selectedObject in selectedObjects) {
             Vector3 currentPosition = selectedObject.transform.position;
 
-            if (!Physics.Raycast(currentPosition + Vector3.up * 5f, Vector3.down, out RaycastHit hit, 10f, placementMask)) return;
+            if (!Physics.Raycast(currentPosition + Vector3.up * 10f, Vector3.down, out RaycastHit hit, 20f, placementMask)) return;
 
             selectedObject.transform.position = new Vector3(currentPosition.x, hit.point.y + offset, currentPosition.z);
         }
