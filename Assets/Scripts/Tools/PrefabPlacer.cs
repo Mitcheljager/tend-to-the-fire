@@ -110,7 +110,7 @@ public class PrefabPlacer : EditorWindow {
     }
 
     private void OnSceneGUI(SceneView sceneView) {
-        if (!isPlacing || selectedPrefab == null) return;
+        if (!isPlacing || selectedPrefab == null || Event.current.alt) return;
 
         Event mouseEvent = Event.current;
 
