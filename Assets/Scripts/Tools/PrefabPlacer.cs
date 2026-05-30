@@ -35,7 +35,7 @@ public class PrefabPlacer : EditorWindow {
         if (EditorGUI.EndChangeCheck()) RefreshPreview();
 
         alignToSurface = EditorGUILayout.Toggle("Align to surface normal", alignToSurface);
-        offset  = EditorGUILayout.FloatField("Offset", offset);
+        offset = EditorGUILayout.FloatField("Offset", offset);
 
         LayerMask mask = EditorGUILayout.MaskField(
             "Placement Layers",
@@ -118,7 +118,7 @@ public class PrefabPlacer : EditorWindow {
 
         Ray ray = HandleUtility.GUIPointToWorldRay(mouseEvent.mousePosition);
 
-        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, placementMask)) return;
+        if (!Physics.Raycast(ray, out RaycastHit hit, 1000f, placementMask)) return;
 
         Vector3 position = hit.point + hit.normal * offset;
         Quaternion rotation = alignToSurface ? Quaternion.FromToRotation(Vector3.up, hit.normal) : Quaternion.identity;

@@ -28,11 +28,11 @@ public class RandomizeSelectedObjects : EditorWindow {
         Undo.RecordObjects(System.Array.ConvertAll(selectedObjects, selectedObject => (Object)selectedObject.transform), "Randomize positions");
 
         foreach (GameObject selectedObject in selectedObjects) {
-            Vector3 original = selectedObject.transform.position;
+            Vector3 currentPosition = selectedObject.transform.position;
 
-            float newX = original.x + (x ? Random.Range(-randomRange, randomRange) : 0f);
-            float newY = original.y + (y ? Random.Range(-randomRange, randomRange) : 0f);
-            float newZ = original.z + (z ? Random.Range(-randomRange, randomRange) : 0f);
+            float newX = currentPosition.x + (x ? Random.Range(-randomRange, randomRange) : 0f);
+            float newY = currentPosition.y + (y ? Random.Range(-randomRange, randomRange) : 0f);
+            float newZ = currentPosition.z + (z ? Random.Range(-randomRange, randomRange) : 0f);
 
             selectedObject.transform.position = new Vector3(newX, newY, newZ);
         }
