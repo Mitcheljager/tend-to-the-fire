@@ -84,7 +84,7 @@ public class EnemyManager : MonoBehaviour {
     }
 
     // https://discussions.unity.com/t/random-point-within-circle-with-min-max-radius/724904/14
-    public Vector3 FindRandomPointAlongRadius(Vector3 origin, float minRadius, float maxRadius){
+    public Vector3 FindRandomPointAlongRadius(Vector3 origin, float minRadius, float maxRadius) {
         Vector2 direction = Random.insideUnitCircle.normalized;
         float distance = Random.Range(minRadius, maxRadius);
 
