@@ -3,7 +3,7 @@ using UnityEditor;
 
 public class AlignSelectedObjectsWithGround : EditorWindow {
     private float offset = 0f;
-    private LayerMask placementMask = ~0;
+    private LayerMask placementMask = 1 << 3;
 
     [MenuItem("Tools/Align selected objects with ground")]
     public static void ShowWindow() {

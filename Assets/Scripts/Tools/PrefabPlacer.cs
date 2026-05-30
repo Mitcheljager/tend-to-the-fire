@@ -6,7 +6,7 @@ public class PrefabPlacer : EditorWindow {
     private bool isPlacing = false;
     private bool alignToSurface = true;
     private float offset = 0f;
-    private LayerMask placementMask = ~0;
+    private LayerMask placementMask = (1 << 0) | (1 << 3);
 
     private GameObject previewInstance;
 
