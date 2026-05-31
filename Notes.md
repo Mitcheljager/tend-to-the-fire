@@ -5,6 +5,7 @@
 - Something looms in the darkness, keeping the fire going keeps it at bay
 - Perhaps the thing that looms can be heard
 - Hearing the thing might be difficult, closing your eyes focuses on the sound instead, boosting the sound of whatever it is that looms
+- Enemies get closer as you lose some sort of sanity, perhaps sanity can be gauged by your heartbeat when you close your eyes?
 
 ## Story
 - Story is told through occassional text
