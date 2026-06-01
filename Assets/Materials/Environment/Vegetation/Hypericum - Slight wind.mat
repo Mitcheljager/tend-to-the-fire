@@ -107,6 +107,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _Exclude_trunk: 0
     - _Final_saturation: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
@@ -128,10 +129,11 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _Trunk_thickness: 1
     - _Use_gradient_noise: 1
     - _Wind_noise_scale: 0.5
     - _Wind_speed: 0.2
-    - _Wind_strength: 0.25
+    - _Wind_strength: 0.025
     - _Wind_variance: 0.5
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
