@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Boulder Heavy Undergrowth - World Space
+  m_Name: Boulder Undergrowth Heavy - World Space
   m_Shader: {fileID: -6465566751694194690, guid: 3bf1471fe2786e64a8fc7dcc70bab368, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -144,7 +144,7 @@ Material:
     - _Undergrowth_Contrast: 1.01
     - _Undergrowth_Depth: 0.8
     - _Undergrowth_Multiplier: 10.49
-    - _Undergrowth_Saturation: 1.5
+    - _Undergrowth_Saturation: 0.98
     - _Undergrowth_Thickness: 3.93
     - _Use_Overgrowth: 0
     - _Use_Undergrowth: 1
