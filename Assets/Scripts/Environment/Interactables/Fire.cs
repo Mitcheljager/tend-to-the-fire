@@ -77,7 +77,7 @@ public class Fire : Interactable {
 
     private void DecreaseActiveFuel() {
         foreach (Fuel fuel in activeFuel) {
-            fuel.DecreaseCurrentFuel(Time.deltaTime * fuelConsumptionPerSecond);
+            fuel.DecreaseCurrentFuel(Time.deltaTime * fuelConsumptionPerSecond / activeFuel.Count);
         }
 
         activeFuel = activeFuel.Where(fuel => fuel.currentFuel > 0).ToList();
