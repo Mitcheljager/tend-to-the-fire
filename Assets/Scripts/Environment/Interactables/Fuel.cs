@@ -6,6 +6,7 @@ public class Fuel : Interactable {
     public Renderer[] materialRenderers;
     [Header("State")]
     [Fade] public float currentFuel = 0;
+    [Fade] [Range(0f, 1f)] public float currentFuelNormalized = 1f;
 
     private PlayerInventory playerInventory;
 
@@ -27,6 +28,7 @@ public class Fuel : Interactable {
 
     public void DecreaseCurrentFuel(float amount) {
         currentFuel -= amount;
+        currentFuelNormalized = 1 / maxFuel * currentFuel;
 
         if (currentFuel <= 0) DestroyFuel();
 

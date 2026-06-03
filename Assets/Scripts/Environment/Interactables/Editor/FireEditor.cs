@@ -25,5 +25,15 @@ public class FireEditor : Editor {
 
             fire.activeFuel.Add(fuel);
         }
+
+        EditorGUILayout.LabelField("Fuel progress", EditorStyles.boldLabel);
+
+        foreach (Fuel fuel in fire.activeFuel) {
+            EditorGUILayout.Slider(fuel.gameObject.name, fuel.currentFuelNormalized, 0f, 1f);
+        }
+
+        if (fire.activeFuel.Count == 0) {
+            EditorGUILayout.LabelField("No active fuel");
+        }
     }
 }
