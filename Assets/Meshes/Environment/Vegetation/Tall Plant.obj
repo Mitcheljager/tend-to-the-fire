@@ -1,7 +1,4 @@
-# Blender v3.2.0 OBJ File: 'tall-plant.blend'
-# www.blender.org
-mtllib Tall Plant.mtl
-o Plane
+o Tall Plant
 v 0.000000 1.500000 -0.375000
 v 0.000000 -0.000000 -0.375000
 v 0.000000 1.500000 0.375000
