@@ -42,3 +42,4 @@ These trees all around you
 ## Quotes from media
 - A home and a repository of memories from an unremarkable life, lived at the fringes of a life I once wanted for myself
 - No one is left to listen
+- But what would befall the trees beyond the roads? Might plants thrive in the rusted light? The insects? As the earth entered a new age, the myriad systems ad cycles of nature would surely be altered. And such epochal notions were suffocating. They mocked his every reason for driving the car. Why was he looking for the boy's sister and endeavouring to discover if the sea could prolong their existence?
