@@ -3678,7 +3678,7 @@ MonoBehaviour:
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
   m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
-  m_SceneIsLit: 0
+  m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
@@ -3686,9 +3686,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0.13589849, y: -1.413282, z: -1.0993611}
+    m_Target: {x: 0.57367754, y: 5.9891047, z: -5.6388216}
     speed: 2
-    m_Value: {x: 0.13589849, y: -1.413282, z: -1.0993611}
+    m_Value: {x: 1.649933, y: 0.68511873, z: -2.4114208}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -3734,13 +3734,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.32312435, y: -0.022190409, z: -0.00819324, w: -0.9471523}
+    m_Target: {x: -0.12883978, y: 0.07829947, z: -0.022726512, w: -0.98938215}
     speed: 2
-    m_Value: {x: -0.32312435, y: -0.022190409, z: -0.00819324, w: -0.9471523}
+    m_Value: {x: -0.23531894, y: -0.04564747, z: -0.0018454383, w: -0.97193563}
   m_Size:
-    m_Target: 6.971266
+    m_Target: 14.638489
     speed: 2
-    m_Value: 6.971266
+    m_Value: 5.318897
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -3941,7 +3941,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 400}
     m_SelectedIDs: 90dd0000
     m_LastClickedID: 56720
-    m_ExpandedIDs: 00000000b6dc0000b8dc0000badc0000bcdc0000bedc0000c0dc0000c2dc0000c4dc0000c6dc0000c8dc0000cadc0000ccdc0000cedc0000
+    m_ExpandedIDs: 000000001c0101001e01010020010100220101002401010026010100280101002a0101002c0101002e010100300101003201010034010100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -3970,7 +3970,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b6dc0000b8dc0000badc0000bcdc0000bedc0000c0dc0000c2dc0000c4dc0000c6dc0000c8dc0000cadc0000ccdc0000cedc0000
+    m_ExpandedIDs: 000000001c0101001e01010020010100220101002401010026010100280101002a0101002c0101002e010100300101003201010034010100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
