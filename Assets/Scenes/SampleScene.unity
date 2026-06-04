@@ -5940,6 +5940,7 @@ GameObject:
   - component: {fileID: 338374884}
   - component: {fileID: 338374883}
   - component: {fileID: 338374885}
+  - component: {fileID: 338374886}
   m_Layer: 0
   m_Name: Ambient
   m_TagString: Untagged
@@ -6072,6 +6073,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeInAudio
   fadeTimeSeconds: 5
+--- !u!114 &338374886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338374882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb9dab8adb07d1c4da7d3ae05f8fff14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FluctuateAudioVolume
+  initialDelaySeconds: 10
+  volumeRange: {x: 0.2, y: 0.6}
+  fadeTimeRangeSeconds: {x: 2, y: 10}
+  fadeWaitRangeSeconds: {x: 2, y: 10}
 --- !u!4 &346713713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6062440830717827321, guid: 091a92d64ee380c4aa8965eb2dc63469, type: 3}
@@ -17918,13 +17935,13 @@ MonoBehaviour:
   vertexSnapSize: 32
   vertexSnapDistance: 3
   materials:
-  - {fileID: 2100000, guid: c1c6a78b7af95564a99a8eeff2658104, type: 2}
+  - {fileID: 2100000, guid: 5309540e81dbf5b4694edea1d141882f, type: 2}
   - {fileID: 2100000, guid: a06439533ece5ae44b0102b6e1f00c91, type: 2}
   - {fileID: 2100000, guid: 4c3ea82aad1726a40a19c2df8d4f2064, type: 2}
   - {fileID: 2100000, guid: 82677eb6cd7dc5a479c66cc32f3e72e5, type: 2}
-  - {fileID: 2100000, guid: 8ebe7877bb17ab447b1dfd2d93b50de0, type: 2}
-  - {fileID: 2100000, guid: 5309540e81dbf5b4694edea1d141882f, type: 2}
   - {fileID: 2100000, guid: 82e8a83073ed212498bf498bd7f4fb58, type: 2}
+  - {fileID: 2100000, guid: 8ebe7877bb17ab447b1dfd2d93b50de0, type: 2}
+  - {fileID: 2100000, guid: c1c6a78b7af95564a99a8eeff2658104, type: 2}
   - {fileID: 2100000, guid: c51f3d1d8cccf0e4284b74f8f6326f85, type: 2}
   - {fileID: 2100000, guid: 4bed1cf04766a1044a007c30ddfa6c13, type: 2}
 --- !u!4 &1067460667
