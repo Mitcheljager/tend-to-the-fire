@@ -4,6 +4,7 @@ public class Interactable : MonoBehaviour {
     public string interactText;
     public Sprite interactImage;
     public GameObject[] meshes;
+    public Collider interactableCollider;
 
     public virtual void Interact() {
     }

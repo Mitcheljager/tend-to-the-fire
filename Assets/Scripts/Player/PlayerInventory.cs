@@ -24,6 +24,7 @@ public class PlayerInventory : MonoBehaviour {
         carryingFuel.Add(fuel);
 
         SetFuelMeshesActive(fuel, false);
+        fuel.interactableCollider.enabled = false;
 
         fuel.transform.parent = transform;
         fuel.transform.localPosition = Vector3.zero;
@@ -58,6 +59,7 @@ public class PlayerInventory : MonoBehaviour {
             );
 
             SetFuelMeshesActive(fuel, true);
+            fuel.interactableCollider.enabled = true;
         }
 
         carryingFuel.Clear();
