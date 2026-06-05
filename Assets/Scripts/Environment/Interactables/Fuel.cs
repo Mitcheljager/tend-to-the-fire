@@ -11,7 +11,7 @@ public class Fuel : Interactable {
     private PlayerInventory playerInventory;
 
     void OnDrawGizmos() {
-        if (this.enabled) Gizmos.DrawIcon(transform.position, "fuel.png", false);
+        if (this.enabled) Gizmos.DrawIcon(transform.position, "fuel.png", false, Color.orangeRed);
     }
 
     void Start() {
