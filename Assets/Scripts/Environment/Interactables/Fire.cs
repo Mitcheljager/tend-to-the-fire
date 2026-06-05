@@ -12,6 +12,7 @@ public class Fire : Interactable {
     public AnimationCurve lightIntensityCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     public AnimationCurve totalSafetyCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
+    public FireEffects fireEffects;
     [Header("Fluff")]
     public string interactTextAble = "Tend to the fire";
     public string interactTextUnable = "You have nothing left";
@@ -89,5 +90,7 @@ public class Fire : Interactable {
         Fuel fuel = playerInventory.carryingFuel[0];
 
         playerInventory.UseFuel(fuel, this);
+
+        fireEffects.BurstEmbers(Mathf.Min((activeFuel.Count - 1) * Mathf.CeilToInt(fuel.maxFuel / 10), 5));
     }
 }

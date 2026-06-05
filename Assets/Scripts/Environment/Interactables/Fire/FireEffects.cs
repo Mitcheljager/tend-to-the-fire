@@ -21,6 +21,11 @@ public class FireEffects : MonoBehaviour {
         SetEffectValues();
     }
 
+    public void BurstEmbers(int amount) {
+        embersEffect.SetInt("Burst Count", amount);
+        embersEffect.SendEvent("OnBurst");
+    }
+
     private void SetEffectValues() {
         embersEffect.SetFloat("Rate", embersEffectRateCurve.Evaluate(fire.currentMultiplier));
         embersEffect.SetFloat("Max Y Velocity", embersEffectMaxVelocityCurve.Evaluate(fire.currentMultiplier));
