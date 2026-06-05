@@ -7,8 +7,12 @@ public class PlayerState : MonoBehaviour {
 
     private Fire fire;
 
-    void Update() {
+    void Start() {
         fire = FindFirstObjectByType<Fire>();
+    }
+
+    void Update() {
+        if (fire == null) return;
 
         bool wasInTotalSafetyRange = isInTotalSafetyRange;
         isInTotalSafetyRange = IsInTotalSafetyRange();
