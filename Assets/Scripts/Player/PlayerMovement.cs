@@ -7,9 +7,11 @@ public class PlayerMovement : MonoBehaviour {
     public PlayerCamera playerCamera;
     public PlayerStamina playerStamina;
     public PlayerRest playerRest;
+    public PlayerSlow playerSlow;
     [Header("Movement")]
     public float baseSpeed = 2f;
     public float runSpeed = 4f;
+    public float slowSpeed = 1f;
     public bool isRunning = false;
     public float staminaRunningCutoff = 0.25f;
     [Header("Gravity")]
@@ -67,7 +69,9 @@ public class PlayerMovement : MonoBehaviour {
             return;
         }
 
-        currentSpeed = isRunning ? runSpeed : baseSpeed;
+        if (playerSlow.IsPlayerBeingSlowed()) currentSpeed = slowSpeed;
+        else if (isRunning) currentSpeed = runSpeed;
+        else currentSpeed = baseSpeed;
     }
 
     private void SetMovementValues() {
