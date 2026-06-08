@@ -14,10 +14,14 @@ public class FuelSpawner : MonoBehaviour {
     public void Spawn() {
         if (!fuelSpawnersManager) fuelSpawnersManager = FindAnyObjectByType<FuelSpawnersManager>();
 
-        GameObject prefab = fuelPrefabs[Random.Range(0, fuelPrefabs.Length)];
+        if (!Physics.Raycast(transform.position + Vector3.up, Vector3.down, out RaycastHit hit, 5f)) return;
+
+        Vector3 position = hit.point;
+        Quaternion rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
         Quaternion randomRotation = Quaternion.Euler(0f, Random.Range(0, 360f), 0f);
 
-        GameObject instantiatedObject = Instantiate(prefab, transform.position, randomRotation);
+        GameObject prefab = fuelPrefabs[Random.Range(0, fuelPrefabs.Length)];
+        GameObject instantiatedObject = Instantiate(prefab, position, rotation * randomRotation);
         instantiatedObject.transform.parent = transform;
 
         Fuel fuel = instantiatedObject.GetComponent<Fuel>();
