@@ -127,14 +127,11 @@ public class PrefabPlacer : EditorWindow {
 
         Ray ray = HandleUtility.GUIPointToWorldRay(mouseEvent.mousePosition);
 
-        if (!Physics.Raycast(ray, out RaycastHit hit, 1000f, placementMask)) return;
+        if (!Physics.Raycast(ray, out RaycastHit cursorHit, 1000f, placementMask)) return;
 
         int index = 0;
         foreach (GameObject previewInstance in previewInstances) {
-            Vector3 position = hit.point + hit.normal * offset;
-            Quaternion rotation = alignToSurface ? Quaternion.FromToRotation(Vector3.up, hit.normal) : Quaternion.identity;
-
-            Random.InitState((int)(position.magnitude * 1000 + index));
+            Random.InitState((int)(cursorHit.point.magnitude * 1000 + index));
 
             Vector3 randomPositionOffset = new(
                 Random.Range(-randomPositionWithinRange.x, randomPositionWithinRange.x),
@@ -144,15 +141,20 @@ public class PrefabPlacer : EditorWindow {
 
             float randomYRotation = Random.Range(0f, 360f);
 
-            previewInstance.transform.position = position + randomPositionOffset;
-            previewInstance.transform.rotation = rotation * Quaternion.Euler(0f, randomYRotation, 0f);
+            if (!Physics.Raycast(cursorHit.point + randomPositionOffset + Vector3.up * 20f, Vector3.down, out RaycastHit hit, 50f, placementMask)) return;
+
+            Vector3 position = hit.point + hit.normal * offset;
+            Quaternion rotation = alignToSurface ? Quaternion.FromToRotation(Vector3.up, hit.normal) : Quaternion.identity;
+
+            previewInstance.transform.position = position;
+            previewInstance.transform.rotation = randomRotationY ? rotation * Quaternion.Euler(0f, randomYRotation, 0f) : rotation;
 
             index++;
         }
 
         Handles.color = new Color(0.2f, 0.9f, 0.2f, 0.8f);
-        Handles.DrawWireDisc(hit.point, hit.normal, Mathf.Max(0.5f, randomPositionWithinRange.x, randomPositionWithinRange.z));
-        Handles.DrawLine(hit.point, hit.point + hit.normal * 0.75f);
+        Handles.DrawWireDisc(cursorHit.point, cursorHit.normal, Mathf.Max(0.5f, randomPositionWithinRange.x, randomPositionWithinRange.z));
+        Handles.DrawLine(cursorHit.point, cursorHit.point + cursorHit.normal * 0.75f);
 
         if (mouseEvent.type == EventType.MouseDown && mouseEvent.button == 0) {
             PlacePrefabs();
