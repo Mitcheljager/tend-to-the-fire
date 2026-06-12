@@ -1,14 +1,19 @@
 using UnityEngine;
 using UnityEditor;
+using System.Collections.Generic;
+using System.Linq;
 
 public class PrefabPlacer : EditorWindow {
     private GameObject selectedPrefab;
     private bool isPlacing = false;
     private bool alignToSurface = true;
+    public bool randomRotationY = true;
+    public int numberOfObjects = 1;
     private float offset = 0f;
+    private Vector3 randomPositionWithinRange = new();
     private LayerMask placementMask = (1 << 0) | (1 << 3);
 
-    private GameObject previewInstance;
+    private List<GameObject> previewInstances;
 
     [MenuItem("Tools/Prefab placer")]
     public static void ShowWindow() {
@@ -35,7 +40,10 @@ public class PrefabPlacer : EditorWindow {
         if (EditorGUI.EndChangeCheck()) RefreshPreview();
 
         alignToSurface = EditorGUILayout.Toggle("Align to surface normal", alignToSurface);
+        randomRotationY = EditorGUILayout.Toggle("Random rotation y", randomRotationY);
+        numberOfObjects = EditorGUILayout.IntField("Number of objects", numberOfObjects);
         offset = EditorGUILayout.FloatField("Offset", offset);
+        randomPositionWithinRange = EditorGUILayout.Vector3Field("Random position within range", randomPositionWithinRange);
 
         LayerMask mask = EditorGUILayout.MaskField(
             "Placement Layers",
@@ -84,18 +92,19 @@ public class PrefabPlacer : EditorWindow {
 
         if (selectedPrefab == null) return;
 
-        previewInstance = (GameObject)PrefabUtility.InstantiatePrefab(selectedPrefab);
-        previewInstance.name = "__PrefabPlacerPreview__";
-        previewInstance.hideFlags = HideFlags.HideAndDontSave;
+        for (int index = 0; index < numberOfObjects; index++) {
+            previewInstances.Add((GameObject)PrefabUtility.InstantiatePrefab(selectedPrefab));
+            previewInstances.Last().name = "__PrefabPlacerPreview__";
+            previewInstances.Last().hideFlags = HideFlags.HideAndDontSave;
 
-        SetPreviewInteractable(previewInstance, false);
+            SetPreviewInteractable(previewInstances.Last(), false);
+        }
     }
 
     private void DestroyPreview() {
-        if (previewInstance != null) {
-            DestroyImmediate(previewInstance);
-
-            previewInstance = null;
+        while(previewInstances.Count > 0) {
+            DestroyImmediate(previewInstances.Last());
+            previewInstances.Remove(previewInstances.Last());
         }
     }
 
@@ -120,19 +129,33 @@ public class PrefabPlacer : EditorWindow {
 
         if (!Physics.Raycast(ray, out RaycastHit hit, 1000f, placementMask)) return;
 
-        Vector3 position = hit.point + hit.normal * offset;
-        Quaternion rotation = alignToSurface ? Quaternion.FromToRotation(Vector3.up, hit.normal) : Quaternion.identity;
+        int index = 0;
+        foreach (GameObject previewInstance in previewInstances) {
+            Vector3 position = hit.point + hit.normal * offset;
+            Quaternion rotation = alignToSurface ? Quaternion.FromToRotation(Vector3.up, hit.normal) : Quaternion.identity;
 
-        if (previewInstance != null) {
-            previewInstance.transform.SetPositionAndRotation(position, rotation);
+            Random.InitState((int)(position.magnitude * 1000 + index));
+
+            Vector3 randomPositionOffset = new(
+                Random.Range(-randomPositionWithinRange.x, randomPositionWithinRange.x),
+                Random.Range(-randomPositionWithinRange.y, randomPositionWithinRange.y),
+                Random.Range(-randomPositionWithinRange.z, randomPositionWithinRange.z)
+            );
+
+            float randomYRotation = Random.Range(0f, 360f);
+
+            previewInstance.transform.position = position + randomPositionOffset;
+            previewInstance.transform.rotation = rotation * Quaternion.Euler(0f, randomYRotation, 0f);
+
+            index++;
         }
 
         Handles.color = new Color(0.2f, 0.9f, 0.2f, 0.8f);
-        Handles.DrawWireDisc(hit.point, hit.normal, 0.5f);
+        Handles.DrawWireDisc(hit.point, hit.normal, Mathf.Max(0.5f, randomPositionWithinRange.x, randomPositionWithinRange.z));
         Handles.DrawLine(hit.point, hit.point + hit.normal * 0.75f);
 
         if (mouseEvent.type == EventType.MouseDown && mouseEvent.button == 0) {
-            PlacePrefab(position, rotation);
+            PlacePrefabs();
 
             mouseEvent.Use();
         }
@@ -140,14 +163,18 @@ public class PrefabPlacer : EditorWindow {
         sceneView.Repaint();
     }
 
-    private void PlacePrefab(Vector3 position, Quaternion rotation) {
-        if (selectedPrefab == null) return;
+    private void PlacePrefabs() {
+        foreach (GameObject previewInstance in previewInstances) {
+            GameObject placed = (GameObject)PrefabUtility.InstantiatePrefab(selectedPrefab);
 
-        GameObject placed = (GameObject)PrefabUtility.InstantiatePrefab(selectedPrefab);
-        placed.transform.SetPositionAndRotation(position, rotation);
+            Debug.Log(previewInstance.transform.position);
 
-        GameObjectUtility.EnsureUniqueNameForSibling(placed);
+            placed.transform.position = previewInstance.transform.position;
+            placed.transform.rotation = previewInstance.transform.rotation;
 
-        Undo.RegisterCreatedObjectUndo(placed, $"Place {selectedPrefab.name}");
+            GameObjectUtility.EnsureUniqueNameForSibling(placed);
+
+            Undo.RegisterCreatedObjectUndo(placed, $"Place {selectedPrefab.name}");
+        }
     }
 }
