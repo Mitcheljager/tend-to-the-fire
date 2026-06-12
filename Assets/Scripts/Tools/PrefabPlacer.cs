@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 
 public class PrefabPlacer : EditorWindow {
-    private GameObject selectedPrefab;
+    public List<GameObject> possiblePrefabs = new();
     private bool isPlacing = false;
     private bool alignToSurface = true;
-    public bool randomRotationY = true;
-    public int numberOfObjects = 1;
+    private bool randomRotationY = true;
+    private int numberOfObjects = 1;
     private float offset = 0f;
     private Vector3 randomPositionWithinRange = new();
     private LayerMask placementMask = (1 << 0) | (1 << 3);
 
-    private List<GameObject> previewInstances;
+    private List<GameObject> previewInstances = new();
+    private List<GameObject> previewSourcePrefabs = new();
 
     [MenuItem("Tools/Prefab placer")]
     public static void ShowWindow() {
@@ -31,11 +32,11 @@ public class PrefabPlacer : EditorWindow {
     }
 
     private void OnGUI() {
-        EditorGUI.BeginChangeCheck();
+        SerializedObject serializedObject = new(this);
+        SerializedProperty prefabsProp = serializedObject.FindProperty("possiblePrefabs");
 
-        selectedPrefab = (GameObject)EditorGUILayout.ObjectField(
-            "Prefab", selectedPrefab, typeof(GameObject), false
-        );
+        EditorGUILayout.PropertyField(prefabsProp, new GUIContent("Prefabs"), true);
+        serializedObject.ApplyModifiedProperties();
 
         if (EditorGUI.EndChangeCheck()) RefreshPreview();
 
@@ -72,7 +73,7 @@ public class PrefabPlacer : EditorWindow {
     }
 
     private void StartPlacing() {
-        if (selectedPrefab == null) return;
+        if (possiblePrefabs.Count == 0) return;
 
         isPlacing = true;
 
@@ -90,9 +91,16 @@ public class PrefabPlacer : EditorWindow {
     private void CreatePreview() {
         DestroyPreview();
 
-        if (selectedPrefab == null) return;
+        if (possiblePrefabs.Count == 0) return;
+
+        previewInstances = new List<GameObject>();
+        previewSourcePrefabs = new List<GameObject>();
 
         for (int index = 0; index < numberOfObjects; index++) {
+            GameObject selectedPrefab = possiblePrefabs[Random.Range(0, possiblePrefabs.Count)];
+
+            previewSourcePrefabs.Add(selectedPrefab);
+
             previewInstances.Add((GameObject)PrefabUtility.InstantiatePrefab(selectedPrefab));
             previewInstances.Last().name = "__PrefabPlacerPreview__";
             previewInstances.Last().hideFlags = HideFlags.HideAndDontSave;
@@ -119,7 +127,7 @@ public class PrefabPlacer : EditorWindow {
     }
 
     private void OnSceneGUI(SceneView sceneView) {
-        if (!isPlacing || selectedPrefab == null || Event.current.alt) return;
+        if (!isPlacing || possiblePrefabs.Count == 0 || Event.current.alt) return;
 
         Event mouseEvent = Event.current;
 
@@ -166,17 +174,16 @@ public class PrefabPlacer : EditorWindow {
     }
 
     private void PlacePrefabs() {
-        foreach (GameObject previewInstance in previewInstances) {
-            GameObject placed = (GameObject)PrefabUtility.InstantiatePrefab(selectedPrefab);
-
-            Debug.Log(previewInstance.transform.position);
+        for (int i = 0; i < previewInstances.Count; i++) {
+            GameObject previewInstance = previewInstances[i];
+            GameObject placed = (GameObject)PrefabUtility.InstantiatePrefab(previewSourcePrefabs[i]);
 
             placed.transform.position = previewInstance.transform.position;
             placed.transform.rotation = previewInstance.transform.rotation;
 
             GameObjectUtility.EnsureUniqueNameForSibling(placed);
 
-            Undo.RegisterCreatedObjectUndo(placed, $"Place {selectedPrefab.name}");
+            Undo.RegisterCreatedObjectUndo(placed, $"Place {placed.name}");
         }
     }
 }
