@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3737667269463062422}
   - component: {fileID: 1109938707931158961}
   m_Layer: 0
-  m_Name: Black Eyed Susan
+  m_Name: Paver Rhoeas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 756d880cb9100e941b22f4e784d09f17, type: 2}
+  - {fileID: 2100000, guid: 0347568418dad20488b107916f44299c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
