@@ -118,7 +118,7 @@ Material:
     - _Noise_strength: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _Pixel_noise_strength: 0.5
+    - _Pixel_noise_strength: 0.3
     - _Pixel_size: 50
     - _QueueControl: 0
     - _QueueOffset: 0
