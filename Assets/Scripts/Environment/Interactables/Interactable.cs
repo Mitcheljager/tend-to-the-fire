@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class Interactable : MonoBehaviour {
+    [Header("Interactable")]
     public string interactText;
     public Sprite interactImage;
     public GameObject[] meshes;

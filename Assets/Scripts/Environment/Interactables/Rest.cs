@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class Rest : Interactable {
+    [Separator]
     public Transform cameraPosition;
 
     private PlayerRest playerRest;

@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 public class Fire : Interactable {
+    [Separator]
     [Header("Config")]
     public float maxLightRange = 20f;
     public float maxLightIntensity;
