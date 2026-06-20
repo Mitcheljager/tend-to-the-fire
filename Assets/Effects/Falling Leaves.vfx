@@ -3524,7 +3524,7 @@ MonoBehaviour:
   - {fileID: 114350483966675229}
   m_ExposedName: Max Lifetime
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:

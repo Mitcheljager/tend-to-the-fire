@@ -140,7 +140,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Tiling: 0.6
+    - _Tiling: 0.4
     - _Undergrowth_Contrast: 8.34
     - _Undergrowth_Depth: 1.16
     - _Undergrowth_Multiplier: 0.27
