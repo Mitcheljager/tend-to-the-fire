@@ -51,7 +51,8 @@
         "ProjectSettings/": true,
         "UserSettings/": true,
         "temp/": true,
-        "Temp/": true
+        "Temp/": true,
+        "Packages/**/": true,
     },
     "dotnet.defaultSolution": "Tend to the Fire.slnx"
 }
