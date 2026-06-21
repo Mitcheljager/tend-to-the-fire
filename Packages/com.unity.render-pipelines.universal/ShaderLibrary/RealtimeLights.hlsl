@@ -42,21 +42,20 @@ struct Light
 //                        Attenuation Functions                               /
 ///////////////////////////////////////////////////////////////////////////////
 
-// Matches Unity Vanilla HINT_NICE_QUALITY attenuation
-// Attenuation smoothly decreases to light range.
-float DistanceAttenuation(float distanceSqr, half2 distanceAttenuation)
+// Matches between quadratic and inverse-square attenuation
+float DistanceAttenuation(float distanceSqr, float2 distanceAndSpotAttenuation)
 {
-    // We use a shared distance attenuation for additional directional and puctual lights
-    // for directional lights attenuation will be 1
-    float lightAtten = rcp(distanceSqr);
-    float2 distanceAttenuationFloat = float2(distanceAttenuation);
+    float distance = sqrt(distanceSqr);
+    float range = rsqrt(distanceAndSpotAttenuation.x);
+    float distance01 = saturate(1.0f - (distance / range));
 
-    // Use the smoothing factor also used in the Unity lightmapper.
-    half factor = half(distanceSqr * distanceAttenuationFloat.x);
-    half smoothFactor = saturate(half(1.0) - factor * factor);
-    smoothFactor = smoothFactor * smoothFactor;
+    float invSquare = rcp(max(distanceSqr, 1e-4));
+    float quadratic = pow(distance01, 2.0f) * smoothstep(0.0f, 1.0f, distance01);
 
-    return lightAtten * smoothFactor;
+    const float coreStrength = 0.5f; // 0 = pure quadratic, 1 = pure inverse-square core
+    float lightAtten = lerp(quadratic, invSquare * (distance01 * distance01), coreStrength);
+
+    return lightAtten;
 }
 
 half AngleAttenuation(half3 spotDirection, half3 lightDirection, half2 spotAttenuation)
