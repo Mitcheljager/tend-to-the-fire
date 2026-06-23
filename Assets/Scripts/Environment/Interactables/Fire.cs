@@ -41,7 +41,9 @@ public class Fire : Interactable {
         playerInventory = FindFirstObjectByType<PlayerInventory>();
     }
 
-    void Update() {
+    public override void Update() {
+        base.Update();
+
         DecreaseActiveFuel();
         SetCurrentFuel();
         SetFireSize();

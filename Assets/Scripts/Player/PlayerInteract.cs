@@ -10,6 +10,7 @@ public class PlayerInteract : MonoBehaviour {
     [Header("Mask")]
     public LayerMask layerMask;
     public int interactableLayerIndex = 0;
+    public int interactableInRangeLayerIndex = 0;
     public int interactableSelectedLayerIndex = 0;
     [Header("Interact limits")]
     public float interactRange = 2f;
@@ -18,7 +19,7 @@ public class PlayerInteract : MonoBehaviour {
 
     void Update() {
         if (lastSelectedInteractable) {
-            foreach(GameObject mesh in lastSelectedInteractable.meshes) mesh.layer = interactableLayerIndex;
+            lastSelectedInteractable.SetLayer(interactableLayerIndex);
             lastSelectedInteractable = null;
         }
 
@@ -27,13 +28,17 @@ public class PlayerInteract : MonoBehaviour {
 
         if (interactable) {
             lastSelectedInteractable = interactable;
-            foreach(GameObject mesh in lastSelectedInteractable.meshes) mesh.layer = interactableSelectedLayerIndex;
+            lastSelectedInteractable.SetLayer(interactableSelectedLayerIndex);
         }
 
         interactImage.gameObject.SetActive(interactable);
         if (interactable && Input.GetButtonDown("Interact")) interactable.Interact();
 
         Debug.DrawLine(transform.position, endTransform.position, interactable ? Color.green : Color.red);
+    }
+
+    void LateUpdate() {
+        if (lastSelectedInteractable) lastSelectedInteractable.SetLayer(interactableSelectedLayerIndex);
     }
 
     private Interactable UpdateInteractTooltip(GameObject hitObject) {

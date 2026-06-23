@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8600473022431097946}
   - component: {fileID: 4943784868046231268}
   - component: {fileID: 5046733453766902505}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,6 +140,7 @@ MonoBehaviour:
   meshes:
   - {fileID: 3007533238936613417}
   interactableCollider: {fileID: 1795887789496423131}
+  interactableOutlineRange: 30
   maxFuel: 10
   weight: 2
   materialRenderers:
