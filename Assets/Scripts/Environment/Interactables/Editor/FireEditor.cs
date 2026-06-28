@@ -28,6 +28,4 @@ public class FireEditor : Editor {
             EditorGUILayout.LabelField("No active fuel");
         }
     }
-
-
 }
