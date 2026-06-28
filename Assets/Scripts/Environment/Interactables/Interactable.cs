@@ -32,6 +32,8 @@ public class Interactable : MonoBehaviour {
     }
 
     public void SetLayer(int layerIndex) {
+        if (meshes == null) return;
+
         foreach(GameObject mesh in meshes) mesh.layer = layerIndex;
     }
 }

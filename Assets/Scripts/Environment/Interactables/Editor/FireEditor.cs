@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.UIElements;
+using System.Linq;
 
 [CustomEditor(typeof(Fire))]
 public class FireEditor : Editor {
@@ -9,21 +11,11 @@ public class FireEditor : Editor {
         Fire fire = (Fire)target;
 
         if (EditorApplication.isPlaying && GUILayout.Button("Add max fuel")) {
-            GameObject fuelObject = new("Editor created fuel");
-            fuelObject.AddComponent<Fuel>();
-            Fuel fuel = fuelObject.GetComponent<Fuel>();
-            fuel.maxFuel = fire.maxFuel;
-
-            fire.activeFuel.Add(fuel);
+            fire.AddEditorFuel(fire.maxFuel);
         }
 
         if (EditorApplication.isPlaying && GUILayout.Button("Add 5 fuel")) {
-            GameObject fuelObject = new("Editor created fuel");
-            fuelObject.AddComponent<Fuel>();
-            Fuel fuel = fuelObject.GetComponent<Fuel>();
-            fuel.maxFuel = 5f;
-
-            fire.activeFuel.Add(fuel);
+            fire.AddEditorFuel(5);
         }
 
         EditorGUILayout.LabelField("Fuel progress", EditorStyles.boldLabel);
@@ -36,4 +28,6 @@ public class FireEditor : Editor {
             EditorGUILayout.LabelField("No active fuel");
         }
     }
+
+
 }

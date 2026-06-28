@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class Fire : Interactable {
@@ -47,6 +48,10 @@ public class Fire : Interactable {
         DecreaseActiveFuel();
         SetCurrentFuel();
         SetFireSize();
+
+        #if UNITY_EDITOR
+            if (Input.GetKeyDown(KeyCode.P)) AddEditorFuel(5);
+        #endif
     }
 
     public override void Interact() {
@@ -95,5 +100,14 @@ public class Fire : Interactable {
         playerInventory.UseFuel(fuel, this);
 
         fireEffects.BurstEmbers(Mathf.Min((activeFuel.Count - 1) * Mathf.CeilToInt(fuel.maxFuel / 10), 5));
+    }
+
+    public void AddEditorFuel(float amount) {
+        GameObject fuelObject = new("Editor created fuel");
+        fuelObject.AddComponent<Fuel>();
+        Fuel fuel = fuelObject.GetComponent<Fuel>();
+        fuel.maxFuel = amount;
+
+        activeFuel.Add(fuel);
     }
 }
