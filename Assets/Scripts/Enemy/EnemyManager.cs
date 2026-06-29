@@ -62,7 +62,10 @@ public class EnemyManager : MonoBehaviour {
     public void RepositionEnemy(Enemy enemy) {
         Vector3? position = FindValidPosition();
 
-        if (position == null) return;
+        if (position == null) {
+            DespawnEnemy(enemy);
+            return;
+        }
 
         enemy.transform.position = position.Value;
     }
