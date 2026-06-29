@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 2783010608148101610}
   - component: {fileID: 1762595228292357626}
   - component: {fileID: 1575914722162022157}
+  - component: {fileID: 5032567521838883540}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -231,6 +232,7 @@ MonoBehaviour:
   killRadius: 0
   audioHelperFocus: {fileID: 3801201590881745037}
   eventWhenOutOfView: {fileID: 1762595228292357626}
+  mesh: {fileID: 0}
 --- !u!114 &1762595228292357626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +260,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  maxDistance: 20
+  maxDistance: 50
   minDistance: 2
   angleBuffer: 10
 --- !u!114 &1575914722162022157
@@ -275,8 +277,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ApplyRandomScaleOnStart
   minimumScale: {x: 0.5, y: 0.9, z: 0.5}
   maximumScale: {x: 1.5, y: 1.2, z: 1.5}
-  uniform: 0
+  uniform: 1
   randomOffset: 0.25
+--- !u!114 &5032567521838883540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034556932203097326}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b404e9426dbb34690c4cdcc6b36dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BobAndRotate
+  rotationsPerMinute: 100
 --- !u!1 &7944621841746731191
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,8 +320,8 @@ Transform:
   m_GameObject: {fileID: 7944621841746731191}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 0.75, y: 1.5, z: 0.75}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7928943911056005088}
