@@ -11,10 +11,10 @@ public class EnemyManager : MonoBehaviour {
     public int maxNumberOfEnemies = 500;
     [Header("Objects")]
     public GameObject enemyPrefab;
-    public Fire fire;
     [Header("State")]
     public List<Enemy> enemies;
 
+    private Fire fire;
     private PlayerState playerState;
     private PlayerCamera playerCamera;
     private PlayerFocus playerFocus;
@@ -35,6 +35,7 @@ public class EnemyManager : MonoBehaviour {
     }
 
     void Start() {
+        fire = FindFirstObjectByType<Fire>();
         playerState = FindFirstObjectByType<PlayerState>();
         playerCamera = FindFirstObjectByType<PlayerCamera>();
         playerFocus = FindFirstObjectByType<PlayerFocus>();
