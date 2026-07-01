@@ -10,9 +10,10 @@ public class PlayerCamera : MonoBehaviour {
     public PlayerState playerState;
     public PlayerRest playerRest;
     public Camera thisCamera;
+    [Header("Rotation")]
+    public float xRotation = 0f;
+    public float yRotation = 0f;
 
-    private float xRotation = 0f;
-    private float yRotation = 0f;
     private float rotationLimitCenter = 0f;
 
     void OnDrawGizmosSelected() {

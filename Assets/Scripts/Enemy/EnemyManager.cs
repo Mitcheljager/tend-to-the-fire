@@ -50,6 +50,7 @@ public class EnemyManager : MonoBehaviour {
 
         GameObject instantiatedEnemy = Instantiate(enemyPrefab, position.Value, transform.rotation);
         instantiatedEnemy.transform.parent = transform;
+        instantiatedEnemy.name = instantiatedEnemy.name + " " + enemies.Count;
 
         Enemy enemy = instantiatedEnemy.GetComponent<Enemy>();
         enemies.Add(enemy);
@@ -96,9 +97,28 @@ public class EnemyManager : MonoBehaviour {
     }
 
     public float GetFocusAudioProgress() {
+        if (enemies.Count == 0) return 0;
         if (enemies[0] == null) return 0;
 
         return enemies[0].audioHelperFocus.audioSource.time;
+    }
+
+    public Enemy FindNearestEnemyToPosition(Vector3 position) {
+        if (enemies.Count == 0) return null;
+
+        Enemy nearestEnemy = null;
+        float nearestDistance = 1000f;
+
+        foreach(Enemy enemy in enemies.ToList()) {
+            float distance = Vector3.Distance(enemy.transform.position, position);
+
+            if (distance < nearestDistance) {
+                nearestEnemy = enemy;
+                nearestDistance = distance;
+            }
+        }
+
+        return nearestEnemy;
     }
 
     private Vector3? FindValidPosition() {
