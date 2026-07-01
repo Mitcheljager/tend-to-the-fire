@@ -62,6 +62,8 @@ public class EnemyManager : MonoBehaviour {
     }
 
     public void RepositionEnemy(Enemy enemy) {
+        if (!this.enabled) return;
+
         Vector3? position = FindValidPosition();
 
         if (position == null) {
