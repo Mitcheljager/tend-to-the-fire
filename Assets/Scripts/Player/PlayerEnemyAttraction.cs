@@ -27,13 +27,12 @@ public class PlayerEnemyAttraction : MonoBehaviour {
 
         if (distance > maxDistance) return;
 
-        Vector3 target = nearestEnemy.transform.position;
-        Vector3 direction = (target - playerCamera.playerBody.position).normalized;
-        Vector3 targetDirection = new(direction.x, 0f, direction.z);
-
         float lerpSpeed = Time.deltaTime * lerpSpeedBase * lerpSpeedCurve.Evaluate(1f / maxDistance * distance);
 
-        playerCamera.playerBody.transform.rotation = Quaternion.Lerp(playerCamera.playerBody.transform.rotation, Quaternion.LookRotation(targetDirection), lerpSpeed);
-        playerCamera.xRotation = Mathf.LerpAngle(playerCamera.xRotation, -Mathf.Asin(direction.y) * Mathf.Rad2Deg, lerpSpeed);
+        Vector3 target = nearestEnemy.transform.position;
+        Vector3 direction = (target - playerCamera.playerBody.position).normalized;
+        Vector3 targetDirection = Vector3.Lerp(playerCamera.transform.forward, direction, lerpSpeed);
+
+        playerCamera.SetCameraFacingDirection(targetDirection);
     }
 }

@@ -2691,7 +2691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce34efa4dd9ed0a46ba7bae4056758cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerEnemyAttraction
-  maxDistance: 5
+  maxDistance: 3
   lerpSpeedBase: 100
   lerpSpeedCurve:
     serializedVersion: 2
