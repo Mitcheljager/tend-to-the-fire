@@ -13,6 +13,9 @@
 - Story is told through the main character talking to the player
 - Text should be either encouraging, or reassuring, the player never makes a mistake, their actions are always right
 
+
+
+
 I do not remember, it has been so long.
 I no longer see faces, I no longer hear voices, I no longer wish to be alone.
 I need your help.
@@ -25,9 +28,20 @@ The light can not die. We must **tend to the fire**.
 
 
 
+I do not remember faces.
+I do not remember voices.
+I remember hope.
+I remember love.
+I remember home.
+I fear the day I do not.
+
+
+
 I'm on my own. Surviving a life void of hope, void of direction.
 Each day hiding from fear. Each day putting off what I do not wish to face.
 I'm on my own. I do not wish to be alone at the end, I wish to go home.
+
+
 
 - The finale of the game presents a choice, love or hope
 - Choosing love directs you home to where someone you loved was consumed by the darkness, you join them
