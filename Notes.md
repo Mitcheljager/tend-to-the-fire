@@ -33,6 +33,7 @@ I'm on my own. I do not wish to be alone at the end, I wish to go home.
 - Choosing love directs you home to where someone you loved was consumed by the darkness, you join them
 - Choosing hope directs you to a place that has continuous lights going, something like a dam with perpetual energy
 - Both options are somewhat open an ambiguous, neither shows a clear end or is clearly more positive or negative than the other
+- Perhaps no choice is better. Just a linear experience.
 
 - The narrator does not remember and does not wish to tell the player what they know, simply because they do not trust their own memories and does not want to mislead. They choose not to tell rather than to possibly share false memories.
 - The narrator talks like Stoic Alder from GW2, they sound cool, collected, and wise
