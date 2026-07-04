@@ -18,11 +18,16 @@ public class PlayerFocus : MonoBehaviour {
     [Fade] public bool isClosed = false;
     [Fade] public bool isFullyClosed = false;
 
+    private PlayerState playerState;
     private float currentFocusVolume;
     private float currentBoostVolume;
 
+    void Start() {
+        playerState = FindFirstObjectByType<PlayerState>();
+    }
+
     void Update() {
-        isClosed = Input.GetButton("Close Eyes");
+        isClosed = Input.GetButton("Close Eyes") || playerState.isDead;
 
         float screenHeight = Screen.height;
         float animationSpeed = isClosed ? animationSpeedClose : animationSpeedOpen;

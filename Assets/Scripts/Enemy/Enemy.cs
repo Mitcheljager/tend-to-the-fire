@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-    public float killRadius;
     public AudioHelper audioHelperFocus;
     public EventWhenOutOfView eventWhenOutOfView;
 

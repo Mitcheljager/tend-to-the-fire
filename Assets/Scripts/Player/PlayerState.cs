@@ -22,6 +22,10 @@ public class PlayerState : MonoBehaviour {
 
     public void Kill() {
         isDead = true;
+
+        Debug.Log("Kill");
+
+        PlayerEvent.OnPlayerDiedEvent.Invoke();
     }
 
     private bool IsInTotalSafetyRange() {
