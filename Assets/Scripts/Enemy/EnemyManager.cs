@@ -9,6 +9,7 @@ public class EnemyManager : MonoBehaviour {
     public float ignoreViewAngleFromDistance = 20f;
     public float spawnDistanceFromFloor = 1f;
     public int maxNumberOfEnemies = 500;
+    public LayerMask checkLayers;
     [Header("Objects")]
     public GameObject enemyPrefab;
     [Header("State")]
@@ -138,7 +139,7 @@ public class EnemyManager : MonoBehaviour {
         }
 
         Vector3 abovePosition = position + Vector3.up * 20f;
-        if (!Physics.Raycast(abovePosition, Vector3.down, out RaycastHit floorHit)) return null;
+        if (!Physics.Raycast(abovePosition, Vector3.down, out RaycastHit floorHit, 100f, checkLayers)) return null;
 
         return floorHit.point + Vector3.up * spawnDistanceFromFloor;
     }

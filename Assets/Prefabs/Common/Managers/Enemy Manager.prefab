@@ -48,6 +48,8 @@ MonoBehaviour:
   ignoreViewAngleFromDistance: 50
   spawnDistanceFromFloor: 0.5
   maxNumberOfEnemies: 500
+  checkLayers:
+    serializedVersion: 2
+    m_Bits: 73
   enemyPrefab: {fileID: 5034556932203097326, guid: 2caceba9582a0f74ca5ada296a57d5cc, type: 3}
-  fire: {fileID: 0}
   enemies: []
