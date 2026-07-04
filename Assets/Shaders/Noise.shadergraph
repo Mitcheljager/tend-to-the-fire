@@ -2822,7 +2822,7 @@
     "m_ObjectId": "024845cf30a546ecad7d870b5b3c33aa",
     "m_Title": "Combined color",
     "m_Position": {
-        "x": -1921.9998779296875,
+        "x": -1922.0,
         "y": 376.0
     }
 }
@@ -2881,7 +2881,7 @@
     "m_ObjectId": "02ffc7b545744c92bc86ddc2aac87c5d",
     "m_Title": "Input",
     "m_Position": {
-        "x": -4134.99951171875,
+        "x": -4135.0,
         "y": -9.0
     }
 }
@@ -3342,7 +3342,7 @@
     "m_ObjectId": "0d663294db544da9b5089db1925366f9",
     "m_Title": "Green",
     "m_Position": {
-        "x": -2633.999755859375,
+        "x": -2634.0,
         "y": 150.0
     }
 }
@@ -3413,8 +3413,8 @@
     "m_ObjectId": "0ef2e1446ae84acf8dfc17d7ad9d1777",
     "m_Title": "Screen position",
     "m_Position": {
-        "x": -5241.99951171875,
-        "y": 49.000064849853519
+        "x": -5242.0,
+        "y": 49.0
     }
 }
 
@@ -5388,7 +5388,7 @@
     "m_ObjectId": "32cdb465b9a649c788fadb0f4a547568",
     "m_Title": "Invert",
     "m_Position": {
-        "x": -666.9998779296875,
+        "x": -667.0,
         "y": 324.0
     }
 }
@@ -8067,8 +8067,8 @@
     "m_ObjectId": "62048872a9de46cbbbeb1eed460bcbfe",
     "m_Title": "Color adjustments",
     "m_Position": {
-        "x": 267.0001220703125,
-        "y": 139.00003051757813
+        "x": 267.0,
+        "y": 139.0
     }
 }
 
@@ -10057,7 +10057,7 @@
     "m_ObjectId": "8220fa93ec9f457caebb4c08da22d838",
     "m_Title": "Blue",
     "m_Position": {
-        "x": -2633.999755859375,
+        "x": -2634.0,
         "y": 609.0
     }
 }
@@ -10140,8 +10140,8 @@
     "m_ObjectId": "83fef9d7979d42fcab47d417e21d0514",
     "m_Title": "Pixelate",
     "m_Position": {
-        "x": -5443.99951171875,
-        "y": -712.9999389648438
+        "x": -5444.0,
+        "y": -713.0
     }
 }
 
@@ -11923,7 +11923,7 @@
     "m_ActiveSubTarget": {
         "m_Id": "b3e75fcf5f2c40098476967e60264aca"
     },
-    "m_AllowMaterialOverride": false,
+    "m_AllowMaterialOverride": true,
     "m_SurfaceType": 0,
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
@@ -12355,7 +12355,7 @@
     "m_ObjectId": "ad910f17f4f143908b12919f3fae06bc",
     "m_Title": "Spiralize",
     "m_Position": {
-        "x": -7957.99951171875,
+        "x": -7958.0,
         "y": 661.0
     }
 }
@@ -12426,8 +12426,8 @@
     "m_ObjectId": "aef52c0e59544883b717a7c18a3c94d2",
     "m_Title": "Vertex noise",
     "m_Position": {
-        "x": -1422.9998779296875,
-        "y": -809.9999389648438
+        "x": -1423.0,
+        "y": -810.0
     }
 }
 
@@ -13830,8 +13830,8 @@
     "m_ObjectId": "ca09e5eedb7d4fb6883211e8a85f9405",
     "m_Title": "Red",
     "m_Position": {
-        "x": -2633.999755859375,
-        "y": -334.99993896484377
+        "x": -2634.0,
+        "y": -335.0
     }
 }
 
@@ -15194,8 +15194,8 @@
     "m_ObjectId": "e0e74b8fcf9e44e0a8d46915185187f1",
     "m_Title": "Alpha",
     "m_Position": {
-        "x": -2805.999755859375,
-        "y": 1077.9998779296875
+        "x": -2806.0,
+        "y": 1078.0
     }
 }
 
@@ -16248,8 +16248,8 @@
     "m_ObjectId": "f01e8b8abed04f19b9be2485fabebf7f",
     "m_Title": "Saturation",
     "m_Position": {
-        "x": -1230.9998779296875,
-        "y": 398.0000915527344
+        "x": -1231.0,
+        "y": 398.0
     }
 }
 
