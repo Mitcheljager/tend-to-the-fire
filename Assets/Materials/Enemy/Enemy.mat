@@ -153,9 +153,9 @@ Material:
     - _Overgrowth_Contrast: -10
     - _Overgrowth_Multiplier: 5
     - _Overgrowth_Saturation: -0.5
-    - _Overlay_opacity: 0.995
+    - _Overlay_opacity: 0.99
     - _Parallax: 0.005
-    - _Pixel_size: 200
+    - _Pixel_size: 100
     - _Pixelate: 1
     - _Pixelate_by_distance: 0
     - _QueueControl: 0
@@ -169,9 +169,9 @@ Material:
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
     - _Spiralize: 1
-    - _Spiralize_speed: 0.1
-    - _Spiralize_strength: 0.7
-    - _Spiralize_updates_per_second: 2
+    - _Spiralize_speed: 0.05
+    - _Spiralize_strength: 0.6
+    - _Spiralize_updates_per_second: 5
     - _SrcBlend: 5
     - _SrcBlendAlpha: 1
     - _Surface: 1
@@ -212,7 +212,7 @@ Material:
     - _Pixelate_min_max: {r: 50, g: 250, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Spiralize_inner_edge: {r: 0.2, g: 0.25, b: 0, a: 0}
+    - _Spiralize_inner_edge: {r: 0.2, g: 0.3, b: 0, a: 0}
     - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _Undergrowth_Color: {r: 0.9415528, g: 0.06074226, b: 0.99056596, a: 1}
     - _Vertex_noise_multiplier: {r: 1, g: 0.5, b: 1, a: 0}
