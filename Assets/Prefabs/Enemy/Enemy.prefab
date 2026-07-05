@@ -499,7 +499,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
+  m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3200745240877562140
 MonoBehaviour:
@@ -515,5 +515,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyClose
   meshRenderer: {fileID: 3827234348577992020}
   meshTransform: {fileID: 209561081127056216}
-  maxDistance: 2
-  maxScaleMultiplier: 3
+  maxDistance: 3
+  maxScaleMultiplier: 5
+  scaleCurveMultiplier:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.61662894
+      value: 0.31334144
+      inSlope: 0.952556
+      outSlope: 0.952556
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.76135045
+      value: 0.8884994
+      inSlope: 0.33097568
+      outSlope: 0.33097568
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.34969223
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.28964594
+      outSlope: 0.28964594
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.32232648
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

@@ -28,7 +28,7 @@ public class EnemyClose : MonoBehaviour {
         if (distance > maxDistance) return;
 
         float normalizedDistance = 1f - (distance / maxDistance);
-        meshTransform.localScale = initialScale * Mathf.Lerp(1f, maxScaleMultiplier, normalizedDistance);;
+        meshTransform.localScale = initialScale * Mathf.Lerp(1f, maxScaleMultiplier, normalizedDistance);
     }
 
     void OnTriggerExit(Collider collider) {
