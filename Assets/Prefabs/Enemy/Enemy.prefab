@@ -303,7 +303,6 @@ GameObject:
   - component: {fileID: 209561081127056216}
   - component: {fileID: 1027379217348094099}
   - component: {fileID: 3827234348577992020}
-  - component: {fileID: 5347445793724000827}
   m_Layer: 16
   m_Name: Mesh
   m_TagString: Untagged
@@ -382,29 +381,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5347445793724000827
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7944621841746731191}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1.5
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8135856758775830665
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6898577893956475228}
   - component: {fileID: 9206253193752273309}
-  - component: {fileID: 441747186387980052}
+  - component: {fileID: 3200745240877562140}
   m_Layer: 16
   m_Name: Material Render Radius
   m_TagString: Untagged
@@ -525,7 +501,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &441747186387980052
+--- !u!114 &3200745240877562140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -534,7 +510,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8407935188001103923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5025104e652e7b4794e91b5a8b9a12a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e0efb68051339c4c9d294a1e3e7fc4d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMaterial
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyClose
   meshRenderer: {fileID: 3827234348577992020}
+  meshTransform: {fileID: 209561081127056216}
+  maxDistance: 2
+  maxScaleMultiplier: 3
