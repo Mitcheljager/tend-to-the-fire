@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.UIElements;
-using System.Linq;
 
 [CustomEditor(typeof(Fire))]
 public class FireEditor : Editor {
