@@ -11,6 +11,7 @@
 ## Story
 - Story is told through occassional text
 - Story is told through the main character talking to the player
+- Game starts with black screen with dialog, a fire is lit and eyes open. More dialog is had while the player tends to the fire with pre collected fire wood until dialog is over, at which point the game starts for real.
 - Text should be either encouraging, or reassuring, the player never makes a mistake, their actions are always right
 
 
