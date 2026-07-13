@@ -5,6 +5,7 @@ using System.Linq;
 
 public class PrefabPlacer : EditorWindow {
     public List<GameObject> possiblePrefabs = new();
+    private Transform transformParent = null;
     private bool isPlacing = false;
     private bool alignToSurface = true;
     private bool randomRotationY = true;
@@ -40,6 +41,7 @@ public class PrefabPlacer : EditorWindow {
 
         if (EditorGUI.EndChangeCheck()) RefreshPreview();
 
+        transformParent = EditorGUILayout.ObjectField("Transform parent", transformParent, typeof(Transform), true) as Transform;
         alignToSurface = EditorGUILayout.Toggle("Align to surface normal", alignToSurface);
         randomRotationY = EditorGUILayout.Toggle("Random rotation y", randomRotationY);
         numberOfObjects = EditorGUILayout.IntField("Number of objects", numberOfObjects);
@@ -180,6 +182,8 @@ public class PrefabPlacer : EditorWindow {
 
             placed.transform.position = previewInstance.transform.position;
             placed.transform.rotation = previewInstance.transform.rotation;
+
+            if (transformParent != null) placed.transform.parent = transformParent;
 
             GameObjectUtility.EnsureUniqueNameForSibling(placed);
 
