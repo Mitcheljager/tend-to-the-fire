@@ -12,7 +12,7 @@ public class PrefabPlacer : EditorWindow {
     private int numberOfObjects = 1;
     private float offset = 0f;
     private Vector3 randomPositionWithinRange = new();
-    private LayerMask placementMask = (1 << 0) | (1 << 3);
+    private LayerMask placementMask = 1 << 3;
 
     private List<GameObject> previewInstances = new();
     private List<GameObject> previewSourcePrefabs = new();
