@@ -1910,8 +1910,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 0.8591101, b: 0.4292453, a: 1}
-  m_Intensity: 10
-  m_Range: 30
+  m_Intensity: 8
+  m_Range: 40
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2129,8 +2129,8 @@ MonoBehaviour:
   - {fileID: 704853651488404404}
   interactableCollider: {fileID: 2505164914556573423}
   interactableOutlineRange: 0
-  maxLightRange: 30
-  maxLightIntensity: 10
+  maxLightRange: 40
+  maxLightIntensity: 8
   maxFuel: 50
   maxEffectiveFuel: 40
   fuelConsumptionPerSecond: 1
@@ -2147,8 +2147,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.022941971
     - serializedVersion: 3
-      time: 0.3647039
-      value: 0.1942008
+      time: 0.4605291
+      value: 0.30455238
       inSlope: -0.8596251
       outSlope: -0.8596251
       tangentMode: 0
@@ -2158,11 +2158,11 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: -0.00022888184
-      inSlope: -0.059576582
-      outSlope: -0.059576582
+      inSlope: -0.23900485
+      outSlope: -0.23900485
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.104088284
+      inWeight: 0.12108223
       outWeight: 0
     m_PreInfinity: 0
     m_PostInfinity: 2
@@ -2191,11 +2191,11 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0.15062684
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.23144343
+      outSlope: -0.23144343
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.0954238
       outWeight: 0
     m_PreInfinity: 0
     m_PostInfinity: 2
