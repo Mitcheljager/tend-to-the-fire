@@ -147,7 +147,7 @@ Material:
     - _Undergrowth_Saturation: 0.5
     - _Undergrowth_Thickness: 1.2
     - _Use_Overgrowth: 0
-    - _Use_Undergrowth: 1
+    - _Use_Undergrowth: 0
     - _Vertex_Snap: 32
     - _Vertex_Snap_Distance: 3
     - _Vertex_Snap_Grid_Size: 32
