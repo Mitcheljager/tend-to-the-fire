@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2777865140948759481}
   - component: {fileID: 3012342825313066184}
   - component: {fileID: 3286384259424650787}
+  - component: {fileID: 4576898953868211632}
   m_Layer: 0
   m_Name: Short Grass
   m_TagString: Untagged
@@ -89,3 +90,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!205 &4576898953868211632
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036893243936626672}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.046436228
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 3286384259424650787}
+  m_Enabled: 1
