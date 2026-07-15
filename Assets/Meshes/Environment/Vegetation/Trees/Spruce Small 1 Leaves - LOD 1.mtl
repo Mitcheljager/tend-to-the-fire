@@ -1,0 +1,578 @@
+# Blender MTL File: 'trees.blend'
+# Material Count: 48
+
+newmtl Material.1082
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1083
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1084
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1085
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1086
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1087
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1088
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1089
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1090
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1091
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1092
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1093
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1094
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1095
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1096
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1097
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1098
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1099
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1100
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1101
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1102
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1103
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1104
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1105
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1106
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1107
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1108
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1109
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1110
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1111
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1112
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1113
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1114
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1115
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1116
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1117
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1118
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1119
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1120
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1121
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1122
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1123
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1124
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1125
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1126
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1127
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1128
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+
+newmtl Material.1129
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
+map_d Q:\\Unity\\Tend to the Fire\\Assets\\Textures\\Environment\\Vegetation\\Branch Pine.png
