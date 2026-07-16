@@ -234,9 +234,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 6
+  m_Height: 20
   m_Direction: 1
-  m_Center: {x: 0, y: 2, z: 0}
+  m_Center: {x: 0, y: 9, z: 0}
 --- !u!205 &3133440057738770232
 LODGroup:
   m_ObjectHideFlags: 0
