@@ -222,7 +222,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 0.6179246, g: 0.8320052, b: 1, a: 1}
-  m_Intensity: 0.12
+  m_Intensity: 0.15
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -231,7 +231,7 @@ Light:
     m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.9
+    m_Strength: 0.85
     m_Bias: 1
     m_NormalBias: 0
     m_NearPlane: 0.2
