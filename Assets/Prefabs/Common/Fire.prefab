@@ -1911,7 +1911,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.8591101, b: 0.4292453, a: 1}
   m_Intensity: 8
-  m_Range: 40
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2129,7 +2129,7 @@ MonoBehaviour:
   - {fileID: 704853651488404404}
   interactableCollider: {fileID: 2505164914556573423}
   interactableOutlineRange: 0
-  maxLightRange: 40
+  maxLightRange: 50
   maxLightIntensity: 8
   maxFuel: 50
   maxEffectiveFuel: 40
