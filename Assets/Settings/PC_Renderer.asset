@@ -190,6 +190,19 @@ MonoBehaviour:
   _event: 550
   _pass: {fileID: 3612876442088471421}
   _blitShader: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
+--- !u!114 &2499802293733761358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f623acde598b17c41a6fd5083bbba641, type: 3}
+  m_Name: CopyColorsForWarp
+  m_EditorClassIdentifier: Assembly-CSharp::CopyColorsForWarp
+  m_Active: 1
 --- !u!114 &3612876442088471421
 MonoBehaviour:
   m_ObjectHideFlags: 3
