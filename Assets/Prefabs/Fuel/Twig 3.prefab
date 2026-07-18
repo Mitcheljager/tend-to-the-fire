@@ -140,7 +140,7 @@ MonoBehaviour:
   meshes:
   - {fileID: 3007533238936613417}
   interactableCollider: {fileID: 1795887789496423131}
-  interactableOutlineRange: 30
+  interactableOutlineRange: 20
   maxFuel: 10
   weight: 2
   materialRenderers:
