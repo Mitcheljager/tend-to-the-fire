@@ -164,7 +164,7 @@ MonoBehaviour:
     m_Value: 0
   contrast:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: -15
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -173,7 +173,7 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 0
 --- !u!114 &-6288072647309666549
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -601,7 +601,7 @@ MonoBehaviour:
     m_Value: {x: 1, y: 1, z: 1, w: 0.017241385}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9085178, z: 0.7357826, w: 0}
+    m_Value: {x: 1, y: 0.8798886, z: 0.65665764, w: 0}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0
@@ -845,7 +845,7 @@ MonoBehaviour:
   active: 1
   texture:
     m_OverrideState: 1
-    m_Value: {fileID: 0}
+    m_Value: {fileID: 2800000, guid: 9204143af0bc5a844981366f757fd8b1, type: 3}
     dimension: 1
   contribution:
     m_OverrideState: 1
@@ -1047,13 +1047,13 @@ MonoBehaviour:
   active: 1
   redOutRedIn:
     m_OverrideState: 1
-    m_Value: 150
+    m_Value: 200
   redOutGreenIn:
     m_OverrideState: 1
     m_Value: 0
   redOutBlueIn:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -40
   greenOutRedIn:
     m_OverrideState: 1
     m_Value: 0
@@ -1068,10 +1068,10 @@ MonoBehaviour:
     m_Value: 0
   blueOutGreenIn:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 35
   blueOutBlueIn:
     m_OverrideState: 1
-    m_Value: 120
+    m_Value: 50
 --- !u!114 &9122958982931076880
 MonoBehaviour:
   m_ObjectHideFlags: 3
