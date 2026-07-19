@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 2239828668346728357}
   - component: {fileID: 6814816717426843423}
   - component: {fileID: 575640700614063783}
+  - component: {fileID: 5679926295559372301}
   m_Layer: 0
   m_Name: Clouds High
   m_TagString: Untagged
@@ -178,6 +179,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5679926295559372301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741477104989688780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16ef44b229b75347b9feae906cc44b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PreventFrustumCulling
 --- !u!1 &917727002412838681
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +728,7 @@ GameObject:
   - component: {fileID: 7786295079105837131}
   - component: {fileID: 3451251590321133132}
   - component: {fileID: 3483119976541510283}
+  - component: {fileID: 7051788304275711107}
   m_Layer: 0
   m_Name: Clouds
   m_TagString: Untagged
@@ -793,3 +807,15 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7051788304275711107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8738250623209723479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c16ef44b229b75347b9feae906cc44b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PreventFrustumCulling
