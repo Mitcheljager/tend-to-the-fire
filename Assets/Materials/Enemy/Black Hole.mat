@@ -67,7 +67,7 @@ Material:
     m_Ints: []
     m_Floats:
     - Vector1_2E510540: 0.75
-    - Vector1_36874B96: 5
+    - Vector1_36874B96: 10
     - Vector1_DC2B334F: 1
     - _AlphaClip: 0
     - _Blend: 0
@@ -82,11 +82,11 @@ Material:
     - _Inner_Depth: 6
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Outer_Ring: 10
+    - _Outer_Ring: 8
     - _Pulse_Speed: 20
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Radius_Power: 0.15
+    - _Radius_Power: 0.2
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
