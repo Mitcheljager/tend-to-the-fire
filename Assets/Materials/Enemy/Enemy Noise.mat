@@ -20,13 +20,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy
+  m_Name: Enemy Noise
   m_Shader: {fileID: -6465566751694194690, guid: ccf384612e608704c9cfafe5c1d61c4d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
-  - _TYPE_BLACK_AND_WHITE
+  - _TYPE_FLAT_COLOR
   m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -168,14 +168,14 @@ Material:
     - _SoftParticlesFarFadeDistance: 1
     - _SoftParticlesNearFadeDistance: 0
     - _SpecularHighlights: 1
-    - _Spiralize: 1
+    - _Spiralize: 0
     - _Spiralize_speed: 0.05
     - _Spiralize_strength: 0.6
     - _Spiralize_updates_per_second: 5
     - _SrcBlend: 5
     - _SrcBlendAlpha: 1
     - _Surface: 1
-    - _TYPE: 1
+    - _TYPE: 2
     - _Tiling: 0.1
     - _Undergrowth_Contrast: 10
     - _Undergrowth_Depth: 5
@@ -207,7 +207,7 @@ Material:
     - _Flat_color: {r: 0, g: 0, b: 0, a: 0}
     - _Overgrowth_Color: {r: 0.20567387, g: 1, b: 0, a: 1}
     - _Overgrowth_Direction: {r: 0, g: 1, b: 0, a: 0}
-    - _Overlay_color: {r: 0, g: 0, b: 0, a: 1}
+    - _Overlay_color: {r: 1, g: 1, b: 1, a: 1}
     - _Pixelate_distance: {r: 20, g: 50, b: 0, a: 0}
     - _Pixelate_min_max: {r: 50, g: 250, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
