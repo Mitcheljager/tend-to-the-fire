@@ -5,16 +5,13 @@ using UnityEngine;
 public class Sundown : MonoBehaviour {
     public Renderer[] renderers;
     public Light sunLight;
-    public Light moonLight;
     public Quaternion rotateTowards;
     public float durationSeconds = 5f;
-    public float moonLightShadowDurationSeconds = 2f;
 
     [Fade] public List<Material> rendererMaterials;
     [Fade] public List<float> materialAlphaInitialValues;
 
     private float initialSunLightIntensity;
-    // private float initialMoonLightShadowStrength;
     private Quaternion initialRotation;
 
     void Start() {
@@ -24,7 +21,6 @@ public class Sundown : MonoBehaviour {
         }
 
         initialSunLightIntensity = sunLight.intensity;
-        // initialMoonLightShadowStrength = moonLight.shadowStrength;
         initialRotation = transform.rotation;
 
         StartCoroutine(StartSundown());
@@ -53,15 +49,5 @@ public class Sundown : MonoBehaviour {
         }
 
         gameObject.SetActive(false);
-
-        // currentTime = 0f;
-
-        // while (currentTime < moonLightShadowDurationSeconds) {
-        //     moonLight.shadowStrength = Mathf.Lerp(0, initialMoonLightShadowStrength, currentTime / moonLightShadowDurationSeconds);
-
-        //     currentTime += Time.deltaTime;
-
-        //     yield return null;
-        // }
     }
 }

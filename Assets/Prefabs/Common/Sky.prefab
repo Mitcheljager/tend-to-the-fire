@@ -638,10 +638,8 @@ MonoBehaviour:
   - {fileID: 6660147329648881567}
   - {fileID: 4780764146772110970}
   sunLight: {fileID: 588144658548015565}
-  moonLight: {fileID: 4463523976227086056}
   rotateTowards: {x: 0, y: 0, z: 0.043619387, w: 0.99904823}
   durationSeconds: 30
-  moonLightShadowDurationSeconds: 2
   rendererMaterials: []
   materialAlphaInitialValues: []
 --- !u!1 &3852872412701695937
@@ -861,6 +859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5997680884390279529}
+  - component: {fileID: 6271620008603407848}
   m_Layer: 0
   m_Name: Nighttime sky
   m_TagString: Untagged
@@ -885,6 +884,66 @@ Transform:
   - {fileID: 5934877545236251484}
   m_Father: {fileID: 2768786500153265085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6271620008603407848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5614474728636705222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d46e4b1b05effe47b75824bd7b774a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Moonrise
+  moonlightIntensityCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.0013122559
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.02429089
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.9753688
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: -0.0012817383
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  moonRotationTransform: {fileID: 5997680884390279529}
+  moonLight: {fileID: 4463523976227086056}
+  rotateFrom: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
+  rotateMiddle: {x: 0.1305262, y: 0, z: 0, w: 0.9914449}
+  rotateTo: {x: 0.7933533, y: 0, z: 0, w: 0.6087614}
+  durationSeconds: 600
 --- !u!1 &8738250623209723479
 GameObject:
   m_ObjectHideFlags: 0
