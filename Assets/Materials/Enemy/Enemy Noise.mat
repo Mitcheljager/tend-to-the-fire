@@ -153,9 +153,9 @@ Material:
     - _Overgrowth_Contrast: -10
     - _Overgrowth_Multiplier: 5
     - _Overgrowth_Saturation: -0.5
-    - _Overlay_opacity: 0.99
+    - _Overlay_opacity: 0.995
     - _Parallax: 0.005
-    - _Pixel_size: 100
+    - _Pixel_size: 1000
     - _Pixelate: 1
     - _Pixelate_by_distance: 0
     - _QueueControl: 0
@@ -204,10 +204,10 @@ Material:
     - _ColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _Color_step: {r: 0.9, g: 0.9, b: 0.9, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Flat_color: {r: 1, g: 1, b: 1, a: 0}
+    - _Flat_color: {r: 0, g: 0, b: 0, a: 0}
     - _Overgrowth_Color: {r: 0.20567387, g: 1, b: 0, a: 1}
     - _Overgrowth_Direction: {r: 0, g: 1, b: 0, a: 0}
-    - _Overlay_color: {r: 1, g: 1, b: 1, a: 1}
+    - _Overlay_color: {r: 0, g: 0, b: 0, a: 1}
     - _Pixelate_distance: {r: 20, g: 50, b: 0, a: 0}
     - _Pixelate_min_max: {r: 50, g: 250, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
