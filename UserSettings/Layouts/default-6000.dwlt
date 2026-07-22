@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79
+    y: 24
     width: 322
     height: 1275
   m_SerializedDataModeController:
@@ -402,7 +402,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 47312}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: ccfaffffcad80000d2d8000084eb0000
@@ -451,8 +451,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 323
-    y: 79
+    x: 324
+    y: 24
     width: 527
     height: 1275
   m_SerializedDataModeController:
@@ -608,8 +608,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 852
-    y: 79
+    x: 1
+    y: 24
     width: 1707
     height: 868
   m_SerializedDataModeController:
@@ -1300,11 +1300,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.19257067, y: -0.7991594, z: 0.33269, w: -0.46246356}
     speed: 2
-    m_Value: {x: -0.19304107, y: -0.7983473, z: 0.33235183, w: -0.46359354}
+    m_Value: {x: 0.19257067, y: 0.7991594, z: -0.33269, w: 0.46246356}
   m_Size:
     m_Target: 6.240034
     speed: 2
-    m_Value: 5.9713244
+    m_Value: 6.240034
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1359,8 +1359,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 852
-    y: 973
+    x: 1
+    y: 918
     width: 1707
     height: 381
   m_SerializedDataModeController:
@@ -1404,7 +1404,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 719}
     m_SelectedIDs: 1c220100
     m_LastClickedID: 74268
-    m_ExpandedIDs: 0000000010220100122201001422010016220100182201001a2201001c2201001e2201002022010022220100242201002622010000ca9a3b
+    m_ExpandedIDs: 000000003422010036220100382201003a2201003c2201003e22010040220100422201004422010046220100482201004a220100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1433,7 +1433,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 942}
     m_SelectedIDs: 2c390200
     m_LastClickedID: 145708
-    m_ExpandedIDs: 0000000010220100122201001422010016220100182201001a2201001c2201001e22010020220100222201002422010026220100
+    m_ExpandedIDs: 000000003422010036220100382201003a2201003c2201003e22010040220100422201004422010046220100482201004a220100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
