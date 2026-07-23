@@ -186,7 +186,7 @@ Material:
     - _Use_Undergrowth: 0
     - _Vertex_Snap_Distance: 3
     - _Vertex_Snap_Size: 32
-    - _Vertex_noise: 1
+    - _Vertex_noise: 0
     - _Vertex_noise_cell_density: 1
     - _Vertex_noise_speed: 10
     - _Vertex_noise_use_position: 1
