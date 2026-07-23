@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5965102627311361935}
   - component: {fileID: 5474066707779858581}
   - component: {fileID: 7688668505127911802}
+  - component: {fileID: -7695271237287636104}
   m_Layer: 0
   m_Name: Fern Huge
   m_TagString: Untagged
@@ -89,3 +90,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!205 &-7695271237287636104
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3466300516277913462}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.013808966, y: 0.402943, z: 0.045366526}
+  m_Size: 2.7987819
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7688668505127911802}
+  m_Enabled: 1

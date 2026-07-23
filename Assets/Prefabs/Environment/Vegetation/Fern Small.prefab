@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5873461318369623341}
   - component: {fileID: 1549338563837106022}
   - component: {fileID: 5357729388978414669}
+  - component: {fileID: -727422657443500313}
   m_Layer: 0
   m_Name: Fern Small
   m_TagString: Untagged
@@ -89,3 +90,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!205 &-727422657443500313
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416307674215067383}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.009878516, y: 0.2431305, z: 0.04397905}
+  m_Size: 1.3846049
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.07
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5357729388978414669}
+  m_Enabled: 1
