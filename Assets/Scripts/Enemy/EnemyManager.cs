@@ -124,7 +124,7 @@ public class EnemyManager : MonoBehaviour {
         return nearestEnemy;
     }
 
-    private Vector3? FindValidPosition() {
+    public Vector3? FindValidPosition() {
         Vector3 position = FindRandomPositionOutsideOfFire();
 
         int safety = 0;

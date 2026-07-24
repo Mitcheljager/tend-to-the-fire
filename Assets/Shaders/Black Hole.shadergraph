@@ -170,6 +170,9 @@
         },
         {
             "m_Id": "148aca4dc03f49b1ba0448d2c57aacbc"
+        },
+        {
+            "m_Id": "c0196ed3bb494a6b85b7c44a0c385bec"
         }
     ],
     "m_GroupDatas": [],
@@ -740,6 +743,9 @@
             },
             {
                 "m_Id": "df970157fbf94009b20b2abfcc1aadbd"
+            },
+            {
+                "m_Id": "c0196ed3bb494a6b85b7c44a0c385bec"
             }
         ]
     },
@@ -3470,6 +3476,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "916db7758d294aa6a132ec479056d6f1",
+    "m_Id": 0,
+    "m_DisplayName": "Metallic",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Metallic",
+    "m_StageCapability": 2,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.RemapNode",
     "m_ObjectId": "9217d8f3af374579bb89a23d890d6583",
     "m_Group": {
@@ -4325,6 +4346,40 @@
         "z": 0.0,
         "w": 0.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
+    "m_ObjectId": "c0196ed3bb494a6b85b7c44a0c385bec",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "SurfaceDescription.Metallic",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 0.0,
+            "y": 0.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "916db7758d294aa6a132ec479056d6f1"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_SerializedDescriptor": "SurfaceDescription.Metallic"
 }
 
 {
@@ -5222,7 +5277,7 @@
     "m_ActiveSubTarget": {
         "m_Id": "e086e01ffcd14f1e9bd8309286085a18"
     },
-    "m_AllowMaterialOverride": false,
+    "m_AllowMaterialOverride": true,
     "m_SurfaceType": 1,
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
