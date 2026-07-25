@@ -4,6 +4,9 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Enemy))]
 public class EnemyNavigation : MonoBehaviour {
     public NavMeshAgent agent;
+    [Header("Config")]
+    public float baseSpeed = 2f;
+    public float runSpeed = 5f;
     [Header("State")]
     [Fade] public bool isFollowingPlayer;
     [Fade] public bool isStopped;
@@ -18,6 +21,8 @@ public class EnemyNavigation : MonoBehaviour {
 
     void Update() {
         isStopped = agent.isStopped;
+
+        SetSpeed();
 
         if (isFollowingPlayer) return;
         if (agent.isStopped) return;
@@ -48,6 +53,10 @@ public class EnemyNavigation : MonoBehaviour {
         isFollowingPlayer = false;
 
         SetRandomValidDestination();
+    }
+
+    private void SetSpeed() {
+            agent.speed = isFollowingPlayer ? runSpeed : baseSpeed;
     }
 
     private void SetRandomValidDestination() {

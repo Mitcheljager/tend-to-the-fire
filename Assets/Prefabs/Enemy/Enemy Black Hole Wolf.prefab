@@ -890,6 +890,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyNavigation
   agent: {fileID: 3453116737691627808}
+  baseSpeed: 1.5
+  runSpeed: 5
   isFollowingPlayer: 0
   isStopped: 0
 --- !u!114 &7639250809963787645
