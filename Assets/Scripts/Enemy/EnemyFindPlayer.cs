@@ -28,8 +28,6 @@ public class EnemyFindPlayer : MonoBehaviour {
 
         Gizmos.color = IsPlayerSeen() ? Color.green : Color.red;
         Gizmos.DrawLine(transform.position, playerState.transform.position);
-
-        UnityEditor.Handles.Label(transform.position + Vector3.up * 1.5f, "Seen: " + IsPlayerSeen());
     }
 
     void Start() {
