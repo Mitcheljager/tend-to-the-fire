@@ -907,8 +907,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 73
-  range: 20
-  maxAngle: 80
+  range: 40
+  maxAngle: 120
   autoDetectInRadius: 3
   secondsToDetectPlayer: 1
 --- !u!114 &8568993961366564016
