@@ -56,7 +56,7 @@ public class EnemyNavigation : MonoBehaviour {
     }
 
     private void SetSpeed() {
-            agent.speed = isFollowingPlayer ? runSpeed : baseSpeed;
+        agent.speed = isFollowingPlayer ? runSpeed : baseSpeed;
     }
 
     private void SetRandomValidDestination() {
