@@ -185,9 +185,9 @@ Material:
     - _Vertex_Snap_Distance: 3
     - _Vertex_Snap_Size: 32
     - _Vertex_noise: 1
-    - _Vertex_noise_cell_density: 1
+    - _Vertex_noise_cell_density: 10
     - _Vertex_noise_speed: 20
-    - _Vertex_noise_use_position: 1
+    - _Vertex_noise_use_position: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZTest: 4
@@ -213,7 +213,7 @@ Material:
     - _Spiralize_inner_edge: {r: 0.2, g: 0.3, b: 0, a: 0}
     - _Tint: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
     - _Undergrowth_Color: {r: 0.9415528, g: 0.06074226, b: 0.99056596, a: 1}
-    - _Vertex_noise_multiplier: {r: 0.0002, g: 0.0002, b: 0.0002, a: 0}
+    - _Vertex_noise_multiplier: {r: 0.00075, g: 0.00075, b: 0.00075, a: 0}
     - _Vertex_noise_position_dot_product: {r: -0.75, g: -0.75, b: -0.75, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
