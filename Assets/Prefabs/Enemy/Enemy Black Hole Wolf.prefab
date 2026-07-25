@@ -827,7 +827,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   audioHelperFocus: {fileID: 8679561047521154337}
   eventWhenOutOfView: {fileID: 0}
-  navMeshAgent: {fileID: 0}
 --- !u!95 &1277341374488874497
 Animator:
   serializedVersion: 7
@@ -873,13 +872,13 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -334000983
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 5
+  m_Acceleration: 12
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0

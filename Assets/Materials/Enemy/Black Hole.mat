@@ -73,7 +73,7 @@ Material:
     m_Floats:
     - Vector1_2E510540: 0.7
     - Vector1_36874B96: 8.97
-    - Vector1_DC2B334F: 0.8
+    - Vector1_DC2B334F: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Alpha_Edge: 1

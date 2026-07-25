@@ -1,10 +1,8 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour {
     public AudioHelper audioHelperFocus;
     public EventWhenOutOfView eventWhenOutOfView;
-    public NavMeshAgent navMeshAgent;
 
     private EnemyManager enemyManager;
 
