@@ -917,6 +917,7 @@ MonoBehaviour:
   maxAngle: 120
   autoDetectInRadius: 3
   secondsToDetectPlayer: 1
+  eyeTransform: {fileID: 2450020321518436152}
 --- !u!114 &8568993961366564016
 MonoBehaviour:
   m_ObjectHideFlags: 0

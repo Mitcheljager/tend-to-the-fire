@@ -5,9 +5,11 @@ public class Enemy : MonoBehaviour {
     public EventWhenOutOfView eventWhenOutOfView;
 
     private EnemyManager enemyManager;
+    private PlayerState playerState;
 
     public void Start() {
         enemyManager = FindFirstObjectByType<EnemyManager>();
+        playerState = FindFirstObjectByType<PlayerState>();
 
         SetFocusAudioProgress();
     }
@@ -18,6 +20,10 @@ public class Enemy : MonoBehaviour {
 
     public void Reposition() {
         if (enemyManager != null) enemyManager.RepositionEnemy(this);
+    }
+
+    public void DespawnWhenPlayerIsInTotalSafetyRange() {
+        if (playerState.isInTotalSafetyRange) Despawn();
     }
 
     public bool IsInView() {

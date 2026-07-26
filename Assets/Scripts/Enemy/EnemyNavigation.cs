@@ -55,11 +55,11 @@ public class EnemyNavigation : MonoBehaviour {
         SetRandomValidDestination();
     }
 
-    private void SetSpeed() {
-        agent.speed = isFollowingPlayer ? runSpeed : baseSpeed;
+    public void SetRandomValidDestination() {
+        SetDestination(enemyManager.FindRandomPositionOutsideOfFire());
     }
 
-    private void SetRandomValidDestination() {
-        SetDestination(enemyManager.FindRandomPositionOutsideOfFire());
+    private void SetSpeed() {
+        agent.speed = isFollowingPlayer ? runSpeed : baseSpeed;
     }
 }

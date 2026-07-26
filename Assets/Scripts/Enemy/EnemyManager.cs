@@ -88,7 +88,7 @@ public class EnemyManager : MonoBehaviour {
     }
 
     public Vector3 FindRandomPositionOutsideOfFire() {
-        return FindRandomPointAlongRadius(playerCamera.transform.position, maxRadius * 0.75f, maxRadius);
+        return FindRandomPointAlongRadius(playerCamera.transform.position, maxRadius, maxRadius * 1.5f);
     }
 
     // https://discussions.unity.com/t/random-point-within-circle-with-min-max-radius/724904/14

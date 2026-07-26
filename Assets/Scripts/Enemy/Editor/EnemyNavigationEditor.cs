@@ -9,12 +9,7 @@ public class EnemyNavigationEditor : Editor {
         EnemyNavigation enemyNavigation = (EnemyNavigation)target;
 
         if (EditorApplication.isPlaying && GUILayout.Button("Set random destination")) {
-            EnemyManager enemyManager = FindFirstObjectByType<EnemyManager>();
-            Vector3? position = enemyManager.FindValidPosition();
-
-            if (position == null) return;
-
-            enemyNavigation.SetDestination(position.Value);
+            enemyNavigation.SetRandomValidDestination();
         }
     }
 }
