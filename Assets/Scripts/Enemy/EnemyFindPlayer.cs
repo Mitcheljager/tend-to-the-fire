@@ -8,6 +8,7 @@ public class EnemyFindPlayer : MonoBehaviour {
     public float maxAngle = 80f;
     public float autoDetectInRadius = 3f;
     public float secondsToDetectPlayer = 1f;
+    public Transform eyeTransform;
 
     private Enemy enemy;
     private EnemyNavigation enemyNavigation;
@@ -27,7 +28,7 @@ public class EnemyFindPlayer : MonoBehaviour {
         if (playerState == null) return;
 
         Gizmos.color = IsPlayerSeen() ? Color.green : Color.red;
-        Gizmos.DrawLine(transform.position, playerState.transform.position);
+        Gizmos.DrawLine(eyeTransform.position, playerState.transform.position);
     }
 
     void Start() {
@@ -39,20 +40,22 @@ public class EnemyFindPlayer : MonoBehaviour {
 
     void Update() {
         if (playerState.isDead) return;
+        if (playerState.isInTotalSafetyRange) return;
+        if (enemyNavigation.agent.isStopped) return;
         if (!IsPlayerSeen()) return;
 
-        StartLookingForPlayer();
+        StartCoroutine(PossiblyDelayDetectPlayer());
     }
 
     public bool IsPlayerSeen() {
         Vector3 playerPosition = playerState.transform.position;
-        Vector3 direction = (playerPosition - transform.position).normalized;
-        float distance = Vector3.Distance(transform.position, playerState.transform.position);
+        Vector3 direction = (playerPosition - eyeTransform.position).normalized;
+        float distance = Vector3.Distance(eyeTransform.position, playerPosition);
 
-        if (!Physics.SphereCast(transform.position, 0.05f, direction, out RaycastHit hit, range, layerMask)) return false;
+        if (!Physics.SphereCast(eyeTransform.position, 0.05f, direction, out RaycastHit hit, range, layerMask)) return false;
         if (!hit.collider.CompareTag("Player")) return false;
         if (distance < autoDetectInRadius) return true;
-        if (!enemyNavigation.isFollowingPlayer && !IsInViewAngle(playerPosition, transform.position, transform.forward)) return false;
+        if (!enemyNavigation.isFollowingPlayer && !IsInViewAngle(playerPosition, eyeTransform.position, transform.forward)) return false;
 
         return true;
     }
@@ -63,12 +66,6 @@ public class EnemyFindPlayer : MonoBehaviour {
 
         if (currentAngle > maxAngle / 2) return false;
         return true;
-    }
-
-    public void StartLookingForPlayer() {
-        if (enemyNavigation.agent.isStopped) return;
-
-        StartCoroutine(PossiblyDelayDetectPlayer());
     }
 
     private IEnumerator PossiblyDelayDetectPlayer() {
