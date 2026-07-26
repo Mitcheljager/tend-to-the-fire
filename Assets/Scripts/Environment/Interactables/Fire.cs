@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Fire : Interactable {
     [Separator]
@@ -14,6 +15,7 @@ public class Fire : Interactable {
     public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     public AnimationCurve totalSafetyCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     public FireEffects fireEffects;
+    public NavMeshObstacle navMeshObstacle;
     [Header("Fluff")]
     public string interactTextAble = "Tend to the fire";
     public string interactTextUnable = "You have nothing left";
@@ -47,6 +49,7 @@ public class Fire : Interactable {
         DecreaseActiveFuel();
         SetCurrentFuel();
         SetFireSize();
+        SetNavMeshObstacle();
 
         #if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.P)) AddEditorFuel(5);
@@ -81,6 +84,10 @@ public class Fire : Interactable {
         currentLightRange = maxLightRange * lightRangeCurve.Evaluate(currentMultiplier);
         currentLightIntensity = maxLightIntensity * lightIntensityCurve.Evaluate(currentMultiplier);
         currentTotalSafetyRange = maxLightRange * totalSafetyCurve.Evaluate(currentMultiplier);
+    }
+
+    private void SetNavMeshObstacle() {
+        navMeshObstacle.radius = currentTotalSafetyRange;
     }
 
     private void DecreaseActiveFuel() {

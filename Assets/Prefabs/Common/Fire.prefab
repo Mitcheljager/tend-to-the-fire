@@ -1754,6 +1754,54 @@ MonoBehaviour:
   audioClips: []
   doReverb: 0
   audioSource: {fileID: 0}
+--- !u!1 &6078779275916311869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7055857354523710038}
+  - component: {fileID: 6274640090044987040}
+  m_Layer: 7
+  m_Name: Navmesh Obstacle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7055857354523710038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078779275916311869}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8245429270347958207}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &6274640090044987040
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078779275916311869}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 10, y: 15, z: 10}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &6141287451861663366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2154,7 @@ Transform:
   - {fileID: 2305980207788031515}
   - {fileID: 295938741899622838}
   - {fileID: 2557580702038344778}
+  - {fileID: 7055857354523710038}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -0.009, y: -0.077, z: 0.177}
 --- !u!114 &1973106647513903085
@@ -2243,6 +2292,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   fireEffects: {fileID: 3054636256099887776}
+  navMeshObstacle: {fileID: 6274640090044987040}
   interactTextAble: Tend to the fire
   interactTextUnable: You have nothing left
   interactImageAble: {fileID: 21300000, guid: 70e22389bdb4fd14e95a36f6f12eaddb, type: 3}
