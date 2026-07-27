@@ -99,7 +99,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Color_strength: 0
+    - _Color_strength: 0.25
     - _Cull: 0
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -108,7 +108,7 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _Exclude_trunk: 0
-    - _Final_saturation: 1
+    - _Final_saturation: 0.75
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
