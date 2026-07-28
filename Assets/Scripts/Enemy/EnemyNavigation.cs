@@ -11,12 +11,16 @@ public class EnemyNavigation : MonoBehaviour {
     [Fade] public bool isFollowingPlayer;
     [Fade] public bool isStopped;
 
+    private Enemy enemy;
     private EnemyManager enemyManager;
     private PlayerState playerState;
+    private Fire fire;
 
     void Start() {
+        enemy = FindFirstObjectByType<Enemy>();
         enemyManager = FindFirstObjectByType<EnemyManager>();
         playerState = FindFirstObjectByType<PlayerState>();
+        fire = FindFirstObjectByType<Fire>();
     }
 
     void Update() {
@@ -27,14 +31,19 @@ public class EnemyNavigation : MonoBehaviour {
         if (isFollowingPlayer) return;
         if (agent.isStopped) return;
 
+        if (Vector3.Distance(transform.position, fire.transform.position) < fire.currentTotalSafetyRange) {
+            enemy.Despawn();
+            return;
+        }
+
         if (isFollowingPlayer) {
             SetDestination(playerState.transform.position);
             return;
         }
 
-        if (agent.remainingDistance > agent.stoppingDistance) return;
-
-        SetRandomValidDestination();
+        if (agent.remainingDistance < agent.stoppingDistance) {
+            SetRandomValidDestination();
+        }
     }
 
     public void SetDestination(Vector3 position) {

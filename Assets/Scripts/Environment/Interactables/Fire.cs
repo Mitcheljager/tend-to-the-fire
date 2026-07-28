@@ -49,11 +49,14 @@ public class Fire : Interactable {
         DecreaseActiveFuel();
         SetCurrentFuel();
         SetFireSize();
-        SetNavMeshObstacle();
 
         #if UNITY_EDITOR
             if (Input.GetKeyDown(KeyCode.P)) AddEditorFuel(5);
         #endif
+    }
+
+    public void LateUpdate() {
+        SetNavMeshObstacle();
     }
 
     public override void Interact() {
