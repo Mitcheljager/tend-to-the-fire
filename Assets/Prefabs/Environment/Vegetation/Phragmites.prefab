@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4955842467679173528}
   - component: {fileID: 8441112890518452669}
   - component: {fileID: 425302403623076439}
+  - component: {fileID: 4685443695564623662}
   m_Layer: 0
   m_Name: Phragmites
   m_TagString: Untagged
@@ -89,3 +90,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!205 &4685443695564623662
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715101780247610337}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -1.5, y: 0.375, z: 6.4959373}
+  m_Size: 2.2531242
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 425302403623076439}
+  m_Enabled: 1

@@ -787,6 +787,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f4d2cc9a080fa34eb33374e21eacf0b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8568993961366564016}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f4d2cc9a080fa34eb33374e21eacf0b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2574690446646211186}
   m_SourcePrefab: {fileID: 100100000, guid: 0f4d2cc9a080fa34eb33374e21eacf0b, type: 3}
 --- !u!4 &5517777274855591 stripped
 Transform:
@@ -880,7 +883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   audioHelperFocus: {fileID: 8679561047521154337}
-  eventWhenOutOfView: {fileID: 0}
+  eventWhenOutOfView: {fileID: 2574690446646211186}
 --- !u!114 &9182608921279600046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,6 +933,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb4792873ce3334dbcdd206a39e10fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAnimator
+--- !u!114 &2574690446646211186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648578511446452575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18ac0201c2f37a49a211fda574eb0c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventWhenOutOfView
+  assignedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5773186067482318515}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: DespawnWhenPlayerIsInTotalSafetyRange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  maxDistance: 50
+  minDistance: 0
+  angleBuffer: 5
 --- !u!4 &2137870374999421925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f4d2cc9a080fa34eb33374e21eacf0b, type: 3}
