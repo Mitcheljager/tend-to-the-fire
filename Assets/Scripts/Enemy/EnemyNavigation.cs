@@ -9,12 +9,17 @@ public class EnemyNavigation : MonoBehaviour {
     public float runSpeed = 5f;
     [Header("State")]
     [Fade] public bool isFollowingPlayer;
-    [Fade] public bool isStopped;
 
     private Enemy enemy;
     private EnemyManager enemyManager;
     private PlayerState playerState;
     private Fire fire;
+
+    void OnDrawGizmos() {
+        #if UNITY_EDITOR
+            UnityEditor.Handles.Label(agent.destination + Vector3.up * 1.5f, "Destination");
+        #endif
+    }
 
     void Start() {
         enemy = FindFirstObjectByType<Enemy>();
@@ -24,8 +29,6 @@ public class EnemyNavigation : MonoBehaviour {
     }
 
     void Update() {
-        isStopped = agent.isStopped;
-
         SetSpeed();
 
         if (isFollowingPlayer) return;
@@ -41,7 +44,8 @@ public class EnemyNavigation : MonoBehaviour {
             return;
         }
 
-        if (agent.remainingDistance < agent.stoppingDistance) {
+        if (agent.remainingDistance <= agent.stoppingDistance) {
+            Debug.Log("Set random destination in update");
             SetRandomValidDestination();
         }
     }
@@ -65,7 +69,7 @@ public class EnemyNavigation : MonoBehaviour {
     }
 
     public void SetRandomValidDestination() {
-        SetDestination(enemyManager.FindRandomPositionOutsideOfFire());
+        SetDestination(enemyManager.FindGuidedValidPosition());
     }
 
     private void SetSpeed() {
