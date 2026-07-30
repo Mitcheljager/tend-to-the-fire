@@ -790,6 +790,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f4d2cc9a080fa34eb33374e21eacf0b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2574690446646211186}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f4d2cc9a080fa34eb33374e21eacf0b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6203009352460225929}
   m_SourcePrefab: {fileID: 100100000, guid: 0f4d2cc9a080fa34eb33374e21eacf0b, type: 3}
 --- !u!4 &5517777274855591 stripped
 Transform:
@@ -987,6 +990,22 @@ MonoBehaviour:
   maxDistance: 50
   minDistance: 0
   angleBuffer: 5
+--- !u!114 &6203009352460225929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648578511446452575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1394c7e92ce9b664faf132f63591a710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlignToGround
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  slerpSpeed: 10
 --- !u!4 &2137870374999421925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0f4d2cc9a080fa34eb33374e21eacf0b, type: 3}
