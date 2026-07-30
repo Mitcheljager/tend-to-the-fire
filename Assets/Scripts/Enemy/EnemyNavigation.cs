@@ -45,7 +45,6 @@ public class EnemyNavigation : MonoBehaviour {
         }
 
         if (agent.remainingDistance <= agent.stoppingDistance) {
-            Debug.Log("Set random destination in update");
             SetRandomValidDestination();
         }
     }
