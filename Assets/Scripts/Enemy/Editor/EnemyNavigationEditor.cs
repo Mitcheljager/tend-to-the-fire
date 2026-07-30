@@ -8,10 +8,13 @@ public class EnemyNavigationEditor : Editor {
 
         EnemyNavigation enemyNavigation = (EnemyNavigation)target;
 
-        if (EditorApplication.isPlaying && GUILayout.Button("Set random destination")) {
+        if (EditorApplication.isPlaying) {
             GUILayout.Label("isStopped: " + enemyNavigation.agent.isStopped);
             GUILayout.Label("remainingDistance: " + enemyNavigation.agent.remainingDistance);
-            enemyNavigation.SetRandomValidDestination();
+
+            if (GUILayout.Button("Set random destination")) {
+                enemyNavigation.SetRandomValidDestination();
+            }
         }
     }
 }
