@@ -7,6 +7,8 @@ public class EnemyNavigation : MonoBehaviour {
     [Header("Config")]
     public float baseSpeed = 2f;
     public float runSpeed = 5f;
+    public float fireDistanceDestinationGuideMaximum = 30f;
+    public AnimationCurve fireDistanceDestinationGuideCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("State")]
     [Fade] public bool isFollowingPlayer;
 
@@ -16,8 +18,14 @@ public class EnemyNavigation : MonoBehaviour {
     private Fire fire;
 
     void OnDrawGizmos() {
+        if (playerState == null) return;
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(playerState.transform.position, GetGuideRange() * 0.5f);
+        Gizmos.DrawWireSphere(playerState.transform.position, GetGuideRange());
+
         #if UNITY_EDITOR
-            UnityEditor.Handles.Label(agent.destination + Vector3.up * 1.5f, "Destination");
+            if (agent.destination.y != float.PositiveInfinity) UnityEditor.Handles.Label(agent.destination + Vector3.up * 1.5f, "Destination");
         #endif
     }
 
@@ -67,8 +75,17 @@ public class EnemyNavigation : MonoBehaviour {
         SetRandomValidDestination();
     }
 
+    public float GetGuideRange() {
+        float playerDistanceFromTotalSafety = Vector3.Distance(playerState.transform.position, fire.transform.position) - fire.currentTotalSafetyRange;
+        float normalizedDistance = 1f / fireDistanceDestinationGuideMaximum * playerDistanceFromTotalSafety;
+
+        return fireDistanceDestinationGuideMaximum * fireDistanceDestinationGuideCurve.Evaluate(normalizedDistance);
+    }
+
     public void SetRandomValidDestination() {
-        SetDestination(enemyManager.FindGuidedValidPosition());
+        float maxRange = GetGuideRange();
+
+        SetDestination(enemyManager.FindValidPositionAroundPlayer(maxRange * 0.5f, maxRange));
     }
 
     private void SetSpeed() {

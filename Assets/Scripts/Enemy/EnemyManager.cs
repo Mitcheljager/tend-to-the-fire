@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
     [Header("Config")]
-    public float maxRadius = 10f;
     public float ignoreViewAngleFromDistance = 20f;
     public float spawnDistanceFromFloor = 1f;
     public int maxNumberOfEnemies = 500;
@@ -21,10 +20,10 @@ public class EnemyManager : MonoBehaviour {
     private PlayerFocus playerFocus;
 
     void OnDrawGizmos() {
-        if (playerCamera == null) return;
+        if (playerState == null) return;
 
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(playerCamera.transform.position, maxRadius);
+        // Gizmos.color = Color.white;
+        // Gizmos.DrawWireSphere(playerState.transform.position, maxRadius);
     }
 
     private void OnEnable() {
@@ -88,7 +87,7 @@ public class EnemyManager : MonoBehaviour {
     }
 
     public Vector3 FindRandomPositionOutsideOfFire() {
-        return FindRandomPointAlongRadius(playerCamera.transform.position, maxRadius, maxRadius * 1.5f);
+        return FindRandomPointAlongRadius(fire.transform.position, fire.currentTotalSafetyRange, fire.currentTotalSafetyRange * 1.5f);
     }
 
     // https://discussions.unity.com/t/random-point-within-circle-with-min-max-radius/724904/14
@@ -144,10 +143,26 @@ public class EnemyManager : MonoBehaviour {
         return floorHit.point + Vector3.up * spawnDistanceFromFloor;
     }
 
+    public Vector3 FindValidPositionAroundPlayer(float minRange = 10f, float maxRange = 15f) {
+        Vector3 position = FindRandomPointAlongRadius(playerState.transform.position, minRange, maxRange);
+
+        int safety = 0;
+
+        while (Vector3.Distance(position, fire.transform.position) < fire.currentTotalSafetyRange) {
+            position = FindRandomPointAlongRadius(playerState.transform.position, minRange, maxRange);
+            safety++;
+
+            if (safety > 100) return FindRandomPositionOutsideOfFire();
+        }
+
+        return position;
+    }
+
     private IEnumerator RepeatedlySpawnEnemies() {
-        while (enemies.Count < maxNumberOfEnemies) {
+        while (true) {
             yield return new WaitForSeconds(0.1f);
 
+            if (enemies.Count >= maxNumberOfEnemies) continue;
             if (!playerState.isInTotalSafetyRange) SpawnEnemy();
         }
     }

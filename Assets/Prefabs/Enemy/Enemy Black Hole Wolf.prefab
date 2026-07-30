@@ -899,6 +899,40 @@ MonoBehaviour:
   agent: {fileID: 3453116737691627808}
   baseSpeed: 1.5
   runSpeed: 5
+  fireDistanceDestinationGuideMaximum: 50
+  fireDistanceDestinationGuideCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.75
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.14550781
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   isFollowingPlayer: 0
 --- !u!114 &7639250809963787645
 MonoBehaviour:
@@ -915,7 +949,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 73
-  range: 40
+  range: 0
   maxAngle: 120
   autoDetectInRadius: 3
   secondsToDetectPlayer: 1
