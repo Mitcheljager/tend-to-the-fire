@@ -42,6 +42,7 @@ public class EnemyNavigation : MonoBehaviour {
 
         if (isFollowingPlayer) return;
         if (agent.isStopped) return;
+        if (agent.pathPending) return;
 
         if (Vector3.Distance(transform.position, fire.transform.position) < fire.currentTotalSafetyRange) {
             enemy.Despawn();
@@ -53,11 +54,12 @@ public class EnemyNavigation : MonoBehaviour {
             return;
         }
 
-        if (agent.remainingDistance <= agent.stoppingDistance) {
+        if (Vector3.Distance(agent.destination, playerState.transform.position) > resetDestinationPastDistanceToPlayer) {
             SetRandomValidDestination();
+            return;
         }
 
-        if (Vector3.Distance(agent.destination, playerState.transform.position) > resetDestinationPastDistanceToPlayer) {
+        if (agent.remainingDistance <= agent.stoppingDistance) {
             SetRandomValidDestination();
         }
     }
