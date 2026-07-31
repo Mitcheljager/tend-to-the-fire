@@ -7,6 +7,7 @@ public class EnemyNavigation : MonoBehaviour {
     [Header("Config")]
     public float baseSpeed = 2f;
     public float runSpeed = 5f;
+    public float resetDestinationPastDistanceToPlayer = 80f;
     public float fireDistanceDestinationGuideMaximum = 30f;
     public AnimationCurve fireDistanceDestinationGuideCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("State")]
@@ -53,6 +54,10 @@ public class EnemyNavigation : MonoBehaviour {
         }
 
         if (agent.remainingDistance <= agent.stoppingDistance) {
+            SetRandomValidDestination();
+        }
+
+        if (Vector3.Distance(agent.destination, playerState.transform.position) > resetDestinationPastDistanceToPlayer) {
             SetRandomValidDestination();
         }
     }
