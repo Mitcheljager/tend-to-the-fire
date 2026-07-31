@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 7079398998778969847}
   - component: {fileID: 5029952514642298922}
   - component: {fileID: 1327685417385601062}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Kill Radius
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358054118651348423}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4701a2d4c379b94428e7c3443eb93760, type: 3}
   m_Name: 
@@ -902,6 +902,7 @@ MonoBehaviour:
   agent: {fileID: 3453116737691627808}
   baseSpeed: 1.5
   runSpeed: 5
+  resetDestinationPastDistanceToPlayer: 80
   fireDistanceDestinationGuideMaximum: 50
   fireDistanceDestinationGuideCurve:
     serializedVersion: 2
