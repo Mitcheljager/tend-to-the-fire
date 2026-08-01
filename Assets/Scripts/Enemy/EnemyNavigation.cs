@@ -4,9 +4,12 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Enemy))]
 public class EnemyNavigation : MonoBehaviour {
     public NavMeshAgent agent;
-    [Header("Config")]
+    [Header("Speed")]
     public float baseSpeed = 2f;
     public float runSpeed = 5f;
+    public float speedUpMaximumDistance = 100f;
+    public AnimationCurve distanceSpeedMultiplierCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
+    [Header("Fire distance")]
     public float resetDestinationPastDistanceToPlayer = 80f;
     public float fireDistanceDestinationGuideMaximum = 30f;
     public AnimationCurve fireDistanceDestinationGuideCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
@@ -96,6 +99,9 @@ public class EnemyNavigation : MonoBehaviour {
     }
 
     private void SetSpeed() {
-        agent.speed = isFollowingPlayer ? runSpeed : baseSpeed;
+        float distanceFromPlayer = Vector3.Distance(playerState.transform.position, transform.position);
+        float normalizedDistance = 1f / speedUpMaximumDistance * distanceFromPlayer;
+
+        agent.speed = (isFollowingPlayer ? runSpeed : baseSpeed) * distanceSpeedMultiplierCurve.Evaluate(normalizedDistance);;
     }
 }
