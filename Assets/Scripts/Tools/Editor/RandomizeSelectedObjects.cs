@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEditor;
 
 public class RandomizeSelectedObjects : EditorWindow {
-    private float positionRange = 5f;
-    private bool positionX = true;
+    private float positionRange = 0f;
+    private bool positionX = false;
     private bool positionY = false;
-    private bool positionZ = true;
+    private bool positionZ = false;
     private bool rotationX = false;
     private bool rotationY = false;
     private bool rotationZ = false;
