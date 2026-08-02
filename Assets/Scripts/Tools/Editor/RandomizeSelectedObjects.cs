@@ -37,7 +37,7 @@ public class RandomizeSelectedObjects : EditorWindow {
     private void RandomizePositions() {
         GameObject[] selectedObjects = Selection.gameObjects;
 
-        Undo.RecordObjects(System.Array.ConvertAll(selectedObjects, selectedObject => (Object)selectedObject.transform), "Randomize positions");
+        Undo.RecordObjects(System.Array.ConvertAll(selectedObjects, selectedObject => selectedObject.transform), "Randomize positions");
 
         foreach (GameObject selectedObject in selectedObjects) {
             Vector3 currentPosition = selectedObject.transform.position;
