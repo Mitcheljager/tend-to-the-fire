@@ -142,6 +142,7 @@ MonoBehaviour:
   interactableCollider: {fileID: 1795887789496423131}
   interactableOutlineRange: 20
   maxFuel: 10
+  smotherIncrease: 0.25
   weight: 2
   materialRenderers:
   - {fileID: 5046733453766902505}

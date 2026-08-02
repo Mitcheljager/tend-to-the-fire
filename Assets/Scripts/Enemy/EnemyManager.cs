@@ -26,11 +26,11 @@ public class EnemyManager : MonoBehaviour {
         // Gizmos.DrawWireSphere(playerState.transform.position, maxRadius);
     }
 
-    private void OnEnable() {
+    void OnEnable() {
         PlayerEvent.OnPlayerEnteredTotalSafetyRange.AddListener(DespawnAllOutOfViewEnemies);
     }
 
-    private void OnDisable() {
+    void OnDisable() {
         PlayerEvent.OnPlayerEnteredTotalSafetyRange.RemoveListener(DespawnAllOutOfViewEnemies);
     }
 

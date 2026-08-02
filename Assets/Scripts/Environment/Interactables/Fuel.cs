@@ -3,6 +3,7 @@ using UnityEngine;
 public class Fuel : Interactable {
     [Separator]
     public float maxFuel = 10f;
+    public float smotherIncrease = 0.5f;
     public float weight = 0f;
     public Renderer[] materialRenderers;
     [Header("State")]

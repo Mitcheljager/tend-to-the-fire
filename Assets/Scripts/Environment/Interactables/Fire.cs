@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Fire : Interactable {
     [Separator]
     [Header("Config")]
+    public FireSmother fireSmother;
     public float maxLightRange = 20f;
     public float maxLightIntensity;
     public float maxFuel = 10f;
@@ -82,7 +83,10 @@ public class Fire : Interactable {
     }
 
     private void SetFireSize() {
-        currentMultiplier = 1f - (1f / Mathf.Min(maxFuel, maxEffectiveFuel) * Mathf.Min(currentFuel, maxEffectiveFuel));
+        float fuelMultiplier = 1f / Mathf.Min(maxFuel, maxEffectiveFuel) * Mathf.Min(currentFuel, maxEffectiveFuel);
+        float smotherMultiplier = 1f - fireSmother.currentSmother;
+
+        currentMultiplier = fuelMultiplier * smotherMultiplier;
 
         currentLightRange = maxLightRange * lightRangeCurve.Evaluate(currentMultiplier);
         currentLightIntensity = maxLightIntensity * lightIntensityCurve.Evaluate(currentMultiplier);
@@ -109,6 +113,7 @@ public class Fire : Interactable {
         playerInventory.UseFuel(fuel, this);
 
         fireEffects.BurstEmbers(Mathf.Min((activeFuel.Count - 1) * Mathf.CeilToInt(fuel.maxFuel / 10), 5));
+        fireSmother.AddSmother(fuel);
     }
 
     public void AddEditorFuel(float amount) {
@@ -116,7 +121,9 @@ public class Fire : Interactable {
         fuelObject.AddComponent<Fuel>();
         Fuel fuel = fuelObject.GetComponent<Fuel>();
         fuel.maxFuel = amount;
+        fuel.smotherIncrease = 0.25f;
 
         activeFuel.Add(fuel);
+        fireSmother.AddSmother(fuel);
     }
 }
