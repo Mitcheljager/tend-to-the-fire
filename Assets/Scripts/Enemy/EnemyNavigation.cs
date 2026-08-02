@@ -11,7 +11,8 @@ public class EnemyNavigation : MonoBehaviour {
     public AnimationCurve distanceSpeedMultiplierCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("Fire distance")]
     public float resetDestinationPastDistanceToPlayer = 80f;
-    public float fireDistanceDestinationGuideMaximum = 30f;
+    public float fireDistanceDestinationGuideMaximum = 30;
+    public float fireDistanceDestinationGuideInnerMultiplier = 0.5f;
     public AnimationCurve fireDistanceDestinationGuideCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("State")]
     [Fade] public bool isFollowingPlayer;
@@ -25,7 +26,7 @@ public class EnemyNavigation : MonoBehaviour {
         if (playerState == null) return;
 
         Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(playerState.transform.position, GetGuideRange() * 0.5f);
+        Gizmos.DrawWireSphere(playerState.transform.position, GetGuideRange() * fireDistanceDestinationGuideInnerMultiplier);
         Gizmos.DrawWireSphere(playerState.transform.position, GetGuideRange());
 
         #if UNITY_EDITOR
@@ -95,7 +96,7 @@ public class EnemyNavigation : MonoBehaviour {
     public void SetRandomValidDestination() {
         float maxRange = GetGuideRange();
 
-        SetDestination(enemyManager.FindValidPositionAroundPlayer(maxRange * 0.5f, maxRange));
+        SetDestination(enemyManager.FindValidPositionAroundPlayer(maxRange * fireDistanceDestinationGuideInnerMultiplier, maxRange));
     }
 
     private void SetSpeed() {
