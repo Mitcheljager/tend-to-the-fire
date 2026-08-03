@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FuelSpawner
   fuelPrefabs:
-  - {fileID: 7042457317238417312, guid: ad1df6c86b3233d4ea8c9c33d2bff42f, type: 3}
-  - {fileID: 7042457317238417312, guid: a6377815697c55d4cade43bf2a88c4b7, type: 3}
-  - {fileID: 7042457317238417312, guid: fe509db578e837b4e8e09770072d676c, type: 3}
+  - {fileID: 3372025977161060689, guid: 3f6e014411edaf54e859b4ca55df2916, type: 3}
+  - {fileID: 3372025977161060689, guid: a6377815697c55d4cade43bf2a88c4b7, type: 3}
+  - {fileID: 3372025977161060689, guid: 972d04190c8777f4f9f263841990c4b0, type: 3}
   hasSpawnedFuel: 0
