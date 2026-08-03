@@ -9,6 +9,7 @@ public class FireSmother : MonoBehaviour {
 
     void Update() {
         if (currentSmother <= 0f) return;
+        if (currentSmother == 1f) return;
 
         DecreaseCurrentSmother();
     }
