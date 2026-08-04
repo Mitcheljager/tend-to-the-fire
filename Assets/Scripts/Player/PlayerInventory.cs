@@ -37,6 +37,7 @@ public class PlayerInventory : MonoBehaviour {
 
         fuel.transform.parent = fire.transform;
         fuel.transform.localPosition = Vector3.zero;
+        fuel.SetLayer(0);
 
         fire.activeFuel.Add(fuel);
     }
