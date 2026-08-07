@@ -43,9 +43,9 @@ public class PlayerFocus : MonoBehaviour {
         bottomEyeLid.offsetMax = bottomOffsetMax;
 
         float targetTopOffsetY = topTargetBottom - screenHeight;
-        bool topClosed = Mathf.Abs(topOffsetMin.y - targetTopOffsetY) <= 0.1f;
-        bool bottomClosed = Mathf.Abs(bottomOffsetMax.y - bottomTargetTop) <= 0.1f;
-        isFullyClosed = isClosed && topClosed && bottomClosed;
+        bool isTopClosed = Mathf.Abs(topOffsetMin.y - targetTopOffsetY) <= 0.1f;
+        bool isBottomClosed = Mathf.Abs(bottomOffsetMax.y - bottomTargetTop) <= 0.1f;
+        isFullyClosed = isClosed && isTopClosed && isBottomClosed;
 
         currentFocusVolume = isClosed ? Mathf.Lerp(currentFocusVolume, 0, Time.deltaTime * focusAudioLerpSpeed) : focusAudioDropoff;
         audioMixer.SetFloat("FocusVolume", currentFocusVolume);
