@@ -71,8 +71,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_2E510540: 0.7
-    - Vector1_36874B96: 8.97
+    - Vector1_2E510540: 0.65
+    - Vector1_36874B96: 8
     - Vector1_DC2B334F: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
@@ -92,7 +92,7 @@ Material:
     - _Inner_Depth: 6
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Outer_Ring: 9
+    - _Outer_Ring: 10
     - _Pulse_Speed: 0
     - _QueueControl: 0
     - _QueueOffset: 0
