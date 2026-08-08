@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 1039418784575266621}
   - component: {fileID: 1636665294368713197}
   m_Layer: 16
-  m_Name: Proximity and Chase Audio
+  m_Name: Proximity and Following Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,6 +343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2963587031280662190}
+  - component: {fileID: 4560906804720078349}
   m_Layer: 16
   m_Name: Audio
   m_TagString: Untagged
@@ -367,6 +368,22 @@ Transform:
   - {fileID: 5692392509758529570}
   m_Father: {fileID: 2137870374999421925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4560906804720078349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7350585064757892569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17ee7d5434392847bb082c58aea078e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAudio
+  enemyNavigation: {fileID: 9182608921279600046}
+  audioHelperFollowing: {fileID: 1636665294368713197}
+  followingAudioMaxDistance: 150
+  followingAudioLerpSpeed: 1
 --- !u!1 &8552858876680083847
 GameObject:
   m_ObjectHideFlags: 0
