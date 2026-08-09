@@ -22,9 +22,6 @@ I do not remember, it has been so long.
 I no longer see faces, I no longer hear voices, I no longer wish to be alone.
 I need your help.
 
-Today is day one.
-Not the day this all started. The day I first met you. The day I start heading home.
-
 The darkness is all enveloping, we must keep it at bay.
 The light can not die. We must **tend to the fire**.
 
@@ -37,9 +34,13 @@ I remember love.
 I remember home.
 I fear the day I do not.
 
+This day is the first.
+Not when it started.
+When I head home.
 
 
-I'm on my own. Surviving a life void of hope, void of direction.
+
+I'm on my own. Life void of hope, void of direction.
 Each day hiding from fear. Each day putting off what I do not wish to face.
 I'm on my own. I do not wish to be alone at the end, I wish to go home.
 
@@ -62,3 +63,4 @@ These trees all around you
 - A home and a repository of memories from an unremarkable life, lived at the fringes of a life I once wanted for myself
 - No one is left to listen
 - But what would befall the trees beyond the roads? Might plants thrive in the rusted light? The insects? As the earth entered a new age, the myriad systems ad cycles of nature would surely be altered. And such epochal notions were suffocating. They mocked his every reason for driving the car. Why was he looking for the boy's sister and endeavouring to discover if the sea could prolong their existence?
+- What will the end of the world look like? Will it be an old man slowly turned to gold, flowers raining from the sky, or a hole cut through the wire fencing that keeps the monsters out? Does it sound like a howl outside the window, or does it look like coming home?
