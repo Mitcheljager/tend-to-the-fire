@@ -28,8 +28,8 @@ public class SmallMessage : MonoBehaviour {
     }
 
     private IEnumerator ShowNextMessage() {
-        if (isCoroutineRunning) yield return null;
-        if (messageQueue.Count == 0) yield return null;
+        if (isCoroutineRunning) yield break;
+        if (messageQueue.Count == 0) yield break;
 
         isCoroutineRunning = true;
 
