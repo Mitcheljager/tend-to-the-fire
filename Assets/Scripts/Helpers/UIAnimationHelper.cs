@@ -32,15 +32,12 @@ public class UIAnimationHelper : MonoBehaviour {
     }
 
     public void FadeOut(float duration = 0.5f) {
-        if (isAnimating) return;
-
         StopAllCoroutines();
         StartCoroutine(FadeOutCoroutine(duration));
     }
 
     public void FadeIn(float duration = 0.5f) {
-        if (isAnimating) return;
-
+        StopAllCoroutines();
         StartCoroutine(FadeInCoroutine(duration));
     }
 
