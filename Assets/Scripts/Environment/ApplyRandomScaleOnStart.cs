@@ -10,9 +10,7 @@ public class ApplyRandomScaleOnStart : MonoBehaviour {
 
     void Start() {
         if (uniform) {
-            float random = Random.Range(scaleRange.x, scaleRange.y);
-            Debug.Log(random);
-            transform.localScale = transform.localScale * random;
+            transform.localScale = transform.localScale * Random.Range(scaleRange.x, scaleRange.y);;
         } else {
             transform.localScale = new(
                 Random.Range(minimumScale.x, maximumScale.x),
