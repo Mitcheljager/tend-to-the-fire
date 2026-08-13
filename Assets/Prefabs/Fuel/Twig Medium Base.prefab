@@ -105,7 +105,7 @@ MonoBehaviour:
   minimumScale: {x: 1, y: 1, z: 1}
   maximumScale: {x: 1, y: 1, z: 1}
   uniform: 1
-  scaleRange: {x: 0.9, y: 1.35}
+  scaleRange: {x: 1.4, y: 1.75}
 --- !u!1 &7042457317238417312
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 6981575085425204825}
   - component: {fileID: 1795887789496423131}
   m_Layer: 7
-  m_Name: Twig Small Base
+  m_Name: Twig Medium Base
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,9 +158,9 @@ MonoBehaviour:
   - {fileID: 3007533238936613417}
   interactableCollider: {fileID: 1795887789496423131}
   interactableOutlineRange: 20
-  maxFuel: 10
-  smotherIncrease: 0.25
-  weight: 2
+  maxFuel: 20
+  smotherIncrease: 0.5
+  weight: 10
   materialRenderers:
   - {fileID: 5046733453766902505}
   currentFuel: 0

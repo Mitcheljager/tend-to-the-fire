@@ -116,12 +116,12 @@ public class Fire : Interactable {
         fireSmother.AddSmother(fuel);
     }
 
-    public void AddEditorFuel(float amount) {
+    public void AddEditorFuel(float amount, float smotherIncrease = 0.1f) {
         GameObject fuelObject = new("Editor created fuel");
         fuelObject.AddComponent<Fuel>();
         Fuel fuel = fuelObject.GetComponent<Fuel>();
         fuel.maxFuel = amount;
-        fuel.smotherIncrease = 0.25f;
+        fuel.smotherIncrease = smotherIncrease;
 
         activeFuel.Add(fuel);
         fireSmother.AddSmother(fuel);

@@ -48,4 +48,7 @@ MonoBehaviour:
   - {fileID: 3372025977161060689, guid: 3f6e014411edaf54e859b4ca55df2916, type: 3}
   - {fileID: 3372025977161060689, guid: a6377815697c55d4cade43bf2a88c4b7, type: 3}
   - {fileID: 3372025977161060689, guid: 972d04190c8777f4f9f263841990c4b0, type: 3}
+  - {fileID: 2061124501064393850, guid: d7c2964513a36eb4682afcc88f650b80, type: 3}
+  - {fileID: 2061124501064393850, guid: dd4b889ed1a47b3439c09917f9c8cb1e, type: 3}
+  - {fileID: 2061124501064393850, guid: b5d625a03b101ef4ca7dad5c930f5acd, type: 3}
   hasSpawnedFuel: 0
