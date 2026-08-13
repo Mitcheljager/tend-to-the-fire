@@ -6,11 +6,13 @@ public class ApplyRandomScaleOnStart : MonoBehaviour {
     public Vector3 maximumScale = new(1.1f, 1.1f, 1.1f);
     [Header("Uniform")]
     public bool uniform = false;
-    public float randomOffset = 0.1f;
+    public Vector2 scaleRange = new(0.9f, 1.1f);
 
     void Start() {
         if (uniform) {
-            transform.localScale = transform.localScale * Random.Range(1f - randomOffset, 1f + randomOffset);
+            float random = Random.Range(scaleRange.x, scaleRange.y);
+            Debug.Log(random);
+            transform.localScale = transform.localScale * random;
         } else {
             transform.localScale = new(
                 Random.Range(minimumScale.x, maximumScale.x),
