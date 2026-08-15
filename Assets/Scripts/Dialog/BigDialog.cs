@@ -25,13 +25,14 @@ public class BigDialog : MonoBehaviour {
     private int currentItemIndex = 0;
 
     void Awake() {
+        playerState = FindFirstObjectByType<PlayerState>();
+
         items.Insert(0, new(""));
     }
 
     void OnEnable() {
-        playerState = FindFirstObjectByType<PlayerState>();
-
         playerState.SetInStasis(true);
+
         text.text = items[currentItemIndex].text;
 
         eventOnEnable.Invoke();

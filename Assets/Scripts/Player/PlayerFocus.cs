@@ -27,7 +27,7 @@ public class PlayerFocus : MonoBehaviour {
     }
 
     void Update() {
-        isClosed = Input.GetButton("Close Eyes") || playerState.isDead;
+        isClosed = Input.GetButton("Close Eyes") || playerState.isDead || playerState.isInStasis;
 
         float screenHeight = Screen.height;
         float animationSpeed = isClosed ? animationSpeedClose : animationSpeedOpen;
@@ -46,6 +46,8 @@ public class PlayerFocus : MonoBehaviour {
         bool isTopClosed = Mathf.Abs(topOffsetMin.y - targetTopOffsetY) <= 0.1f;
         bool isBottomClosed = Mathf.Abs(bottomOffsetMax.y - bottomTargetTop) <= 0.1f;
         isFullyClosed = isClosed && isTopClosed && isBottomClosed;
+
+        if (playerState.isInStasis) return;
 
         currentFocusVolume = isClosed ? Mathf.Lerp(currentFocusVolume, 0, Time.deltaTime * focusAudioLerpSpeed) : focusAudioDropoff;
         audioMixer.SetFloat("FocusVolume", currentFocusVolume);
