@@ -12,8 +12,11 @@ public class BigDialogItem {
 
 public class BigDialog : MonoBehaviour {
     public TMP_Text text;
-    public UIAnimationHelper uiAnimationHelper;
     public List<BigDialogItem> items;
+    [Header("Animation")]
+    public float textFadeTimeSeconds = 0.5f;
+    public UIAnimationHelper uiAnimationHelper;
+    public UIAnimationHelper textUiAnimationHelper;
     [Header("Event")]
     public UnityEvent eventOnEnable;
     public UnityEvent eventOnEnd;
@@ -47,6 +50,8 @@ public class BigDialog : MonoBehaviour {
             End();
             return;
         }
+
+        textUiAnimationHelper.FadeIn(textFadeTimeSeconds);
 
         text.text = items[currentItemIndex].text;
     }
