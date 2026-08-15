@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5704503639409621261}
   - {fileID: 8373728244921543047}
+  - {fileID: 5704503639409621261}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5368423566369387413
@@ -144,11 +144,16 @@ MonoBehaviour:
   text: {fileID: 283749481358418284}
   uiAnimationHelper: {fileID: 3960571868601039204}
   items:
-  - text: 'This is a message on the first screen.
+  - text: 'This is the very first message.
 
-      And another sentence on
-      the second line.'
-  - text: This is a second screen with another message.
+      And it has a second message.'
+  - text: This would be the next message.
+  eventOnEnable:
+    m_PersistentCalls:
+      m_Calls: []
+  eventOnEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6992631325925425656
 GameObject:
   m_ObjectHideFlags: 0

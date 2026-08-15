@@ -1,22 +1,29 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 using TMPro;
 
 [System.Serializable]
 public class BigDialogItem {
     [TextArea] public string text;
+
+    public BigDialogItem(string _text) => text = _text;
 }
 
 public class BigDialog : MonoBehaviour {
     public TMP_Text text;
     public UIAnimationHelper uiAnimationHelper;
-    public BigDialogItem[] items;
+    public List<BigDialogItem> items;
     [Header("Event")]
     public UnityEvent eventOnEnable;
     public UnityEvent eventOnEnd;
 
     private PlayerState playerState;
     private int currentItemIndex = 0;
+
+    void Awake() {
+        items.Insert(0, new(""));
+    }
 
     void OnEnable() {
         playerState = FindFirstObjectByType<PlayerState>();
@@ -25,6 +32,8 @@ public class BigDialog : MonoBehaviour {
         text.text = items[currentItemIndex].text;
 
         eventOnEnable.Invoke();
+
+        Next();
     }
 
     void Update() {
@@ -34,7 +43,7 @@ public class BigDialog : MonoBehaviour {
     private void Next() {
         currentItemIndex++;
 
-        if (currentItemIndex >= items.Length) {
+        if (currentItemIndex >= items.Count) {
             End();
             return;
         }
