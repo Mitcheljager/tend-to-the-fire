@@ -5,7 +5,7 @@ public class PlayerRest : MonoBehaviour {
 
     private PlayerCamera playerCamera;
 
-    void Start() {
+    void Awake() {
         playerCamera = FindFirstObjectByType<PlayerCamera>();
     }
 
@@ -21,6 +21,8 @@ public class PlayerRest : MonoBehaviour {
         isResting = state;
 
         if (!state) return;
+
+        if (playerCamera == null) playerCamera = FindFirstObjectByType<PlayerCamera>();
 
         playerCamera.playerBody.transform.position = restCameraPosition.position;
         playerCamera.SetCameraLimitAngle(restCameraPosition.eulerAngles.y);

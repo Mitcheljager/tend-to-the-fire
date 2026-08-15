@@ -147,7 +147,7 @@ MonoBehaviour:
 
       And it has a second message.'
   - text: This would be the next message.
-  textFadeTimeSeconds: 0.5
+  textFadeTimeSeconds: 1.5
   uiAnimationHelper: {fileID: 3960571868601039204}
   textUiAnimationHelper: {fileID: 1507968779619281953}
   eventOnEnable:

@@ -16,7 +16,7 @@ public class Rest : Interactable {
         Gizmos.DrawLine(cameraPosition.position, cameraPosition.position + cameraPosition.forward * 0.25f);
     }
 
-    void Start() {
+    void Awake() {
         playerRest = FindFirstObjectByType<PlayerRest>();
     }
 
