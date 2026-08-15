@@ -4,6 +4,7 @@ public class PlayerState : MonoBehaviour {
     [Header("State")]
     public bool isDead = false;
     public bool isInTotalSafetyRange = false;
+    public bool isInStasis = false;
 
     private Fire fire;
 
@@ -26,6 +27,10 @@ public class PlayerState : MonoBehaviour {
         Debug.Log("Kill");
 
         PlayerEvent.OnPlayerDiedEvent.Invoke();
+    }
+
+    public void SetInStasis(bool state) {
+        isInStasis = state;
     }
 
     private bool IsInTotalSafetyRange() {

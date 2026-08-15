@@ -35,8 +35,7 @@ public class PlayerMovement : MonoBehaviour {
 
         if (isGrounded && IsGravityPositive()) velocity = gravityDirection * 10;
 
-        if (playerState.isDead) return;
-        if (playerRest.isResting) return;
+        if (!CanMove()) return;
 
         SetMovement();
         SetRunning();
@@ -88,6 +87,14 @@ public class PlayerMovement : MonoBehaviour {
 
         float velocityMagnitude = velocity.magnitude;
         if (velocityMagnitude > maxVelocity) velocity = velocity.normalized * maxVelocity;
+    }
+
+    public bool CanMove() {
+        if (playerState.isDead) return false;
+        if (playerState.isInStasis) return false;
+        if (playerRest.isResting) return false;
+
+        return true;
     }
 
     public bool IsGravityPositive() {
