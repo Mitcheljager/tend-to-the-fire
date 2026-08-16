@@ -16,11 +16,9 @@ public class Rest : Interactable {
         Gizmos.DrawLine(cameraPosition.position, cameraPosition.position + cameraPosition.forward * 0.25f);
     }
 
-    void Awake() {
-        playerRest = FindFirstObjectByType<PlayerRest>();
-    }
-
     public override void Interact() {
+        if (playerRest == null) playerRest = FindFirstObjectByType<PlayerRest>();
+
         playerRest.SetResting(true, cameraPosition);
     }
 }
