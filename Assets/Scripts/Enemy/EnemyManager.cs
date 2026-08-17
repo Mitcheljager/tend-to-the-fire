@@ -163,7 +163,9 @@ public class EnemyManager : MonoBehaviour {
             yield return new WaitForSeconds(0.1f);
 
             if (enemies.Count >= maxNumberOfEnemies) continue;
-            if (!playerState.isInTotalSafetyRange) SpawnEnemy();
+            if (playerState.isInTotalSafetyRange) continue;
+
+            SpawnEnemy();
         }
     }
 }
