@@ -146,7 +146,49 @@ MonoBehaviour:
   - text: 'This is the very first message.
 
       And it has a second message.'
+    eventOnShow:
+      m_PersistentCalls:
+        m_Calls: []
   - text: This would be the next message.
+    eventOnShow:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Fire, Assembly-CSharp
+          m_MethodName: AddFuelFromPrefab
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3372025977161060689, guid: 3f6e014411edaf54e859b4ca55df2916, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Fire, Assembly-CSharp
+          m_MethodName: AddFuelFromPrefab
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3372025977161060689, guid: a6377815697c55d4cade43bf2a88c4b7, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: Fire, Assembly-CSharp
+          m_MethodName: AddFuelFromPrefab
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3372025977161060689, guid: 972d04190c8777f4f9f263841990c4b0, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   textFadeTimeSeconds: 1.5
   uiAnimationHelper: {fileID: 3960571868601039204}
   textUiAnimationHelper: {fileID: 1507968779619281953}

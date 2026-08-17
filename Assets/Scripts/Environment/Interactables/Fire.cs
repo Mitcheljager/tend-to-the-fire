@@ -119,11 +119,23 @@ public class Fire : Interactable {
     public void AddEditorFuel(float amount, float smotherIncrease = 0.1f) {
         GameObject fuelObject = new("Editor created fuel");
         fuelObject.AddComponent<Fuel>();
+
         Fuel fuel = fuelObject.GetComponent<Fuel>();
         fuel.maxFuel = amount;
         fuel.smotherIncrease = smotherIncrease;
 
         activeFuel.Add(fuel);
         fireSmother.AddSmother(fuel);
+    }
+
+    public void AddFuelFromPrefab(GameObject fuelPrefab) {
+        GameObject fuelObject = GameObject.Instantiate(fuelPrefab, transform.position, Quaternion.identity);
+        fuelObject.name = "Prefab created fuel";
+        fuelObject.transform.parent = transform;
+
+        Fuel fuel = fuelObject.GetComponent<Fuel>();
+        fuel.currentFuel = fuel.maxFuel;
+
+        activeFuel.Add(fuel);
     }
 }

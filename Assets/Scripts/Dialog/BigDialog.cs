@@ -6,6 +6,7 @@ using TMPro;
 [System.Serializable]
 public class BigDialogItem {
     [TextArea] public string text;
+    public UnityEvent eventOnShow;
 
     public BigDialogItem(string _text) => text = _text;
 }
@@ -55,6 +56,8 @@ public class BigDialog : MonoBehaviour {
         textUiAnimationHelper.FadeIn(textFadeTimeSeconds);
 
         text.text = items[currentItemIndex].text;
+
+        items[currentItemIndex].eventOnShow.Invoke();
     }
 
     private void End() {
