@@ -12,10 +12,14 @@ public class PlayerFootsteps : MonoBehaviour {
     public float lastFootstepSecondsAgo = 0f;
 
     void Update() {
-        lastFootstepSecondsAgo += Time.deltaTime;
-
-        if (playerMovement.move.magnitude == 0) return;
         if (!playerMovement.isGrounded) return;
+
+        if (playerMovement.move.magnitude == 0) {
+            lastFootstepSecondsAgo = 0f;
+            return;
+        }
+
+        lastFootstepSecondsAgo += Time.deltaTime;
 
         float footstepCooldown = playerMovement.isRunning ? footstepCooldownRunning : footstepCooldownWalking;
 
