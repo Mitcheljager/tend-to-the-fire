@@ -60,6 +60,8 @@ public class AudioHelper : MonoBehaviour {
     }
 
     public void PlayRandomClip() {
+        if (audioClips.Length == 0) return;
+
         SetRandomPitchedClip();
 
         if (playAtPoint) {
