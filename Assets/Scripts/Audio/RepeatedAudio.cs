@@ -4,7 +4,6 @@ using UnityEngine;
 [RequireComponent(typeof(AudioHelper))]
 public class RepeatedAudio : MonoBehaviour {
     public float delayInSeconds = 1f;
-    public bool viaConnector = true;
 
     private AudioHelper audioHelper;
 
@@ -18,8 +17,7 @@ public class RepeatedAudio : MonoBehaviour {
         while (true) {
             yield return new WaitForSeconds(delayInSeconds);
 
-            if (viaConnector) audioHelper.PlayAudioViaConnector();
-            else audioHelper.PlayRandomClip();
+            audioHelper.PlayRandomClip();
         }
     }
 }
