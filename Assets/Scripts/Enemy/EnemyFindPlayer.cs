@@ -88,8 +88,8 @@ public class EnemyFindPlayer : MonoBehaviour {
         } else if (seenTime >= secondsToDetectPlayer / 2) {
             // If player is seen for at least half of the detection time set destination without actually following the player
             enemyNavigation.SetDestination(playerState.transform.position);
-        } else {
-            // Reset if seen for less than half the time
+        } else if (!enemyNavigation.isFollowingPlayer || enemyNavigation.agent.remainingDistance < enemyNavigation.agent.stoppingDistance) {
+            // Reset if seen for less than half the time but only if not following the player or only when reaching the last know position of the player
             enemyNavigation.EndFollowingPlayer();
         }
 

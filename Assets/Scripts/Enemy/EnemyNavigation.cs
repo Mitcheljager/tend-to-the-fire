@@ -4,6 +4,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Enemy))]
 public class EnemyNavigation : MonoBehaviour {
     public NavMeshAgent agent;
+    public Enemy enemy;
+    public EnemyFindPlayer enemyFindPlayer;
     [Header("Speed")]
     public float baseSpeed = 2f;
     public float runSpeed = 5f;
@@ -15,9 +17,8 @@ public class EnemyNavigation : MonoBehaviour {
     public float fireDistanceDestinationGuideInnerMultiplier = 0.5f;
     public AnimationCurve fireDistanceDestinationGuideCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     [Header("State")]
-    [Fade] public bool isFollowingPlayer;
+    [Fade] public bool isFollowingPlayer = false;
 
-    private Enemy enemy;
     private EnemyManager enemyManager;
     private PlayerState playerState;
     private Fire fire;
@@ -35,7 +36,6 @@ public class EnemyNavigation : MonoBehaviour {
     }
 
     void Start() {
-        enemy = FindFirstObjectByType<Enemy>();
         enemyManager = FindFirstObjectByType<EnemyManager>();
         playerState = FindFirstObjectByType<PlayerState>();
         fire = FindFirstObjectByType<Fire>();
@@ -54,7 +54,7 @@ public class EnemyNavigation : MonoBehaviour {
         }
 
         if (isFollowingPlayer) {
-            SetDestination(playerState.transform.position);
+            if (enemyFindPlayer.IsPlayerSeen()) SetDestination(playerState.transform.position);
             return;
         }
 

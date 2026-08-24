@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
     void Awake() {
         initialMaxNumberOfEnemies = enemyManager.maxNumberOfEnemies;
         enemyManager.maxNumberOfEnemies = 0;
-        enemyManager.DespawnAllEnemies();
+        // enemyManager.DespawnAllEnemies();
 
         initialFuelConsumptionPerSecond = fire.fuelConsumptionPerSecond;
         fire.fuelConsumptionPerSecond = 0f;

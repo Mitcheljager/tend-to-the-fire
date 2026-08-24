@@ -57,6 +57,8 @@ public class EnemyManager : MonoBehaviour {
     }
 
     public void DespawnEnemy(Enemy enemy) {
+        Debug.Log(enemy);
+
         enemies.Remove(enemy);
         Destroy(enemy.gameObject);
     }

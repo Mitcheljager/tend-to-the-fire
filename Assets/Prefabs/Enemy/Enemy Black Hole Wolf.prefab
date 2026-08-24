@@ -330,10 +330,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioHelper
   minPitch: 1
   maxPitch: 1
+  delay: 0
   playAtPoint: 0
+  avoidRepeats: 0
   audioClips: []
-  doReverb: 1
   audioSource: {fileID: 1039418784575266621}
+  pitchMultiplier: 1
 --- !u!1 &7350585064757892569
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,10 +530,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioHelper
   minPitch: 1
   maxPitch: 1
+  delay: 0
   playAtPoint: 0
+  avoidRepeats: 0
   audioClips: []
-  doReverb: 1
   audioSource: {fileID: 323677951670850120}
+  pitchMultiplier: 1
 --- !u!1 &9123351308638099765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1070,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyNavigation
   agent: {fileID: 3453116737691627808}
+  enemy: {fileID: 5773186067482318515}
+  enemyFindPlayer: {fileID: 7639250809963787645}
   baseSpeed: 1.5
   runSpeed: 5
   speedUpMaximumDistance: 100
