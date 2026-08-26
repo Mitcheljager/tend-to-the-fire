@@ -18,11 +18,7 @@ public class GameManager : MonoBehaviour {
 
     void Awake() {
         initialMaxNumberOfEnemies = enemyManager.maxNumberOfEnemies;
-        enemyManager.maxNumberOfEnemies = 0;
-        // enemyManager.DespawnAllEnemies();
-
         initialFuelConsumptionPerSecond = fire.fuelConsumptionPerSecond;
-        fire.fuelConsumptionPerSecond = 0f;
     }
 
     void Update() {
@@ -31,6 +27,13 @@ public class GameManager : MonoBehaviour {
         currentTimeSeconds += Time.deltaTime;
 
         if (currentTimeSeconds >= endTimeSeconds) EndGame();
+    }
+
+    public void ResetGame() {
+        enemyManager.maxNumberOfEnemies = 0;
+        enemyManager.DespawnAllEnemies();
+
+        fire.fuelConsumptionPerSecond = 0f;
     }
 
     public void StartGame() {
