@@ -11,15 +11,24 @@ public enum SettingsKey {
     MusicVolume,
     RenderScale,
     FishEye,
-    MaxFPS
+    MaxFPS,
+    LODBias
 }
 
 public static class Settings {
-    public static bool IsSettingEnabled(SettingsKey key) {
-        return PlayerPrefs.GetInt(key.ToString(), 1) > 0;
+    public static bool IsSettingBoolEnabled(SettingsKey key) {
+        return GetSettingInt(key) > 0;
     }
 
-    public static void ToggleSetting(SettingsKey key, bool value) {
+    public static void ToggleSettingBool(SettingsKey key, bool value) {
         PlayerPrefs.SetInt(key.ToString(), value ? 1 : 0);
+    }
+
+    public static int GetSettingInt(SettingsKey key, int defaultValue = 1) {
+        return PlayerPrefs.GetInt(key.ToString(), defaultValue);
+    }
+
+    public static void SetSettingInt(SettingsKey key, int value) {
+        PlayerPrefs.SetInt(key.ToString(), value);
     }
 }
