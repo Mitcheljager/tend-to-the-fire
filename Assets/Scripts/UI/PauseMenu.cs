@@ -17,14 +17,14 @@ public class PauseMenu : MonoBehaviour {
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0f : 1f;
 
+        pauseMenuObject.SetActive(isPaused);
+
         if (isPaused) {
             UIscreenManager.ShowScreen(initialUIScreen);
-            Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            Cursor.lockState = CursorLockMode.None;
         } else {
             Cursor.lockState = CursorLockMode.Locked;
         }
-
-        pauseMenuObject.SetActive(isPaused);
 
         ToggleAudioSources();
     }
