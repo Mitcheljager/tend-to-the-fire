@@ -4,14 +4,13 @@ public enum SettingsKey {
     Bloom,
     PostExposure,
     Shadows,
-    ScreenShake,
     MasterVolume,
     SoundEffectsVolume,
     AmbienceVolume,
     MusicVolume,
     RenderScale,
-    FishEye,
     MaxFPS,
+    VSyncCount,
     LODBias
 }
 
