@@ -2,7 +2,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class AudioVolumeSettings : MonoBehaviour {
+public class AudioVolumeSettings : UserSettings {
     public AudioMixer mixer;
 
     private readonly SettingsKey[] volumeKeys = { SettingsKey.MasterVolume, SettingsKey.SoundEffectsVolume, SettingsKey.AmbienceVolume, SettingsKey.MusicVolume };
@@ -13,15 +13,7 @@ public class AudioVolumeSettings : MonoBehaviour {
         }
     }
 
-    void OnEnable() {
-        ChangeEvent.OnChangeEvent.AddListener(PossibilyUpdateFromEvent);
-    }
-
-    void OnDisable() {
-        ChangeEvent.OnChangeEvent.RemoveListener(PossibilyUpdateFromEvent);
-    }
-
-    private void PossibilyUpdateFromEvent(SettingsKey key) {
+    override public void PossibilyUpdateFromEvent(SettingsKey key) {
         if (!volumeKeys.Contains(key)) return;
 
         SetVolume(key);

@@ -11,7 +11,8 @@ public enum SettingsKey {
     RenderScale,
     MaxFPS,
     VSyncCount,
-    LODBias
+    LODBias,
+    PerPixelLighting
 }
 
 public static class Settings {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WindowSettings : MonoBehaviour {
+public class WindowSettings : UserSettings {
     void Start() {
         QualitySettings.vSyncCount = 0;
 
@@ -8,15 +8,7 @@ public class WindowSettings : MonoBehaviour {
         SetVSyncCount();
     }
 
-    void OnEnable() {
-        ChangeEvent.OnChangeEvent.AddListener(PossibilyUpdateFromEvent);
-    }
-
-    void OnDisable() {
-        ChangeEvent.OnChangeEvent.RemoveListener(PossibilyUpdateFromEvent);
-    }
-
-    private void PossibilyUpdateFromEvent(SettingsKey key) {
+    public override void PossibilyUpdateFromEvent(SettingsKey key) {
         if (key == SettingsKey.MaxFPS) SetMaxFPS();
         if (key == SettingsKey.VSyncCount) SetVSyncCount();
     }
