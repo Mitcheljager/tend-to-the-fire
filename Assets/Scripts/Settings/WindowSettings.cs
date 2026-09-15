@@ -14,14 +14,12 @@ public class WindowSettings : UserSettings {
     }
 
     public void SetMaxFPS() {
-        string key = SettingsKey.MaxFPS.ToString();
-        int maxFPS = (int)PlayerPrefs.GetFloat(key, 300f);
+        int maxFPS = Settings.GetSettingInt(SettingsKey.MaxFPS, 120);
 
-        Application.targetFrameRate = Mathf.Clamp(maxFPS, 30, 500);
+        Application.targetFrameRate = Mathf.Clamp(maxFPS, 30, 300);
     }
 
     public void SetVSyncCount() {
-        string key = SettingsKey.VSyncCount.ToString();
-        QualitySettings.vSyncCount = PlayerPrefs.GetInt(key, 0);
+        QualitySettings.vSyncCount = Settings.GetSettingInt(SettingsKey.VSyncCount, 0);
     }
 }

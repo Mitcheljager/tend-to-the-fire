@@ -12,12 +12,12 @@ public enum SettingsKey {
     MaxFPS,
     VSyncCount,
     LODBias,
-    PerPixelLighting
+    SimpleLighting
 }
 
 public static class Settings {
-    public static bool IsSettingBoolEnabled(SettingsKey key) {
-        return GetSettingInt(key) > 0;
+    public static bool IsSettingBoolEnabled(SettingsKey key, bool defaultValue = false) {
+        return GetSettingInt(key, defaultValue ? 1 : 0) > 0;
     }
 
     public static void ToggleSettingBool(SettingsKey key, bool value) {
@@ -30,5 +30,13 @@ public static class Settings {
 
     public static void SetSettingInt(SettingsKey key, int value) {
         PlayerPrefs.SetInt(key.ToString(), value);
+    }
+
+    public static float GetSettingFloat(SettingsKey key, float defaultValue = 1f) {
+        return PlayerPrefs.GetFloat(key.ToString(), defaultValue);
+    }
+
+    public static void SetSettingFloat(SettingsKey key, float value) {
+        PlayerPrefs.SetFloat(key.ToString(), value);
     }
 }
