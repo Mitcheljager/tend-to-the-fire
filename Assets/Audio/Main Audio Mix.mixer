@@ -36,7 +36,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ambient
+  m_Name: Ambience
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: b19e16a46d0da12469ab1df940c30a27
   m_Children: []
@@ -105,10 +105,18 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: 80a44ff637327e04ea99df00a50ed25c
+    name: AmbienceVolume
   - guid: 7eeb98cdfe339ec4b8a874c0c0c64488
     name: FocusVolume
+  - guid: a2f47dc1d778827409aeec4f66575d7d
+    name: MasterVolume
+  - guid: 033bea3fc76da7143a59b50634750f56
+    name: MusicVolume
   - guid: b4a8728dfa7f54148a33f8598860f4ad
     name: BoostVolume
+  - guid: d1eb2a1f894d7bc4e8bdaab3e7526f9b
+    name: SoundEffectsVolume
   m_AudioMixerGroupViews:
   - guids:
     - 743d5d31cf0bf414a8e0d15344cb3fee
