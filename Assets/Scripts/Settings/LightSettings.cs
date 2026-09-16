@@ -18,6 +18,6 @@ public class LightSettings : UserSettings {
 
         FieldInfo field = typeof(UniversalRenderPipelineAsset).GetField("m_AdditionalLightsRenderingMode", BindingFlags.NonPublic | BindingFlags.Instance);
 
-        field.SetValue(urpAsset, Settings.IsSettingBoolEnabled(SettingsKey.SimpleLighting, false) ? LightRenderingMode.PerVertex : LightRenderingMode.PerPixel);
+        field.SetValue(urpAsset, Settings.IsSettingBoolEnabled(SettingsKey.SimpleLighting) ? LightRenderingMode.PerVertex : LightRenderingMode.PerPixel);
     }
 }

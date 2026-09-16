@@ -10,14 +10,14 @@ public enum SettingsKey {
     MusicVolume,
     RenderScale,
     MaxFPS,
-    VSyncCount,
+    VSync,
     LODBias,
     SimpleLighting
 }
 
 public static class Settings {
-    public static bool IsSettingBoolEnabled(SettingsKey key, bool defaultValue = false) {
-        return GetSettingInt(key, defaultValue ? 1 : 0) > 0;
+    public static bool IsSettingBoolEnabled(SettingsKey key) {
+        return GetSettingInt(key, 0) > 0;
     }
 
     public static void ToggleSettingBool(SettingsKey key, bool value) {

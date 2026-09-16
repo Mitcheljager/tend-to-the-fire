@@ -1,7 +1,6 @@
 using UnityEngine;
 
 public class Checkbox : MonoBehaviour {
-    public bool defaultValue = true;
     public SettingsKey key;
     public GameObject[] activeObjects;
     public AudioHelper audioHelperOnChange;
@@ -10,7 +9,7 @@ public class Checkbox : MonoBehaviour {
     private bool initialValueSet = false;
 
     void OnEnable() {
-        SetValue(Settings.IsSettingBoolEnabled(key, defaultValue));
+        SetValue(Settings.IsSettingBoolEnabled(key));
 
         initialValueSet = true;
     }

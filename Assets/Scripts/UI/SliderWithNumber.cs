@@ -37,7 +37,7 @@ public class SliderWithNumber : MonoBehaviour {
         value = Mathf.Round(slider.value * 100) / 100;
 
         if (slider.wholeNumbers) value = Mathf.Round(value);
-        if (saveToUserSettings) PlayerPrefs.SetFloat(key.ToString(), value);
+        if (saveToUserSettings) Settings.SetSettingFloat(key, value);
 
         slider.value = value;
 
