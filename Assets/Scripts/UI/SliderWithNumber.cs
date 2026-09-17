@@ -30,6 +30,7 @@ public class SliderWithNumber : MonoBehaviour {
         if (!initialValueSet) return;
 
         if (audioHelperOnChange != null && !audioHelperOnChange.audioSource.isPlaying) audioHelperOnChange.PlayRandomClip();
+
         ChangeEvent.Dispatch(key);
     }
 

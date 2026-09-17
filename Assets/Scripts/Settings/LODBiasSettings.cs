@@ -1,11 +1,17 @@
 using UnityEngine;
 
-public class LODBiasSettings : MonoBehaviour {
+public class LODBiasSettings : UserSettings {
     void OnValidate() {
         ApplySettings();
     }
 
-    void OnEnable() {
+    void Start() {
+        ApplySettings();
+    }
+
+    public override void PossibilyUpdateFromEvent(SettingsKey key) {
+        if (key != SettingsKey.LODBias) return;
+
         ApplySettings();
     }
 

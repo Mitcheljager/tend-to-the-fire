@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 1357
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 332}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 38801
+  controlID: 75
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 38802
+  controlID: 76
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -406,7 +406,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 865df5ffe82efbffb8bffbff04c0fbff12c0fbff2cc0fbff40c0fbff5ac4fbffcefaffff361d0100f0f401006e0802005e180200
+      m_ExpandedIDs: cefaffff5e1d0100d6880100909c0100b4d4010078f501008a030200f0180200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -3016,4 +3016,4 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -696954
+  m_LastSelectedObjectID: -188560
