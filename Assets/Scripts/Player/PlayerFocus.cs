@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.InputSystem;
 
 public class PlayerFocus : MonoBehaviour {
     [Header("References")]
@@ -21,13 +22,15 @@ public class PlayerFocus : MonoBehaviour {
     private PlayerState playerState;
     private float currentFocusVolume;
     private float currentBoostVolume;
+    private InputAction focusInput;
 
     void Start() {
         playerState = FindFirstObjectByType<PlayerState>();
+        focusInput = InputSystem.actions.FindAction("Focus");
     }
 
     void Update() {
-        isClosed = Input.GetButton("Close Eyes") || playerState.isDead || playerState.isInStasis;
+        isClosed = focusInput.IsPressed() || playerState.isDead || playerState.isInStasis;
 
         float screenHeight = Screen.height;
         float animationSpeed = isClosed ? animationSpeedClose : animationSpeedOpen;

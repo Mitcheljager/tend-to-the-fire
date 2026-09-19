@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 public class Fire : Interactable {
     [Separator]
@@ -52,7 +53,7 @@ public class Fire : Interactable {
         SetFireSize();
 
         #if UNITY_EDITOR
-            if (Input.GetKeyDown(KeyCode.P)) AddEditorFuel(5);
+            if (Keyboard.current.pKey.wasPressedThisFrame) AddEditorFuel(5);
         #endif
     }
 

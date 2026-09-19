@@ -3376,7 +3376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db078ece41a6f44787a96353075cec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 3
   cameraAngleRestingLimit: 100
   playerBody: {fileID: 5263180691626490583}
   playerState: {fileID: 7730588770865220002}

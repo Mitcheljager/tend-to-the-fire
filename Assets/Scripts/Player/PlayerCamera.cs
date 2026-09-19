@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Camera))]
 public class PlayerCamera : MonoBehaviour {
@@ -14,6 +15,7 @@ public class PlayerCamera : MonoBehaviour {
     public float xRotation = 0f;
     public float yRotation = 0f;
     private float rotationLimitCenter = 0f;
+    private InputAction lookInput;
 
     void OnDrawGizmosSelected() {
         float angle = GetCameraViewAngle();
@@ -30,6 +32,7 @@ public class PlayerCamera : MonoBehaviour {
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        lookInput = InputSystem.actions.FindAction("Look");
     }
 
     void Update() {
@@ -37,19 +40,18 @@ public class PlayerCamera : MonoBehaviour {
         if (playerState.isDead) return;
         if (playerState.isInStasis) return;
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        Vector2 look = lookInput.ReadValue<Vector2>() * mouseSensitivity * Time.deltaTime;
 
-        xRotation -= mouseY;
+        xRotation -= look.y;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         if (playerRest.isResting) {
-            yRotation = Mathf.Clamp(yRotation + mouseX, rotationLimitCenter - cameraAngleRestingLimit, rotationLimitCenter + cameraAngleRestingLimit);
+            yRotation = Mathf.Clamp(yRotation + look.x, rotationLimitCenter - cameraAngleRestingLimit, rotationLimitCenter + cameraAngleRestingLimit);
             playerBody.localRotation = Quaternion.Euler(0f, yRotation, 0f);
         }
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+        playerBody.Rotate(Vector3.up * look.x);
     }
 
     public bool IsInViewAngleOfPlayer(Vector3 position, float angleBuffer = 0f) {

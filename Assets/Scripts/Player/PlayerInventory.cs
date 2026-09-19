@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInventory : MonoBehaviour {
     public float maxWeight = 50f;
@@ -10,10 +11,20 @@ public class PlayerInventory : MonoBehaviour {
     [Header("State")]
     [Fade] public float currentWeight = 0f;
 
+    private InputAction dropInput;
+
+    public void OnDrop(InputAction.CallbackContext context) {
+        if (context.started) DropAllFuel();
+    }
+
+    void Start() {
+        dropInput = InputSystem.actions.FindAction("Drop");
+    }
+
     void Update() {
         currentWeight = GetCurrentWeight();
 
-        if (Input.GetButtonDown("Drop")) DropAllFuel();
+        if (dropInput.WasPressedThisFrame()) DropAllFuel();
     }
 
     public bool IsCarryingAnyFuel() {

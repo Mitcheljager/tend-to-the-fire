@@ -1,6 +1,7 @@
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerInteract : MonoBehaviour {
     public Transform endTransform;
@@ -16,6 +17,11 @@ public class PlayerInteract : MonoBehaviour {
     public float interactRange = 2f;
 
     private Interactable lastSelectedInteractable;
+    private InputAction interactInput;
+
+    void Start() {
+        interactInput = InputSystem.actions.FindAction("Interact");
+    }
 
     void Update() {
         if (lastSelectedInteractable) {
@@ -32,7 +38,7 @@ public class PlayerInteract : MonoBehaviour {
         }
 
         interactImage.gameObject.SetActive(interactable);
-        if (interactable && Input.GetButtonDown("Interact")) interactable.Interact();
+        if (interactable && interactInput.WasPressedThisFrame()) interactable.Interact();
 
         Debug.DrawLine(transform.position, endTransform.position, interactable ? Color.green : Color.red);
     }

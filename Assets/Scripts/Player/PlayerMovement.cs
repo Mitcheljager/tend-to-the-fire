@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour {
     [Header("Components")]
@@ -29,6 +30,12 @@ public class PlayerMovement : MonoBehaviour {
     public float inputZ = 0f;
     public bool isGrounded = false;
     public bool startedRunningBeforeCutoff = false;
+
+    private InputAction moveInput;
+
+    void Start() {
+        moveInput = InputSystem.actions.FindAction("Move");
+    }
 
     void Update() {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
@@ -74,10 +81,9 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void SetMovementValues() {
-        inputX = isGrounded ? Input.GetAxisRaw("Horizontal") : Input.GetAxis("Horizontal");
-        inputZ = isGrounded ? Input.GetAxisRaw("Vertical") : Input.GetAxis("Vertical");
+        Vector2 input = moveInput.ReadValue<Vector2>();
 
-        move = transform.right * inputX + transform.forward * inputZ;
+        move = transform.right * input.x + transform.forward * input.y;
 
         if (move.magnitude > 1) move.Normalize();
     }

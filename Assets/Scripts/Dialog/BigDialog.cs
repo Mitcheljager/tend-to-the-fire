@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using TMPro;
 
@@ -24,6 +25,7 @@ public class BigDialog : MonoBehaviour {
 
     private PlayerState playerState;
     private int currentItemIndex = 0;
+    private InputAction interactInput;
 
     void Awake() {
         playerState = FindFirstObjectByType<PlayerState>();
@@ -41,8 +43,12 @@ public class BigDialog : MonoBehaviour {
         Next();
     }
 
+    void Start() {
+        interactInput = InputSystem.actions.FindAction("Interact");
+    }
+
     void Update() {
-        if (Input.GetButtonDown("Interact")) Next();
+        if (interactInput.WasPressedThisFrame()) Next();
     }
 
     private void Next() {

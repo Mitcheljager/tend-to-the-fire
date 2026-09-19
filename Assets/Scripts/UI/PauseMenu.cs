@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour {
     public bool isPaused = false;
@@ -7,10 +8,14 @@ public class PauseMenu : MonoBehaviour {
     public UIScreen initialUIScreen;
     public AudioSource[] pauseAudioSourcesOnShow;
 
-    void Update() {
-        if (!Input.GetButtonDown("Pause")) return;
+    private InputAction pauseInput;
 
-        TogglePause();
+    void Start() {
+        pauseInput = InputSystem.actions.FindAction("Pause");
+    }
+
+    void Update() {
+        if (pauseInput.WasPressedThisFrame()) TogglePause();
     }
 
     public void TogglePause() {
