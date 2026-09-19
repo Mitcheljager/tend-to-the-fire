@@ -12,7 +12,9 @@ public enum SettingsKey {
     MaxFPS,
     VSync,
     LODBias,
-    SimpleLighting
+    SimpleLighting,
+    MouseSensitivity,
+    ControllerSensitivity
 }
 
 public static class Settings {

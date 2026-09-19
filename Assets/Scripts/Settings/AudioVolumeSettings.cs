@@ -20,7 +20,7 @@ public class AudioVolumeSettings : UserSettings {
     }
 
     public void SetVolume(SettingsKey key) {
-        float volume = PlayerPrefs.GetFloat(key.ToString(), 80f) / 100f;
+        float volume = Settings.GetSettingInt(key, 80) / 100f;
         if (volume == 0f) volume = 0.00001f;
 
         float log10volume = Mathf.Log10(volume) * 20;

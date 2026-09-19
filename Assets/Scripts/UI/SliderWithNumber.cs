@@ -5,16 +5,17 @@ using TMPro;
 public class SliderWithNumber : MonoBehaviour {
     public TextMeshProUGUI text;
     public Slider slider;
-    public float defaultValue;
+    public int defaultValue;
     public bool saveToUserSettings = true;
     public SettingsKey key;
     public AudioHelper audioHelperOnChange;
 
-    private float value = 0f;
+    private float value = 0;
     private bool initialValueSet = false;
 
     void OnEnable() {
-        value = PlayerPrefs.GetFloat(key.ToString(), defaultValue);
+        if (slider.wholeNumbers) value = Settings.GetSettingInt(key, defaultValue);
+        else value = Settings.GetSettingFloat(key, defaultValue);
 
         text.text = value.ToString();
         slider.value = value;
@@ -38,7 +39,10 @@ public class SliderWithNumber : MonoBehaviour {
         value = Mathf.Round(slider.value * 100) / 100;
 
         if (slider.wholeNumbers) value = Mathf.Round(value);
-        if (saveToUserSettings) Settings.SetSettingFloat(key, value);
+        if (saveToUserSettings) {
+            if (slider.wholeNumbers) Settings.SetSettingInt(key, (int)value);
+            else Settings.SetSettingFloat(key, value);
+        }
 
         slider.value = value;
 
