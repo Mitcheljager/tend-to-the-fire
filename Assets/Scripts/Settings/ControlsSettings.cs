@@ -43,9 +43,6 @@ public class ControlsSettings : UserSettings {
         for (int i = 0; i < input.bindings.Count; i++) {
             InputBinding binding = input.bindings[i];
 
-            Debug.Log(binding.name);
-            Debug.Log(name);
-
             if (binding.isPartOfComposite && binding.name.ToLower() == name.ToLower()) {
                 input.ApplyBindingOverride(i, "<Keyboard>/" + key);
                 return;
