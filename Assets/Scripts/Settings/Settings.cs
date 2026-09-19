@@ -14,7 +14,15 @@ public enum SettingsKey {
     LODBias,
     SimpleLighting,
     MouseSensitivity,
-    ControllerSensitivity
+    ControllerSensitivity,
+    BindingUp,
+    BindingDown,
+    BindingLeft,
+    BindingRight,
+    BindingInteract,
+    BindingFocus,
+    BindingDrop,
+    BindingSprint
 }
 
 public static class Settings {
@@ -40,5 +48,13 @@ public static class Settings {
 
     public static void SetSettingFloat(SettingsKey key, float value) {
         PlayerPrefs.SetFloat(key.ToString(), value);
+    }
+
+    public static string GetSettingString(SettingsKey key, string defaultValue = "") {
+        return PlayerPrefs.GetString(key.ToString(), defaultValue);
+    }
+
+    public static void SetSettingString(SettingsKey key, string value) {
+        PlayerPrefs.SetString(key.ToString(), value);
     }
 }
