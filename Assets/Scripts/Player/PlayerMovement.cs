@@ -32,9 +32,11 @@ public class PlayerMovement : MonoBehaviour {
     public bool startedRunningBeforeCutoff = false;
 
     private InputAction moveInput;
+    private InputAction sprintInput;
 
     void Start() {
         moveInput = InputSystem.actions.FindAction("Move");
+        sprintInput = InputSystem.actions.FindAction("Sprint");
     }
 
     void Update() {
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour {
     private void SetRunning() {
         if (!startedRunningBeforeCutoff && playerStamina.currentStamina < staminaRunningCutoff) return;
 
-        if (Input.GetKey(KeyCode.LeftShift) && !playerStamina.isRecovering) {
+        if (sprintInput.IsPressed() && !playerStamina.isRecovering) {
             isRunning = true;
             if (!startedRunningBeforeCutoff) startedRunningBeforeCutoff = playerStamina.currentStamina > staminaRunningCutoff;
         } else {
