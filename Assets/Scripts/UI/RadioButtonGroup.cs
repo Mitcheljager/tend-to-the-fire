@@ -3,6 +3,7 @@ using UnityEngine;
 public class RadioButtonGroup : MonoBehaviour {
     public SettingsKey key;
     public bool saveToUserSettings = true;
+    public int defaultValue = 0;
     public AudioHelper audioHelperOnChange;
 
     private RadioButton[] radioButtons;
@@ -10,7 +11,7 @@ public class RadioButtonGroup : MonoBehaviour {
     void Start() {
         radioButtons = GetComponentsInChildren<RadioButton>();
 
-        SetValue(Settings.GetSettingInt(key, 0));
+        SetValue(Settings.GetSettingInt(key, defaultValue));
     }
 
     public void ToggleRadioButtons(int value) {
