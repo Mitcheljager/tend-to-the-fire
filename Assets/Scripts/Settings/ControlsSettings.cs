@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class ControlsSettings : UserSettings {
+    public bool isUsingKeyboard = false;
+
     private PlayerCamera playerCamera;
 
     void OnValidate() {
@@ -12,6 +14,15 @@ public class ControlsSettings : UserSettings {
     void Start() {
         ApplySensitivity();
         ApplyBindings();
+    }
+
+    void Update() {
+        bool wasUsingKeyboard = isUsingKeyboard;
+
+        if (Keyboard.current.anyKey.wasPressedThisFrame) isUsingKeyboard = true;
+        if (Gamepad.current.wasUpdatedThisFrame) isUsingKeyboard = false;
+
+        if (wasUsingKeyboard != isUsingKeyboard) ApplyBindings();
     }
 
     public override void PossibilyUpdateFromEvent(SettingsKey key) {
@@ -26,7 +37,15 @@ public class ControlsSettings : UserSettings {
         playerCamera.controllerSensitivity = Mathf.Max(Settings.GetSettingInt(SettingsKey.ControllerSensitivity, 50) * 2f, 0.01f);
     }
 
+    public void RemoveBindings() {
+        InputSystem.actions.RemoveAllBindingOverrides();
+    }
+
     public void ApplyBindings() {
+        RemoveBindings();
+
+        if (!isUsingKeyboard) return;
+
         InputAction moveInput = InputSystem.actions.FindAction("Move");
 
         OverrideMoveComponent(moveInput, "Up",    Settings.GetSettingString(SettingsKey.BindingUp,    "w"));
