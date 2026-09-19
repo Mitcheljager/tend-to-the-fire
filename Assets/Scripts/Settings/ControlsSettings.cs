@@ -19,8 +19,8 @@ public class ControlsSettings : UserSettings {
     void Update() {
         bool wasUsingKeyboard = isUsingKeyboard;
 
-        if (Keyboard.current.anyKey.wasPressedThisFrame) isUsingKeyboard = true;
-        if (Gamepad.current.wasUpdatedThisFrame) isUsingKeyboard = false;
+        if (Keyboard.current != null && Keyboard.current.anyKey.wasPressedThisFrame) isUsingKeyboard = true;
+        if (Gamepad.current != null && Gamepad.current.wasUpdatedThisFrame) isUsingKeyboard = false;
 
         if (wasUsingKeyboard != isUsingKeyboard) ApplyBindings();
     }
