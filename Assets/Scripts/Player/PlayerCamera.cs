@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerCamera : MonoBehaviour {
     [Header("Config")]
     public float mouseSensitivity = 25f;
+    public float controllerSensitivity = 25f;
     public int cameraAngleRestingLimit = 60;
     [Header("Components")]
     public Transform playerBody;
@@ -40,7 +41,8 @@ public class PlayerCamera : MonoBehaviour {
         if (playerState.isDead) return;
         if (playerState.isInStasis) return;
 
-        Vector2 look = lookInput.ReadValue<Vector2>() * mouseSensitivity * Time.deltaTime;
+        bool isUsingMouse = lookInput.activeControl != null && lookInput.activeControl.device is Mouse;
+        Vector2 look = lookInput.ReadValue<Vector2>() * (isUsingMouse ? mouseSensitivity : controllerSensitivity) * Time.deltaTime;
 
         xRotation -= look.y;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
