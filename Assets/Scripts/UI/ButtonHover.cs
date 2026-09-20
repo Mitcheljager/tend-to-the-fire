@@ -10,7 +10,7 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     private Color baseColor;
     private Vector3 baseScale;
 
-    private void Start() {
+    void OnEnable() {
         baseColor = textElement.color;
         baseScale = transform.localScale;
     }

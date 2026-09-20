@@ -19,10 +19,10 @@ public enum SettingsKey {
     BindingDown,
     BindingLeft,
     BindingRight,
+    BindingSprint,
     BindingInteract,
     BindingFocus,
-    BindingDrop,
-    BindingSprint
+    BindingDrop
 }
 
 public static class Settings {

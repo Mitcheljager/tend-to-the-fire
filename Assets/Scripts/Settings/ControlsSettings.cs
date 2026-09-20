@@ -27,7 +27,7 @@ public class ControlsSettings : UserSettings {
 
     public override void PossibilyUpdateFromEvent(SettingsKey key) {
         if (key == SettingsKey.MouseSensitivity && key == SettingsKey.ControllerSensitivity) ApplySensitivity();
-        if (key == SettingsKey.BindingFocus) ApplyBindings();
+        if (key.ToString().Contains("Binding")) ApplyBindings();
     }
 
     public void ApplySensitivity() {
@@ -54,6 +54,7 @@ public class ControlsSettings : UserSettings {
         OverrideMoveComponent(moveInput, "Right", Settings.GetSettingString(SettingsKey.BindingRight, "d"));
 
         if (Settings.GetSettingString(SettingsKey.BindingInteract) != "") InputSystem.actions.FindAction("Interact").ApplyBindingOverride("<Keyboard>/" + Settings.GetSettingString(SettingsKey.BindingInteract));
+        if (Settings.GetSettingString(SettingsKey.BindingFocus) != "")    InputSystem.actions.FindAction("Sprint")   .ApplyBindingOverride("<Keyboard>/" + Settings.GetSettingString(SettingsKey.BindingSprint));
         if (Settings.GetSettingString(SettingsKey.BindingFocus) != "")    InputSystem.actions.FindAction("Focus")   .ApplyBindingOverride("<Keyboard>/" + Settings.GetSettingString(SettingsKey.BindingFocus));
         if (Settings.GetSettingString(SettingsKey.BindingDrop) != "")     InputSystem.actions.FindAction("Drop")    .ApplyBindingOverride("<Keyboard>/" + Settings.GetSettingString(SettingsKey.BindingDrop));
     }
