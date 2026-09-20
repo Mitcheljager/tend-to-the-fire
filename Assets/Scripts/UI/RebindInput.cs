@@ -22,7 +22,7 @@ public class RebindInput : MonoBehaviour {
         if (Keyboard.current == null) return;
 
         foreach (var key in Keyboard.current.allKeys) {
-            if (!key.wasPressedThisFrame) continue;
+            if (key == null || !key.wasPressedThisFrame) continue;
 
             SetBinding(key.displayName.ToLower());
             break;
