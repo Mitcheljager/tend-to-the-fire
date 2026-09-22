@@ -13,6 +13,7 @@ public enum SettingsKey {
     VSync,
     LODBias,
     SimpleLighting,
+    Pixelation,
     MouseSensitivity,
     ControllerSensitivity,
     BindingUp,
@@ -22,7 +23,7 @@ public enum SettingsKey {
     BindingSprint,
     BindingInteract,
     BindingFocus,
-    BindingDrop
+    BindingDrop,
 }
 
 public static class Settings {
