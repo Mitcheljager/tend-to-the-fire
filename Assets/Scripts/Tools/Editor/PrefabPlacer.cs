@@ -33,6 +33,9 @@ public class PrefabPlacer : EditorWindow {
     }
 
     private void OnGUI() {
+        if (Application.isPlaying) return;
+        if (!EditorApplication.isFocused) return;
+
         SerializedObject serializedObject = new(this);
         SerializedProperty prefabsProp = serializedObject.FindProperty("possiblePrefabs");
 
