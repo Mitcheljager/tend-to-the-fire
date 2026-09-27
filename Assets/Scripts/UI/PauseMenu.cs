@@ -34,6 +34,14 @@ public class PauseMenu : MonoBehaviour {
         ToggleAudioSources();
     }
 
+    public void Quit() {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
+    }
+
     private void ToggleAudioSources() {
         foreach (AudioSource audioSource in pauseAudioSourcesOnShow) {
             if (isPaused) audioSource.Pause();
