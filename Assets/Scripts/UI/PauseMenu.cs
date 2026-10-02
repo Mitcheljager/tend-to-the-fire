@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PauseMenu : MonoBehaviour {
     public bool pauseable = true;
@@ -7,7 +8,9 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenuObject;
     public UIScreenManager UIscreenManager;
     public UIScreen initialUIScreen;
-    public AudioSource[] pauseAudioSourcesOnShow;
+
+    [Header("State")]
+    [Fade] public List<AudioSource> playingAudioSourcesOnPause;
 
     private InputAction pauseInput;
 
@@ -44,7 +47,15 @@ public class PauseMenu : MonoBehaviour {
     }
 
     private void ToggleAudioSources() {
-        foreach (AudioSource audioSource in pauseAudioSourcesOnShow) {
+        if (isPaused) {
+            playingAudioSourcesOnPause.Clear();
+
+            foreach (AudioSource audioSource in GameObject.FindObjectsByType<AudioSource>(FindObjectsSortMode.None)) {
+                if (audioSource.isPlaying) playingAudioSourcesOnPause.Add(audioSource);
+            }
+        }
+
+        foreach (AudioSource audioSource in playingAudioSourcesOnPause) {
             if (isPaused) audioSource.Pause();
             else audioSource.UnPause();
         }
