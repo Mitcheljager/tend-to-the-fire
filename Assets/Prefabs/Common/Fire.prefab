@@ -552,7 +552,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 60
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -641,10 +641,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioHelper
   minPitch: 1
   maxPitch: 1
+  delay: 0
   playAtPoint: 0
+  avoidRepeats: 0
   audioClips: []
-  doReverb: 0
   audioSource: {fileID: 0}
+  pitchMultiplier: 1
 --- !u!1 &1976451299127654042
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +962,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 25
+  MaxDistance: 35
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -1049,10 +1051,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioHelper
   minPitch: 1
   maxPitch: 1
+  delay: 0
   playAtPoint: 0
+  avoidRepeats: 0
   audioClips: []
-  doReverb: 0
   audioSource: {fileID: 0}
+  pitchMultiplier: 1
 --- !u!1 &3144721100678886408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,10 +1318,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioHelper
   minPitch: 1
   maxPitch: 1
+  delay: 0
   playAtPoint: 0
+  avoidRepeats: 0
   audioClips: []
-  doReverb: 0
   audioSource: {fileID: 0}
+  pitchMultiplier: 1
 --- !u!1 &3664572300658168792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,8 +1481,8 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -0.0012506901
-        value: -0.002609253
+        time: 0.0004888119
+        value: -0.001449585
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1509,7 +1515,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -0.44992065
+        time: 0.0049105287
         value: -0.003208724
         inSlope: 0
         outSlope: 0
@@ -1518,7 +1524,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.35669804
+        time: 0.64799255
         value: 1
         inSlope: 0
         outSlope: 0
@@ -1527,7 +1533,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.7985494
+        time: 1.0002614
         value: 0.9996948
         inSlope: 0
         outSlope: 0
@@ -1543,7 +1549,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -0.44891357
+        time: 0.0003156947
         value: -0.00043162447
         inSlope: 0
         outSlope: 0
@@ -1552,7 +1558,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.26781824
+        time: 0.6857445
         value: 0.4038309
         inSlope: 0
         outSlope: 0
@@ -1561,7 +1567,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.6040199
+        time: 1.0072627
         value: 0.4035257
         inSlope: 0
         outSlope: 0
@@ -1577,7 +1583,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -0.44869995
+        time: 0.0006738398
         value: -0.00030955416
         inSlope: 0
         outSlope: 0
@@ -1586,7 +1592,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.46058583
+        time: 0.86878747
         value: 0.2000004
         inSlope: 0
         outSlope: 0
@@ -1595,7 +1601,7 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.599609
+        time: 1.0015156
         value: 0.19969523
         inSlope: 0
         outSlope: 0
@@ -1750,10 +1756,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioHelper
   minPitch: 1
   maxPitch: 1
+  delay: 0
   playAtPoint: 0
+  avoidRepeats: 0
   audioClips: []
-  doReverb: 0
   audioSource: {fileID: 0}
+  pitchMultiplier: 1
 --- !u!1 &6078779275916311869
 GameObject:
   m_ObjectHideFlags: 0

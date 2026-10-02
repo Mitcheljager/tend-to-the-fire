@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour {
+    public bool pauseable = true;
     public bool isPaused = false;
     public GameObject pauseMenuObject;
     public UIScreenManager UIscreenManager;
@@ -15,7 +16,7 @@ public class PauseMenu : MonoBehaviour {
     }
 
     void Update() {
-        if (pauseInput.WasPressedThisFrame()) TogglePause();
+        if (pauseable && pauseInput.WasPressedThisFrame()) TogglePause();
     }
 
     public void TogglePause() {

@@ -15,6 +15,8 @@ public class Interactable : MonoBehaviour {
     }
 
     public virtual void Update() {
+        if (playerInteract == null) return;
+
         bool isInOutlineRange = Vector3.Distance(transform.position, playerInteract.transform.position) < interactableOutlineRange;
 
         SetLayer(isInOutlineRange ? playerInteract.interactableInRangeLayerIndex : playerInteract.interactableLayerIndex);

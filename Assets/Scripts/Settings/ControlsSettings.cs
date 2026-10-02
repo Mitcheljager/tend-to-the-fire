@@ -32,6 +32,7 @@ public class ControlsSettings : UserSettings {
 
     public void ApplySensitivity() {
         if (playerCamera == null) playerCamera = FindFirstObjectByType<PlayerCamera>();
+        if (playerCamera == null) return;
 
         playerCamera.mouseSensitivity = Mathf.Max(Settings.GetSettingInt(SettingsKey.MouseSensitivity, 25) / 10f, 0.01f);
         playerCamera.controllerSensitivity = Mathf.Max(Settings.GetSettingInt(SettingsKey.ControllerSensitivity, 50) * 2f, 0.01f);
