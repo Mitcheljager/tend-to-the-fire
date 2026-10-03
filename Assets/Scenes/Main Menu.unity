@@ -341216,7 +341216,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7606068913492964009, guid: c7c651680505fc94b9dcb5287818d7d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2015762416}
+    - targetCorrespondingSourceObject: {fileID: 7606068913492964009, guid: c7c651680505fc94b9dcb5287818d7d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2015762415}
+    - targetCorrespondingSourceObject: {fileID: 7606068913492964009, guid: c7c651680505fc94b9dcb5287818d7d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2015762414}
   m_SourcePrefab: {fileID: 100100000, guid: c7c651680505fc94b9dcb5287818d7d5, type: 3}
 --- !u!114 &2015762411 stripped
 MonoBehaviour:
@@ -341229,6 +341238,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e4b7d542a1f33a4ca2c09256f3b6ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+--- !u!224 &2015762412 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4525616419980501450, guid: c7c651680505fc94b9dcb5287818d7d5, type: 3}
+  m_PrefabInstance: {fileID: 2015762410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2015762413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7606068913492964009, guid: c7c651680505fc94b9dcb5287818d7d5, type: 3}
+  m_PrefabInstance: {fileID: 2015762410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2015762414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015762413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b2b73b3d898ec458de90bfb8f9da4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIAnimationHelper
+  canvasGroup: {fileID: 2015762415}
+  rectTransform: {fileID: 2015762412}
+  UIObject: {fileID: 0}
+  UIAnimation: {fileID: 0}
+  hideOnStart: 1
+  showUIAnimationName: Grow Image
+  hideUIAnimationName: Shrink Image
+--- !u!225 &2015762415
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015762413}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &2015762416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015762413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26be99af02a636245ab7d4d40891ec78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FadeOnIdle
+  idleSeconds: 20
+  fadeTimeSeconds: 2
+  uiAnimationHelper: {fileID: 2015762414}
 --- !u!1001 &2016211190
 PrefabInstance:
   m_ObjectHideFlags: 0
