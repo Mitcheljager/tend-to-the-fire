@@ -14,7 +14,7 @@ public class WindowSettings : UserSettings {
     }
 
     public void SetMaxFPS() {
-        int maxFPS = (int)Settings.GetSettingFloat(SettingsKey.MaxFPS, 120f);
+        int maxFPS = Settings.GetSettingInt(SettingsKey.MaxFPS, 120);
 
         Application.targetFrameRate = Mathf.Clamp(maxFPS, 30, 300);
     }
