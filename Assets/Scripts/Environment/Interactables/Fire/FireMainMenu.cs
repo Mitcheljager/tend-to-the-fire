@@ -33,5 +33,6 @@ public class FireMainMenu : MonoBehaviour {
         if (hit.collider.gameObject != fire.gameObject) return;
 
         fire.fireEffects.BurstEmbers(Random.Range((int) burstEmbersRange.x, (int) burstEmbersRange.y));
+        fire.fireAudio.audioHelperWoosh.PlayRandomClip();
     }
 }

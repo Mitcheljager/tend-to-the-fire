@@ -17,6 +17,7 @@ public class Fire : Interactable {
     public AnimationCurve lightRangeCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     public AnimationCurve totalSafetyCurve = new(new Keyframe(0f, 1f), new Keyframe(0.75f, 1f), new Keyframe(1f, 0f));
     public FireEffects fireEffects;
+    public FireAudio fireAudio;
     public NavMeshObstacle navMeshObstacle;
     [Header("Fluff")]
     public string interactTextAble = "Tend to the fire";
@@ -115,6 +116,7 @@ public class Fire : Interactable {
 
         fireEffects.BurstEmbers(Mathf.Min((activeFuel.Count - 1) * Mathf.CeilToInt(fuel.maxFuel / 10), 5));
         fireSmother.AddSmother(fuel);
+        fireAudio.audioHelperWoosh.PlayRandomClip();
     }
 
     public void AddEditorFuel(float amount, float smotherIncrease = 0.1f) {

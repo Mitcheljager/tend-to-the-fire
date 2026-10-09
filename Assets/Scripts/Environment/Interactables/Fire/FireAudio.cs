@@ -9,6 +9,7 @@ public class FireAudioItem {
 public class FireAudio : MonoBehaviour {
     public Fire fire;
     public FireAudioItem[] audioItems;
+    public AudioHelper audioHelperWoosh;
 
     void Update() {
         SetAudioValues();
