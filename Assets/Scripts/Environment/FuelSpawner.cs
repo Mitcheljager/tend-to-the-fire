@@ -8,7 +8,7 @@ public class FuelSpawner : MonoBehaviour {
     private FuelSpawnersManager fuelSpawnersManager;
 
     void OnDrawGizmos() {
-        Gizmos.DrawIcon(transform.position, "activity.png", true, Color.cyan);
+        Gizmos.DrawIcon(transform.position, "activity.png", true, hasSpawnedFuel ? Color.forestGreen : Color.cyan);
     }
 
     public void Spawn() {
