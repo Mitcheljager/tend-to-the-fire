@@ -4,6 +4,7 @@ using UnityEngine;
 public class UIScreenManager : MonoBehaviour {
     public UIScreen currentUIScreen = null;
     public List<UIScreen> UIScreens = new();
+    public UIScreen initialUIScreen;
 
     public void ShowScreen(UIScreen newUIScreen) {
         foreach(UIScreen UIScreen in UIScreens) {
@@ -12,5 +13,13 @@ public class UIScreenManager : MonoBehaviour {
         }
 
         currentUIScreen = newUIScreen;
+    }
+
+    public bool IsOnInitialUIScreen() {
+        return currentUIScreen == initialUIScreen;
+    }
+
+    public void Reset() {
+        ShowScreen(initialUIScreen);
     }
 }

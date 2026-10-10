@@ -7,7 +7,6 @@ public class PauseMenu : MonoBehaviour {
     public bool isPaused = false;
     public GameObject pauseMenuObject;
     public UIScreenManager UIscreenManager;
-    public UIScreen initialUIScreen;
 
     [Header("State")]
     [Fade] public List<AudioSource> playingAudioSourcesOnPause;
@@ -19,17 +18,24 @@ public class PauseMenu : MonoBehaviour {
     }
 
     void Update() {
-        if (pauseable && pauseInput.WasPressedThisFrame()) TogglePause();
+        if (pauseInput.WasPressedThisFrame()) TogglePause();
     }
 
     public void TogglePause() {
+        if ((isPaused || !pauseable) && !UIscreenManager.IsOnInitialUIScreen()) {
+            UIscreenManager.Reset();
+            return;
+        }
+
+        if (!pauseable) return;
+
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0f : 1f;
 
         pauseMenuObject.SetActive(isPaused);
 
         if (isPaused) {
-            UIscreenManager.ShowScreen(initialUIScreen);
+            UIscreenManager.Reset();
             Cursor.lockState = CursorLockMode.None;
         } else {
             Cursor.lockState = CursorLockMode.Locked;

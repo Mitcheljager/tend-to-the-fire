@@ -1485,7 +1485,6 @@ MonoBehaviour:
   isPaused: 0
   pauseMenuObject: {fileID: 7606068913492964009}
   UIscreenManager: {fileID: 8725650846447862127}
-  initialUIScreen: {fileID: 486675925623274936}
   playingAudioSourcesOnPause: []
 --- !u!1 &7397367165101209462
 GameObject:
@@ -1611,6 +1610,7 @@ MonoBehaviour:
   UIScreens:
   - {fileID: 486675925623274936}
   - {fileID: 1019944916657175435}
+  initialUIScreen: {fileID: 486675925623274936}
 --- !u!114 &1126140416502716141
 MonoBehaviour:
   m_ObjectHideFlags: 0
