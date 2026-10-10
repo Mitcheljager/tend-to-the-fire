@@ -8,9 +8,7 @@ public class LightSettings : UserSettings {
     }
 
     public override void PossibilyUpdateFromEvent(SettingsKey key) {
-        if (key != SettingsKey.SimpleLighting) return;
-
-        SetLightSettings();
+        if (key == SettingsKey.SimpleLighting) SetLightSettings();
     }
 
     public void SetLightSettings() {
