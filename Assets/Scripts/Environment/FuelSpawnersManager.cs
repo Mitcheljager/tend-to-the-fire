@@ -1,9 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class FuelSpawnersManager : MonoBehaviour {
     public int numberOfFuelSpawned = 10;
+    public int staggerSpawnPerCount = 10;
     [Header("State")]
     public List<Fuel> spawnedFuel;
     public List<FuelSpawner> fuelSpawners;
@@ -12,7 +14,7 @@ public class FuelSpawnersManager : MonoBehaviour {
         spawnedFuel = FindObjectsByType<Fuel>(FindObjectsSortMode.None).ToList();
         fuelSpawners = FindObjectsByType<FuelSpawner>(FindObjectsSortMode.None).ToList();
 
-        SpawnFuel();
+        StartCoroutine(SpawnFuel());
     }
 
     public void AddFuel(Fuel fuel) {
@@ -25,13 +27,15 @@ public class FuelSpawnersManager : MonoBehaviour {
         return fuelSpawners.OrderBy(x => rng.Next()).ToList();
     }
 
-    private void SpawnFuel() {
+    private IEnumerator SpawnFuel() {
         List<FuelSpawner> randomizedSpawners = GetRandomizedSpawners();
 
-        if (randomizedSpawners.Count == 0) return;
+        if (randomizedSpawners.Count == 0) yield return null;
 
         for (int i = 0; i < Mathf.Min(numberOfFuelSpawned, fuelSpawners.Count); i++) {
             randomizedSpawners[i].Spawn();
+
+            if (i % staggerSpawnPerCount == 0) yield return new WaitForEndOfFrame();
         }
     }
 }
