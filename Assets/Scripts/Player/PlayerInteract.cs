@@ -6,6 +6,7 @@ using TMPro;
 public class PlayerInteract : MonoBehaviour {
     public Transform endTransform;
     [Header("Cursor & UI")]
+    public Transform uiParent;
     public Image interactImage;
     public TMP_Text uiText;
     [Header("Mask")]
@@ -55,6 +56,8 @@ public class PlayerInteract : MonoBehaviour {
         }
 
         if (!hitObject.TryGetComponent<Interactable>(out var interactable)) return null;
+
+        uiParent.position = Camera.main.WorldToScreenPoint(hitObject.transform.position);
 
         uiText.gameObject.SetActive(true);
         uiText.text = interactable.GetInteractText();

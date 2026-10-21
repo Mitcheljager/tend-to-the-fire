@@ -2313021,6 +2313021,18 @@ PrefabInstance:
       propertyPath: mouseSensitivity
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3965812244937900987, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179589163408954964, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179589163408954964, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5263180691626490583, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
