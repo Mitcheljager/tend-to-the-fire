@@ -2068,10 +2068,10 @@ MonoBehaviour:
   maximumIntensityMultiplier: 1.5
   minimumRangeMultiplier: 1
   maximumRangeMultiplier: 1
-  minimumPositionDisplacement: {x: -0.025, y: 0, z: -0.025}
-  maximumPositionDisplacement: {x: 0.025, y: 0, z: 0.025}
+  minimumPositionDisplacement: {x: -0.01, y: 0, z: -0.01}
+  maximumPositionDisplacement: {x: 0.01, y: 0, z: 0.01}
   lerpChance: 0.05
-  lerpSpeed: 20
+  lerpSpeed: 40
 --- !u!1 &7558271547064606468
 GameObject:
   m_ObjectHideFlags: 0

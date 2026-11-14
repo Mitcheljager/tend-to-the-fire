@@ -382339,7 +382339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FluctuateAudioVolume
   initialDelaySeconds: 10
-  volumeRange: {x: 0.2, y: 0.6}
+  volumeRange: {x: 0.1, y: 0.35}
   fadeTimeRangeSeconds: {x: 2, y: 10}
   fadeWaitRangeSeconds: {x: 2, y: 10}
 --- !u!1001 &338430576
