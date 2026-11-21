@@ -1,4 +1,5 @@
 using UnityEngine;
+using Random=UnityEngine.Random;
 
 [RequireComponent(typeof(Renderer))]
 public class ApplyRandomOffsetToShader : MonoBehaviour {

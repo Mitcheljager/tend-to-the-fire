@@ -1,4 +1,5 @@
 using UnityEngine;
+using Random=UnityEngine.Random;
 
 public class FuelSpawner : MonoBehaviour {
     public GameObject[] fuelPrefabs;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using Random=UnityEngine.Random;
 
 public class ApplyRandomScaleOnStart : MonoBehaviour {
     [Header("Per component")]

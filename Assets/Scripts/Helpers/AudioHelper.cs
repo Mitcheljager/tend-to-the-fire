@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Random=UnityEngine.Random;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioHelper : MonoBehaviour {
