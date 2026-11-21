@@ -18,8 +18,8 @@ public class PlayerInteract : MonoBehaviour {
     public float interactRange = 2f;
     public float sphereCastRadius = 0.1f;
 
-    private Interactable? lastSelectedInteractable;
-    private InputAction? interactInput;
+    private Interactable lastSelectedInteractable;
+    private InputAction interactInput;
 
     void Start() {
         interactInput = InputSystem.actions.FindAction("Interact");
@@ -31,8 +31,8 @@ public class PlayerInteract : MonoBehaviour {
             lastSelectedInteractable = null;
         }
 
-        GameObject? hitObject = GetMouseHoverObject();
-        Interactable? interactable = UpdateInteractTooltip(hitObject);
+        GameObject hitObject = GetMouseHoverObject();
+        Interactable interactable = UpdateInteractTooltip(hitObject);
 
         if (interactable) {
             lastSelectedInteractable = interactable;
@@ -49,7 +49,7 @@ public class PlayerInteract : MonoBehaviour {
         if (lastSelectedInteractable) lastSelectedInteractable.SetLayer(interactableSelectedLayerIndex);
     }
 
-    private Interactable? UpdateInteractTooltip(GameObject? hitObject) {
+    private Interactable UpdateInteractTooltip(GameObject hitObject) {
         if (hitObject == null || (!CanInteract(hitObject))) {
             uiText.text = " ";
             uiText.gameObject.SetActive(false);
@@ -71,7 +71,7 @@ public class PlayerInteract : MonoBehaviour {
         return hitObject && hitObject.CompareTag("Interactable");
     }
 
-    public GameObject? GetMouseHoverObject() {
+    public GameObject GetMouseHoverObject() {
         Vector3 position = transform.position;
         Vector3 target = position + transform.forward * interactRange;
 
