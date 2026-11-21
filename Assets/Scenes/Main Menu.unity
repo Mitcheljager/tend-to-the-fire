@@ -117820,6 +117820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hypericum (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 173540738291907642, guid: 75eed1d974c691348b53e1df568701e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8621242122872461411, guid: 75eed1d974c691348b53e1df568701e7, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2387092
@@ -117842,7 +117846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8621242122872461411, guid: 75eed1d974c691348b53e1df568701e7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.269324
+      value: -9.337
       objectReference: {fileID: 0}
     - target: {fileID: 8621242122872461411, guid: 75eed1d974c691348b53e1df568701e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -293563,6 +293567,10 @@ PrefabInstance:
     - target: {fileID: 173540738291907642, guid: 75eed1d974c691348b53e1df568701e7, type: 3}
       propertyPath: m_Name
       value: Hypericum (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 173540738291907642, guid: 75eed1d974c691348b53e1df568701e7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8621242122872461411, guid: 75eed1d974c691348b53e1df568701e7, type: 3}
       propertyPath: m_LocalScale.x

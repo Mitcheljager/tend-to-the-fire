@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
     public GameObject loadingScreenObject;
+    public GameObject[] disableObjectsOnLoad;
 
     public void ResetCurrentScene() {
         StartCoroutine(LoadSceneWithLoadingScreen(SceneManager.GetActiveScene().name));
@@ -19,5 +20,9 @@ public class SceneLoader : MonoBehaviour {
         yield return new WaitForSeconds(0);
 
         SceneManager.LoadSceneAsync(sceneName);
+
+        foreach(GameObject gameObject in disableObjectsOnLoad) {
+            gameObject.SetActive(false);
+        }
     }
 }
