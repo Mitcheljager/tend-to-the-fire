@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random=UnityEngine.Random;
 
@@ -76,13 +77,13 @@ public class EnemyManager : MonoBehaviour {
     }
 
     public void DespawnAllOutOfViewEnemies() {
-        foreach(Enemy enemy in enemies.ToList()) {
+        foreach(Enemy enemy in enemies) {
             if (!enemy.IsInView()) DespawnEnemy(enemy);
         }
     }
 
     public void DespawnAllEnemies() {
-        foreach(Enemy enemy in enemies.ToList()) {
+        foreach(Enemy enemy in enemies) {
             DespawnEnemy(enemy);
         }
     }
@@ -112,7 +113,7 @@ public class EnemyManager : MonoBehaviour {
         Enemy nearestEnemy = null;
         float nearestDistance = 1000f;
 
-        foreach(Enemy enemy in enemies.ToList()) {
+        foreach(Enemy enemy in enemies) {
             float distance = Vector3.Distance(enemy.transform.position, position);
 
             if (distance < nearestDistance) {
