@@ -16,9 +16,10 @@ public class PlayerInteract : MonoBehaviour {
     public int interactableSelectedLayerIndex = 0;
     [Header("Interact limits")]
     public float interactRange = 2f;
+    public float sphereCastRadius = 0.1f;
 
-    private Interactable lastSelectedInteractable;
-    private InputAction interactInput;
+    private Interactable? lastSelectedInteractable;
+    private InputAction? interactInput;
 
     void Start() {
         interactInput = InputSystem.actions.FindAction("Interact");
@@ -30,8 +31,8 @@ public class PlayerInteract : MonoBehaviour {
             lastSelectedInteractable = null;
         }
 
-        GameObject hitObject = GetMouseHoverObject();
-        Interactable interactable = UpdateInteractTooltip(hitObject);
+        GameObject? hitObject = GetMouseHoverObject();
+        Interactable? interactable = UpdateInteractTooltip(hitObject);
 
         if (interactable) {
             lastSelectedInteractable = interactable;
@@ -39,7 +40,7 @@ public class PlayerInteract : MonoBehaviour {
         }
 
         interactImage.gameObject.SetActive(interactable);
-        if (interactable && interactInput.WasPressedThisFrame()) interactable.Interact();
+        if (interactable && interactInput!.WasPressedThisFrame()) interactable.Interact();
 
         Debug.DrawLine(transform.position, endTransform.position, interactable ? Color.green : Color.red);
     }
@@ -48,7 +49,7 @@ public class PlayerInteract : MonoBehaviour {
         if (lastSelectedInteractable) lastSelectedInteractable.SetLayer(interactableSelectedLayerIndex);
     }
 
-    private Interactable UpdateInteractTooltip(GameObject hitObject) {
+    private Interactable? UpdateInteractTooltip(GameObject? hitObject) {
         if (hitObject == null || (!CanInteract(hitObject))) {
             uiText.text = " ";
             uiText.gameObject.SetActive(false);
@@ -70,19 +71,26 @@ public class PlayerInteract : MonoBehaviour {
         return hitObject && hitObject.CompareTag("Interactable");
     }
 
-    public GameObject GetMouseHoverObject() {
+    public GameObject? GetMouseHoverObject() {
         Vector3 position = transform.position;
         Vector3 target = position + transform.forward * interactRange;
 
-        Physics.SphereCast(position, 0.1f, transform.forward, out RaycastHit raycastHit, interactRange, layerMask);
+        Physics.Raycast(position, transform.forward, out RaycastHit raycastHit, interactRange, layerMask);
 
-        endTransform.position = raycastHit.point;
+        if (raycastHit.collider != null) {
+            endTransform.position = raycastHit.point;
+            return raycastHit.collider.gameObject;
+        }
 
-		if (raycastHit.collider == null) {
+        Physics.SphereCast(position, sphereCastRadius, transform.forward, out RaycastHit spherecastHit, interactRange, layerMask);
+
+        endTransform.position = spherecastHit.point;
+
+		if (spherecastHit.collider == null) {
             endTransform.position = target;
             return null;
         }
 
-        return raycastHit.collider.gameObject;
+        return spherecastHit.collider.gameObject;
 	}
 }

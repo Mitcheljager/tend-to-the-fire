@@ -2315951,6 +2315951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1617711795710786338, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
+      propertyPath: interactRange
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3544161918527047044, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
       propertyPath: mouseSensitivity
       value: 5
@@ -2316006,6 +2316010,10 @@ PrefabInstance:
     - target: {fileID: 5263180691626490583, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7512523527143212613, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
+      propertyPath: runSpeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
