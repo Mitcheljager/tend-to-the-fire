@@ -20,6 +20,6 @@ public class LODBiasSettings : UserSettings {
 
         if (storedValue == 0) QualitySettings.lodBias = 1.25f;
         else if (storedValue == 1) QualitySettings.lodBias = 2;
-        else if (storedValue == 2) QualitySettings.lodBias = 3;
+        else if (storedValue == 2) QualitySettings.lodBias = 4;
     }
 }
