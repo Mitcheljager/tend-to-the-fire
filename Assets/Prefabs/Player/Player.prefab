@@ -518,6 +518,7 @@ Transform:
   - {fileID: 7460936822886396120}
   - {fileID: 2497056021384202780}
   - {fileID: 1279145295512407056}
+  - {fileID: 5941020124331566514}
   - {fileID: 2418928225708082882}
   - {fileID: 2200943042305138808}
   - {fileID: 8471610176014457318}
@@ -718,6 +719,56 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1858589340508816353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5941020124331566514}
+  - component: {fileID: 2610106184340231287}
+  m_Layer: 6
+  m_Name: Death
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5941020124331566514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858589340508816353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5263180691626490583}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2610106184340231287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858589340508816353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1a0abc213bddb438980aeb307496d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath
+  playerCamera: {fileID: 3544161918527047044}
+  playerState: {fileID: 7730588770865220002}
+  playerFocus: {fileID: 7332485123113027338}
+  targetFieldOfView: 180
+  fieldOfViewDurationSeconds: 1
+  setFocusAfterSeconds: 0.5
 --- !u!1 &2155013904966374521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1203,7 @@ MonoBehaviour:
   interactableInRangeLayerIndex: 9
   interactableSelectedLayerIndex: 8
   interactRange: 2
+  sphereCastRadius: 0.1
 --- !u!1 &3226638338821548808
 GameObject:
   m_ObjectHideFlags: 0
@@ -2888,6 +2940,7 @@ MonoBehaviour:
   focusAudioLerpSpeed: 1
   isClosed: 0
   isFullyClosed: 0
+  isForced: 0
 --- !u!1 &8169885200497368844
 GameObject:
   m_ObjectHideFlags: 0

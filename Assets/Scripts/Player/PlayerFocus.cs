@@ -18,19 +18,18 @@ public class PlayerFocus : MonoBehaviour {
     [Header("State")]
     [Fade] public bool isClosed = false;
     [Fade] public bool isFullyClosed = false;
+    [Fade] public bool isForced = false;
 
-    private PlayerState playerState;
     private float currentFocusVolume;
     private float currentBoostVolume;
     private InputAction focusInput;
 
     void Start() {
-        playerState = FindFirstObjectByType<PlayerState>();
         focusInput = InputSystem.actions.FindAction("Focus");
     }
 
     void Update() {
-        isClosed = focusInput.IsPressed() || playerState.isDead || playerState.isInStasis;
+        isClosed = focusInput.IsPressed() || isForced;
 
         float screenHeight = Screen.height;
         float animationSpeed = isClosed ? animationSpeedClose : animationSpeedOpen;
@@ -50,12 +49,16 @@ public class PlayerFocus : MonoBehaviour {
         bool isBottomClosed = Mathf.Abs(bottomOffsetMax.y - bottomTargetTop) <= 0.1f;
         isFullyClosed = isClosed && isTopClosed && isBottomClosed;
 
-        if (playerState.isInStasis) return;
+        if (isForced) return;
 
         currentFocusVolume = isClosed ? Mathf.Lerp(currentFocusVolume, 0, Time.deltaTime * focusAudioLerpSpeed) : focusAudioDropoff;
         audioMixer.SetFloat("FocusVolume", currentFocusVolume);
 
         currentBoostVolume = isClosed ? Mathf.Lerp(currentBoostVolume, focusAudioBoost, Time.deltaTime * focusAudioLerpSpeed) : 0;
         audioMixer.SetFloat("BoostVolume", currentBoostVolume);
+    }
+
+    public void SetIsForced(bool state) {
+        isForced = state;
     }
 }

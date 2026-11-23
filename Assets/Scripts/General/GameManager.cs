@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
     [Header("Components")]
     public EnemyManager enemyManager;
     public Fire fire;
+    public BigDialog startDialog;
     [Header("Config")]
     public float endTimeSeconds = 60000f;
     public UnityEvent onGameEnd;
@@ -19,6 +20,10 @@ public class GameManager : MonoBehaviour {
     void Awake() {
         initialMaxNumberOfEnemies = enemyManager.maxNumberOfEnemies;
         initialFuelConsumptionPerSecond = fire.fuelConsumptionPerSecond;
+    }
+
+    void Start() {
+        if (startDialog != null) startDialog.gameObject.SetActive(true);
     }
 
     void Update() {

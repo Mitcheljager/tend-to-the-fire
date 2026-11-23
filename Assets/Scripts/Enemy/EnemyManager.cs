@@ -83,8 +83,8 @@ public class EnemyManager : MonoBehaviour {
     }
 
     public void DespawnAllEnemies() {
-        foreach(Enemy enemy in enemies) {
-            DespawnEnemy(enemy);
+        while(enemies.Count > 0) {
+            DespawnEnemy(enemies[0]);
         }
     }
 
