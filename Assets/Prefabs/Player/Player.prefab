@@ -767,8 +767,8 @@ MonoBehaviour:
   playerState: {fileID: 7730588770865220002}
   playerFocus: {fileID: 7332485123113027338}
   targetFieldOfView: 180
-  fieldOfViewDurationSeconds: 1
-  setFocusAfterSeconds: 0.5
+  fieldOfViewDurationSeconds: 4.5
+  setFocusAfterSeconds: 3
 --- !u!1 &2155013904966374521
 GameObject:
   m_ObjectHideFlags: 0

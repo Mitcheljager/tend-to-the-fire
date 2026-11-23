@@ -2316266,14 +2316266,6 @@ PrefabInstance:
       propertyPath: sphereCastRadius
       value: 0.25
       objectReference: {fileID: 0}
-    - target: {fileID: 2610106184340231287, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
-      propertyPath: setFocusAfterSeconds
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2610106184340231287, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
-      propertyPath: fieldOfViewDurationSeconds
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3544161918527047044, guid: db0bf378ddeaba74face23fe91400a06, type: 3}
       propertyPath: mouseSensitivity
       value: 5

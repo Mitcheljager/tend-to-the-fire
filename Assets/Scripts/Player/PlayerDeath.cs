@@ -24,16 +24,15 @@ public class PlayerDeath : MonoBehaviour {
     }
 
     private IEnumerator DeathSequenceCoroutine() {
-        float totalFieldOfViewDifference = playerCamera.thisCamera.fieldOfView;
+        float totalFieldOfViewDifference = targetFieldOfView - playerCamera.thisCamera.fieldOfView;
+        float changePerSecond = 1f / fieldOfViewDurationSeconds * targetFieldOfView;;
         float elapsedTime = 0f;
         bool hasFocusBeenSet = false;
 
         playerState.SetInStasis(true);
 
-        while (playerCamera.thisCamera.fieldOfView <= targetFieldOfView) {
-            playerCamera.thisCamera.fieldOfView += 1f / fieldOfViewDurationSeconds * Time.deltaTime * targetFieldOfView;
-
-            yield return new WaitForEndOfFrame();
+        while (elapsedTime < fieldOfViewDurationSeconds) {
+            playerCamera.thisCamera.fieldOfView += changePerSecond * Time.deltaTime;
 
             elapsedTime += Time.deltaTime;
 
@@ -41,6 +40,8 @@ public class PlayerDeath : MonoBehaviour {
                 playerFocus.SetIsForced(true);
                 hasFocusBeenSet = true;
             }
+
+            yield return new WaitForEndOfFrame();
         }
     }
 }
