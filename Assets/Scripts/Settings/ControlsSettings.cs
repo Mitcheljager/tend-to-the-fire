@@ -1,12 +1,35 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Controls {
     public Gamepad gamepad = Gamepad.current;
     public Keyboard keyboard = Keyboard.current;
     public Mouse mouse = Mouse.current;
-    public ButtonControl[] mouseControls = { Mouse.current.leftButton, Mouse.current.rightButton, Mouse.current.forwardButton, Mouse.current.backButton };
+
+    public ButtonControl[] mouseControls = { Mouse.current.leftButton, Mouse.current.rightButton, Mouse.current.forwardButton, Mouse.current.backButton, Mouse.current.middleButton };
+
+    public string getButtonDisplayOverride(string name) {
+        Dictionary<string, string> buttonDisplayOverrides = new();
+
+        buttonDisplayOverrides.Add("leftButton",    "Left mouse");
+        buttonDisplayOverrides.Add("rightButton",   "Right mouse");
+        buttonDisplayOverrides.Add("middleButton",  "Middle mouse");
+        buttonDisplayOverrides.Add("forwardButton", "Forward mouse");
+        buttonDisplayOverrides.Add("backButton",    "Back mouse");
+        buttonDisplayOverrides.Add("leftShift",     "Left shift");
+        buttonDisplayOverrides.Add("rightShift",    "Right shift");
+        buttonDisplayOverrides.Add("leftCtrl",      "Left Ctrl");
+        buttonDisplayOverrides.Add("rightCtrl",     "Right Ctrl");
+        buttonDisplayOverrides.Add("leftAlt",       "Left alt");
+        buttonDisplayOverrides.Add("rightAlt",      "Right alt");
+
+        string value = buttonDisplayOverrides.SingleOrDefault(s => s.Key == name).Value;
+
+        return value == null ? name : value;
+    }
 }
 
 public class ControlsSettings : UserSettings {

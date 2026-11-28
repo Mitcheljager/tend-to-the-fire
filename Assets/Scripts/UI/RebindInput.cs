@@ -41,6 +41,8 @@ public class RebindInput : MonoBehaviour {
     }
 
     public void AwaitBinding() {
+        if (isAwaitingBinding) return;
+
         text.text = "...";
 
         isAwaitingBinding = true;
@@ -49,7 +51,7 @@ public class RebindInput : MonoBehaviour {
     public void SetBinding(string binding) {
         Settings.SetSettingString(key, binding);
 
-        text.text = binding;
+        text.text = new Controls().getButtonDisplayOverride(binding);
 
         isAwaitingBinding = false;
 
