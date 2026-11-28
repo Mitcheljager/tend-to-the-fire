@@ -9,7 +9,13 @@ public class Controls {
     public Keyboard keyboard = Keyboard.current;
     public Mouse mouse = Mouse.current;
 
-    public ButtonControl[] mouseControls = { Mouse.current.leftButton, Mouse.current.rightButton, Mouse.current.forwardButton, Mouse.current.backButton, Mouse.current.middleButton };
+    public ButtonControl[] mouseControls = {
+        Mouse.current.leftButton,
+        Mouse.current.rightButton,
+        Mouse.current.forwardButton,
+        Mouse.current.backButton,
+        Mouse.current.middleButton
+    };
 
     public string getButtonDisplayOverride(string name) {
         Dictionary<string, string> buttonDisplayOverrides = new();
