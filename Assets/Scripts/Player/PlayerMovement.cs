@@ -44,7 +44,10 @@ public class PlayerMovement : MonoBehaviour {
 
         if (isGrounded && IsGravityPositive()) velocity = gravityDirection * 10;
 
-        if (!CanMove()) return;
+        if (!CanMove()) {
+            move = Vector3.zero;
+            return;
+        }
 
         SetMovement();
         SetRunning();

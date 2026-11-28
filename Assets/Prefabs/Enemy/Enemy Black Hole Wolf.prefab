@@ -1073,7 +1073,7 @@ MonoBehaviour:
   enemy: {fileID: 5773186067482318515}
   enemyFindPlayer: {fileID: 7639250809963787645}
   baseSpeed: 1.5
-  runSpeed: 5
+  runSpeed: 7
   speedUpMaximumDistance: 100
   distanceSpeedMultiplierCurve:
     serializedVersion: 2
