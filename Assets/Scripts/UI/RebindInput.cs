@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using System.Collections;
 using TMPro;
 
 public class RebindInput : MonoBehaviour {
@@ -24,7 +25,7 @@ public class RebindInput : MonoBehaviour {
         if (new Controls().keyboard == null) return;
 
         foreach (KeyControl key in new Controls().keyboard.allKeys) {
-            if ((key == null || !key.wasPressedThisFrame)) continue;
+            if ((key == null || !key.wasReleasedThisFrame)) continue;
 
             SetBinding(key.name);
             break;
@@ -33,7 +34,7 @@ public class RebindInput : MonoBehaviour {
         if (!allowMouse) return;
 
         foreach (ButtonControl control in new Controls().mouseControls) {
-            if ((control == null || !control.wasPressedThisFrame)) continue;
+            if ((control == null || !control.wasReleasedThisFrame)) continue;
 
             SetBinding(control.name);
             break;
@@ -45,7 +46,7 @@ public class RebindInput : MonoBehaviour {
 
         text.text = "...";
 
-        isAwaitingBinding = true;
+        StartCoroutine(DelayIsAwaitingBinding());
     }
 
     public void SetBinding(string binding) {
@@ -56,5 +57,11 @@ public class RebindInput : MonoBehaviour {
         isAwaitingBinding = false;
 
         ChangeEvent.Dispatch(key);
+    }
+
+    private IEnumerator DelayIsAwaitingBinding() {
+        yield return new WaitForEndOfFrame();
+
+        isAwaitingBinding = true;
     }
 }
