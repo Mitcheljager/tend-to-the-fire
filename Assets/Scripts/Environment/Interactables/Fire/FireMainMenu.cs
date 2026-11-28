@@ -20,7 +20,7 @@ public class FireMainMenu : MonoBehaviour {
             return;
         }
 
-        if (Mouse.current.leftButton.wasPressedThisFrame) {
+        if (new Controls().mouse.leftButton.wasPressedThisFrame) {
             BurstFireOnClick();
             currentBurstCooldown = burstCooldownSeconds;
         }

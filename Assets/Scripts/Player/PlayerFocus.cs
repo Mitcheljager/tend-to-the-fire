@@ -23,12 +23,16 @@ public class PlayerFocus : MonoBehaviour {
     private float currentFocusVolume;
     private float currentBoostVolume;
     private InputAction focusInput;
+    private PlayerState playerState;
 
     void Start() {
         focusInput = InputSystem.actions.FindAction("Focus");
+        playerState = FindFirstObjectByType<PlayerState>();
     }
 
     void Update() {
+        if (playerState.isInStasis || playerState.isDead) return;
+
         isClosed = focusInput.IsPressed() || isForced;
 
         float screenHeight = Screen.height;

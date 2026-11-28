@@ -10,7 +10,7 @@ public class FadeOnIdle : MonoBehaviour {
     private bool isCurrentlyIdle = false;
 
     void Update() {
-        if (Keyboard.current != null && Keyboard.current.anyKey.wasPressedThisFrame || Mouse.current != null && Mouse.current.delta.magnitude > 0.01f || Gamepad.current != null && Gamepad.current.wasUpdatedThisFrame) {
+        if (new Controls().keyboard != null && new Controls().keyboard.anyKey.wasPressedThisFrame || new Controls().mouse != null && new Controls().mouse.delta.magnitude > 0.01f || new Controls().gamepad != null && new Controls().gamepad.wasUpdatedThisFrame) {
             if (!isCurrentlyIdle) return;
 
             currentIdleTime = 0f;

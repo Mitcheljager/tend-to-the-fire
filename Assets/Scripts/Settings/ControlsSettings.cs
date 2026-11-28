@@ -1,5 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
+
+public class Controls {
+    public Gamepad gamepad = Gamepad.current;
+    public Keyboard keyboard = Keyboard.current;
+    public Mouse mouse = Mouse.current;
+    public ButtonControl[] mouseControls = { Mouse.current.leftButton, Mouse.current.rightButton, Mouse.current.forwardButton, Mouse.current.backButton };
+}
 
 public class ControlsSettings : UserSettings {
     public bool isUsingKeyboard = false;
@@ -19,8 +27,8 @@ public class ControlsSettings : UserSettings {
     void Update() {
         bool wasUsingKeyboard = isUsingKeyboard;
 
-        if (Keyboard.current != null && Keyboard.current.anyKey.wasPressedThisFrame) isUsingKeyboard = true;
-        if (Gamepad.current != null && Gamepad.current.wasUpdatedThisFrame) isUsingKeyboard = false;
+        if (new Controls().keyboard != null && new Controls().keyboard.anyKey.wasPressedThisFrame) isUsingKeyboard = true;
+        if (new Controls().gamepad != null && new Controls().gamepad.wasUpdatedThisFrame) isUsingKeyboard = false;
 
         if (wasUsingKeyboard != isUsingKeyboard) ApplyBindings();
     }
@@ -54,10 +62,10 @@ public class ControlsSettings : UserSettings {
         OverrideMoveComponent(moveInput, "Left",  Settings.GetSettingString(SettingsKey.BindingLeft,  "a"));
         OverrideMoveComponent(moveInput, "Right", Settings.GetSettingString(SettingsKey.BindingRight, "d"));
 
-        if (Settings.GetSettingString(SettingsKey.BindingInteract) != "") InputSystem.actions.FindAction("Interact").ApplyBindingOverride("<Keyboard>/" + Settings.GetSettingString(SettingsKey.BindingInteract));
-        if (Settings.GetSettingString(SettingsKey.BindingFocus) != "")    InputSystem.actions.FindAction("Sprint")   .ApplyBindingOverride("<Keyboard>/" + Settings.GetSettingString(SettingsKey.BindingSprint));
-        if (Settings.GetSettingString(SettingsKey.BindingFocus) != "")    InputSystem.actions.FindAction("Focus")   .ApplyBindingOverride("<Keyboard>/" + Settings.GetSettingString(SettingsKey.BindingFocus));
-        if (Settings.GetSettingString(SettingsKey.BindingDrop) != "")     InputSystem.actions.FindAction("Drop")    .ApplyBindingOverride("<Keyboard>/" + Settings.GetSettingString(SettingsKey.BindingDrop));
+        if (Settings.GetSettingString(SettingsKey.BindingInteract) != "") ApplyAction("Interact", SettingsKey.BindingInteract);
+        if (Settings.GetSettingString(SettingsKey.BindingFocus) != "")    ApplyAction("Sprint",   SettingsKey.BindingSprint);
+        if (Settings.GetSettingString(SettingsKey.BindingFocus) != "")    ApplyAction("Focus",    SettingsKey.BindingFocus);
+        if (Settings.GetSettingString(SettingsKey.BindingDrop) != "")     ApplyAction("Drop",     SettingsKey.BindingDrop);
     }
 
     private void OverrideMoveComponent(InputAction input, string name, string key) {
@@ -66,7 +74,19 @@ public class ControlsSettings : UserSettings {
 
             if (binding.isPartOfComposite && binding.name.ToLower() == name.ToLower()) {
                 input.ApplyBindingOverride(i, "<Keyboard>/" + key);
-                return;
+                break;
+            }
+        }
+    }
+
+    private void ApplyAction(string action, SettingsKey settingsKey) {
+        string settingsValue = Settings.GetSettingString(settingsKey);
+
+        InputSystem.actions.FindAction(action).ApplyBindingOverride("<Keyboard>/" + Settings.GetSettingString(settingsKey));
+
+        foreach (ButtonControl control in new Controls().mouseControls) {
+            if (control.name == settingsValue) {
+                InputSystem.actions.FindAction(action).ApplyBindingOverride("<Mouse>/" + Settings.GetSettingString(settingsKey));
             }
         }
     }

@@ -54,7 +54,7 @@ public class Fire : Interactable {
         SetFireSize();
 
         #if UNITY_EDITOR
-            if (Keyboard.current.pKey.wasPressedThisFrame) AddEditorFuel(5);
+            if (new Controls().keyboard.pKey.wasPressedThisFrame) AddEditorFuel(5);
         #endif
     }
 

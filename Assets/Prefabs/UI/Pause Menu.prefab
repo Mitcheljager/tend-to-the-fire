@@ -2094,6 +2094,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
+      propertyPath: allowMouse
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
       propertyPath: defaultBinding
       value: w
       objectReference: {fileID: 0}
@@ -2209,7 +2213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
       propertyPath: defaultBinding
-      value: shift
+      value: leftShift
       objectReference: {fileID: 0}
     - target: {fileID: 2819631258293020556, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
       propertyPath: m_Pivot.x
@@ -2824,6 +2828,10 @@ PrefabInstance:
     - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
       propertyPath: key
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
+      propertyPath: allowMouse
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
       propertyPath: defaultBinding
@@ -3968,6 +3976,10 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
+      propertyPath: allowMouse
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
       propertyPath: defaultBinding
       value: d
       objectReference: {fileID: 0}
@@ -4080,6 +4092,10 @@ PrefabInstance:
     - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
       propertyPath: key
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
+      propertyPath: allowMouse
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
       propertyPath: defaultBinding
@@ -4457,7 +4473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1298301583556669661, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
       propertyPath: defaultBinding
-      value: e
+      value: leftButton
       objectReference: {fileID: 0}
     - target: {fileID: 2819631258293020556, guid: 03c1e1bb0df32fa4ab360bacdc6ece95, type: 3}
       propertyPath: m_Pivot.x

@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using TMPro;
 
 public class RebindInput : MonoBehaviour {
     public TMP_Text text;
     public SettingsKey key;
     public string defaultBinding;
+    public bool allowMouse = true;
 
     private bool isAwaitingBinding = false;
 
@@ -19,12 +21,21 @@ public class RebindInput : MonoBehaviour {
 
     void Update() {
         if (!isAwaitingBinding) return;
-        if (Keyboard.current == null) return;
+        if (new Controls().keyboard == null) return;
 
-        foreach (var key in Keyboard.current.allKeys) {
-            if (key == null || !key.wasPressedThisFrame) continue;
+        foreach (KeyControl key in new Controls().keyboard.allKeys) {
+            if ((key == null || !key.wasPressedThisFrame)) continue;
 
-            SetBinding(key.displayName.ToLower());
+            SetBinding(key.name);
+            break;
+        }
+
+        if (!allowMouse) return;
+
+        foreach (ButtonControl control in new Controls().mouseControls) {
+            if ((control == null || !control.wasPressedThisFrame)) continue;
+
+            SetBinding(control.name);
             break;
         }
     }
